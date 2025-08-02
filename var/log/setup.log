@@ -1,0 +1,312 @@
+2025/07/31 23:07:31 Starting cygwin install, version 2.934
+2025/07/31 23:07:31 User has backup/restore rights
+2025/07/31 23:07:31 User has symlink creation right
+2025/07/31 23:07:31 io_stream_cygfile: fopen(/etc/setup/setup.rc) failed 2 No such file or directory
+2025/07/31 23:07:31 Current Directory: D:\02_sw\utils\cygwin\cygwin_3.6.4
+2025/07/31 23:07:34 source: network install
+2025/07/31 23:07:49 root: D:\02_sw\cygwin64 system
+2025/07/31 23:07:49 Changing gid to Administrators
+2025/07/31 23:07:53 Selected local directory: D:\02_sw\utils\cygwin\cygwin_3.6.4
+2025/07/31 23:07:55 net: Preconfig
+2025/07/31 23:07:59 site: https://mirrors.163.com/cygwin/
+2025/07/31 23:08:59 io_stream_cygfile: fopen(/etc/setup/timestamp) failed 2 No such file or directory
+2025/07/31 23:08:59 io_stream_cygfile: fopen(/etc/setup/installed.db) failed 2 No such file or directory
+2025/07/31 23:08:59 solving: 39 tasks, update: yes, use test packages: no
+2025/08/02 15:11:15 solving: 80 tasks, update: no, use test packages: no
+2025/08/02 15:11:15 Augmented Transaction List:
+2025/08/02 15:11:15    0 install libpopt-common   1.19-1                   
+2025/08/02 15:11:15    1 install libsqlite3_0     3.49.1-1                 
+2025/08/02 15:11:15    2 install terminfo         6.5+20240427-1           
+2025/08/02 15:11:15    3 install tzdata           2025b-1                  
+2025/08/02 15:11:15    4 install cygwin           3.6.4-1                  
+2025/08/02 15:11:15    5 install libiconv2        1.17-1                   
+2025/08/02 15:11:15    6 install libintl8         0.22.5-1                 
+2025/08/02 15:11:15    7 install libncursesw10    6.5+20240427-1           
+2025/08/02 15:11:15    8 install libreadline7     8.2-2                    
+2025/08/02 15:11:15    9 install bash             5.2.21-1                 
+2025/08/02 15:11:15   10 install libgcc1          13.4.0-1                 
+2025/08/02 15:11:15   11 install crypto-policies  20190218-1               
+2025/08/02 15:11:15   12 install base-cygwin      3.8-2                    
+2025/08/02 15:11:15   13 install libzstd1         1.5.7-1                  
+2025/08/02 15:11:15   14 install zlib0            1.3.1-1                  
+2025/08/02 15:11:15   15 install libkrb5support0  1.15.2-2                 
+2025/08/02 15:11:15   16 install libcom_err2      1.44.5-1                 
+2025/08/02 15:11:15   17 install libedit0         20221030-4               
+2025/08/02 15:11:15   18 install libcrypt2        4.4.20-1                 
+2025/08/02 15:11:15   19 install cygrunsrv        1.64-1                   
+2025/08/02 15:11:15   20 install libxxhash0       0.8.3-1                  
+2025/08/02 15:11:15   21 install which            2.23-1                   
+2025/08/02 15:11:15   22 install vim-minimal      9.1.1054-1               
+2025/08/02 15:11:15   23 install tzcode           2025b-1                  
+2025/08/02 15:11:15   24 install sed              4.9-1                    
+2025/08/02 15:11:15   25 install run              1.3.4-2                  
+2025/08/02 15:11:15   26 install ncurses          6.5+20240427-1           
+2025/08/02 15:11:15   27 install mintty           3.7.8-1                  
+2025/08/02 15:11:15   28 install login            1.13-1                   
+2025/08/02 15:11:15   29 install libuuid1         2.40.2-2                 
+2025/08/02 15:11:15   30 install libtasn1_6       4.14-1                   
+2025/08/02 15:11:15   31 install libstdc++6       13.4.0-1                 
+2025/08/02 15:11:15   32 install libsmartcols1    2.40.2-2                 
+2025/08/02 15:11:15   33 install libreadline8     8.3-1                    
+2025/08/02 15:11:15   34 install libpopt0         1.19-1                   
+2025/08/02 15:11:15   35 install libpipeline1     1.5.8-1                  
+2025/08/02 15:11:15   36 install libpcre2_8_0     10.45-1                  
+2025/08/02 15:11:15   37 install libpcre1         8.45-1                   
+2025/08/02 15:11:15   38 install liblzma5         5.8.1-1                  
+2025/08/02 15:11:15   39 install liblz4_1         1.9.4-1                  
+2025/08/02 15:11:15   40 install liblastlog2      2.40.2-2                 
+2025/08/02 15:11:15   41 install libgmp10         6.3.0-1                  
+2025/08/02 15:11:15   42 install libgdbm6         1.24-1                   
+2025/08/02 15:11:15   43 install libffi6          3.2.1-2                  
+2025/08/02 15:11:15   44 install libbz2_1         1.0.8-1                  
+2025/08/02 15:11:15   45 install libblkid1        2.40.2-2                 
+2025/08/02 15:11:15   46 install libattr1         2.5.1-1.20.g0981a7bfe487 
+2025/08/02 15:11:15   47 install libargp          20230708-2               
+2025/08/02 15:11:15   48 install ipc-utils        1.1-1                    
+2025/08/02 15:11:15   49 install hostname         3.13-1                   
+2025/08/02 15:11:15   50 install gzip             1.14-1                   
+2025/08/02 15:11:15   51 install editrights       1.04-1                   
+2025/08/02 15:11:15   52 install diffutils        3.12-1                   
+2025/08/02 15:11:15   53 install dash             0.5.12-5                 
+2025/08/02 15:11:15   54 install alternatives     1.31-1                   
+2025/08/02 15:11:15   55 install libk5crypto3     1.15.2-2                 
+2025/08/02 15:11:15   56 install libuchardet0     0.0.8-1                  
+2025/08/02 15:11:15   57 install cygutils         1.4.17-4                 
+2025/08/02 15:11:15   58 install grep             3.12-1                   
+2025/08/02 15:11:15   59 install less             668-1                    
+2025/08/02 15:11:15   60 install xz               5.8.1-1                  
+2025/08/02 15:11:15   61 install zstd             1.5.7-1                  
+2025/08/02 15:11:15   62 install libmpfr6         4.2.2-1                  
+2025/08/02 15:11:15   63 install libp11-kit0      0.23.20-1                
+2025/08/02 15:11:15   64 install file             5.44-1                   
+2025/08/02 15:11:15   65 install bzip2            1.0.8-1                  
+2025/08/02 15:11:15   66 install libfdisk1        2.40.2-2                 
+2025/08/02 15:11:15   67 install coreutils        9.0-1                    
+2025/08/02 15:11:15   68 install getent           2.18.90-5                
+2025/08/02 15:11:15   69 install rebase           4.6.6-1                  
+2025/08/02 15:11:15   70 install info             7.1-2                    
+2025/08/02 15:11:15   71 install _autorebase      001091-1                 
+2025/08/02 15:11:15   72 install libkrb5_3        1.15.2-2                 
+2025/08/02 15:11:15   73 install groff            1.23.0-1                 
+2025/08/02 15:11:15   74 install gawk             5.3.2-1                  
+2025/08/02 15:11:15   75 install p11-kit-trust    0.23.20-1                
+2025/08/02 15:11:15   76 install p11-kit          0.23.20-1                
+2025/08/02 15:11:15   77 install tar              1.35-2                   
+2025/08/02 15:11:15   78 install util-linux       2.40.2-2                 
+2025/08/02 15:11:15   79 install findutils        4.10.0-1                 
+2025/08/02 15:11:15   80 install libgssapi_krb5_2 1.15.2-2                 
+2025/08/02 15:11:15   81 install csih             0.9.14-1                 
+2025/08/02 15:11:15   82 install ca-certificates  2024.2.69_v8.0.401-1     
+2025/08/02 15:11:15   83 install man-db           2.13.1-1                 
+2025/08/02 15:11:15   84 install base-files       4.3-3                    
+2025/08/02 15:11:15   85 install libssl3          3.0.17-1                 
+2025/08/02 15:11:15   86 install libssl1.1        1.1.1w-1                 
+2025/08/02 15:11:15   87 install libfido2         1.15.0-1                 
+2025/08/02 15:11:15   88 install openssl          3.0.17-1                 
+2025/08/02 15:11:15   89 install rsync            3.2.7-1                  
+2025/08/02 15:11:15   90 install openssh          10.0p1-1                 
+2025/08/02 15:11:20 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/popt/libpopt-common/libpopt-common-1.19-1.tar.xz
+2025/08/02 15:11:42 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/sqlite3/libsqlite3_0/libsqlite3_0-3.49.1-1.tar.xz
+2025/08/02 15:11:47 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/ncurses/terminfo/terminfo-6.5+20240427-1.tar.xz
+2025/08/02 15:11:54 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/noarch/release/tzdata/tzdata-2025b-1.tar.xz
+2025/08/02 15:12:52 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/cygwin/cygwin-3.6.4-1-x86_64.tar.xz
+2025/08/02 15:13:15 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libiconv/libiconv2/libiconv2-1.17-1.tar.xz
+2025/08/02 15:13:16 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gettext/libintl8/libintl8-0.22.5-1.tar.xz
+2025/08/02 15:13:30 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/ncurses/libncursesw10/libncursesw10-6.5+20240427-1.tar.xz
+2025/08/02 15:13:34 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/readline/libreadline7/libreadline7-8.2-2.tar.xz
+2025/08/02 15:14:39 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/bash/bash-5.2.21-1.tar.xz
+2025/08/02 15:14:42 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gcc/libgcc1/libgcc1-13.4.0-1-x86_64.tar.zst
+2025/08/02 15:14:42 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/noarch/release/crypto-policies/crypto-policies-20190218-1.tar.xz
+2025/08/02 15:14:43 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/noarch/release/base-cygwin/base-cygwin-3.8-2.tar.xz
+2025/08/02 15:14:51 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/zstd/libzstd1/libzstd1-1.5.7-1.tar.zst
+2025/08/02 15:14:52 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/zlib/zlib0/zlib0-1.3.1-1.tar.zst
+2025/08/02 15:14:53 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/krb5/libkrb5support0/libkrb5support0-1.15.2-2.tar.xz
+2025/08/02 15:14:54 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/e2fsprogs/libcom_err2/libcom_err2-1.44.5-1.tar.xz
+2025/08/02 15:14:56 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libedit/libedit0/libedit0-20221030-4.tar.xz
+2025/08/02 15:14:59 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libxcrypt/libcrypt2/libcrypt2-4.4.20-1.tar.xz
+2025/08/02 15:15:04 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/cygrunsrv/cygrunsrv-1.64-1.tar.xz
+2025/08/02 15:15:05 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/xxhash/libxxhash0/libxxhash0-0.8.3-1.tar.xz
+2025/08/02 15:15:06 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/which/which-2.23-1-x86_64.tar.xz
+2025/08/02 15:15:52 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/vim/vim-minimal/vim-minimal-9.1.1054-1.tar.xz
+2025/08/02 15:15:56 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/tzcode/tzcode-2025b-1.tar.xz
+2025/08/02 15:16:08 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/sed/sed-4.9-1.tar.xz
+2025/08/02 15:16:10 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/run/run-1.3.4-2.tar.xz
+2025/08/02 15:16:14 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/ncurses/ncurses-6.5+20240427-1.tar.xz
+2025/08/02 15:16:54 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/mintty/mintty-3.7.8-1.tar.xz
+2025/08/02 15:16:55 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/login/login-1.13-1.tar.xz
+2025/08/02 15:16:56 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/util-linux/libuuid1/libuuid1-2.40.2-2.tar.xz
+2025/08/02 15:16:59 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libtasn1/libtasn1_6/libtasn1_6-4.14-1.tar.xz
+2025/08/02 15:17:13 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gcc/libstdc++6/libstdc++6-13.4.0-1-x86_64.tar.zst
+2025/08/02 15:17:16 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/util-linux/libsmartcols1/libsmartcols1-2.40.2-2.tar.xz
+2025/08/02 15:17:18 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/readline/libreadline8/libreadline8-8.3-1-x86_64.tar.xz
+2025/08/02 15:17:22 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/popt/libpopt0/libpopt0-1.19-1.tar.xz
+2025/08/02 15:17:24 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libpipeline/libpipeline1/libpipeline1-1.5.8-1-x86_64.tar.xz
+2025/08/02 15:17:27 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/pcre2/libpcre2_8_0/libpcre2_8_0-10.45-1.tar.zst
+2025/08/02 15:17:30 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/pcre/libpcre1/libpcre1-8.45-1.tar.zst
+2025/08/02 15:17:32 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/xz/liblzma5/liblzma5-5.8.1-1-x86_64.tar.zst
+2025/08/02 15:17:32 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/lz4/liblz4_1/liblz4_1-1.9.4-1.tar.xz
+2025/08/02 15:17:33 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/util-linux/liblastlog2/liblastlog2-2.40.2-2.tar.xz
+2025/08/02 15:17:41 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gmp/libgmp10/libgmp10-6.3.0-1.tar.zst
+2025/08/02 15:17:42 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gdbm/libgdbm6/libgdbm6-1.24-1.tar.xz
+2025/08/02 15:17:43 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libffi/libffi6/libffi6-3.2.1-2.tar.xz
+2025/08/02 15:17:45 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/bzip2/libbz2_1/libbz2_1-1.0.8-1.tar.xz
+2025/08/02 15:17:47 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/util-linux/libblkid1/libblkid1-2.40.2-2.tar.xz
+2025/08/02 15:17:47 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/attr/libattr1/libattr1-2.5.1-1.20.g0981a7bfe487.tar.xz
+2025/08/02 15:17:47 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libargp/libargp-20230708-2.tar.xz
+2025/08/02 15:17:49 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/ipc-utils/ipc-utils-1.1-1.tar.xz
+2025/08/02 15:17:51 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/hostname/hostname-3.13-1.tar.bz2
+2025/08/02 15:17:55 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gzip/gzip-1.14-1-x86_64.tar.xz
+2025/08/02 15:17:55 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/editrights/editrights-1.04-1.tar.xz
+2025/08/02 15:18:06 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/diffutils/diffutils-3.12-1-x86_64.tar.xz
+2025/08/02 15:18:08 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/dash/dash-0.5.12-5.tar.xz
+2025/08/02 15:18:11 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/alternatives/alternatives-1.31-1.tar.xz
+2025/08/02 15:18:11 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/krb5/libk5crypto3/libk5crypto3-1.15.2-2.tar.xz
+2025/08/02 15:18:19 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/uchardet/libuchardet0/libuchardet0-0.0.8-1.tar.zst
+2025/08/02 15:18:20 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/cygutils/cygutils-1.4.17-4-x86_64.tar.xz
+2025/08/02 15:18:28 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/grep/grep-3.12-1-x86_64.tar.xz
+2025/08/02 15:18:35 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/less/less-668-1.tar.xz
+2025/08/02 15:18:57 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/xz/xz-5.8.1-1-x86_64.tar.zst
+2025/08/02 15:19:09 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/zstd/zstd-1.5.7-1.tar.zst
+2025/08/02 15:19:28 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/mpfr/libmpfr6/libmpfr6-4.2.2-1.tar.zst
+2025/08/02 15:19:30 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/p11-kit/libp11-kit0/libp11-kit0-0.23.20-1.tar.xz
+2025/08/02 15:19:53 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/file/file-5.44-1.tar.xz
+2025/08/02 15:19:55 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/bzip2/bzip2-1.0.8-1.tar.xz
+2025/08/02 15:19:58 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/util-linux/libfdisk1/libfdisk1-2.40.2-2.tar.xz
+2025/08/02 15:21:22 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/coreutils/coreutils-9.0-1.tar.xz
+2025/08/02 15:21:23 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/getent/getent-2.18.90-5.tar.xz
+2025/08/02 15:21:32 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/rebase/rebase-4.6.6-1.tar.xz
+2025/08/02 18:56:48 Downloaded file D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/texinfo/info/info-7.1-2.tar.zst is corrupt; deleting.
+2025/08/02 18:56:51 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/noarch/release/_autorebase/_autorebase-001091-1.tar.zst
+2025/08/02 18:56:56 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/krb5/libkrb5_3/libkrb5_3-1.15.2-2.tar.xz
+2025/08/02 18:58:21 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/groff/groff-1.23.0-1.tar.zst
+2025/08/02 18:58:32 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gawk/gawk-5.3.2-1-x86_64.tar.xz
+2025/08/02 18:58:36 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/p11-kit/p11-kit-trust/p11-kit-trust-0.23.20-1.tar.xz
+2025/08/02 18:58:37 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/p11-kit/p11-kit-0.23.20-1.tar.xz
+2025/08/02 18:58:48 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/tar/tar-1.35-2.tar.zst
+2025/08/02 18:59:04 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/util-linux/util-linux-2.40.2-2.tar.xz
+2025/08/02 18:59:11 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/findutils/findutils-4.10.0-1.tar.xz
+2025/08/02 18:59:13 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/krb5/libgssapi_krb5_2/libgssapi_krb5_2-1.15.2-2.tar.xz
+2025/08/02 18:59:16 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/csih/csih-0.9.14-1.tar.xz
+2025/08/02 18:59:28 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/noarch/release/ca-certificates/ca-certificates-2024.2.69_v8.0.401-1.tar.zst
+2025/08/02 18:59:36 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/man-db/man-db-2.13.1-1-x86_64.tar.zst
+2025/08/02 18:59:36 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/noarch/release/base-files/base-files-4.3-3.tar.zst
+2025/08/02 18:59:57 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/openssl/libssl3/libssl3-3.0.17-1-x86_64.tar.zst
+2025/08/02 19:00:12 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/openssl/libssl1.1/libssl1.1-1.1.1w-1.tar.zst
+2025/08/02 19:00:13 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libfido2/libfido2-1.15.0-1.tar.xz
+2025/08/02 19:07:35 Downloaded file D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/openssl/openssl-3.0.17-1-x86_64.tar.zst is corrupt; deleting.
+2025/08/02 19:07:42 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/rsync/rsync-3.2.7-1.tar.xz
+2025/08/02 19:07:55 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/openssh/openssh-10.0p1-1-x86_64.tar.xz
+2025/08/02 19:07:55 The following package(s) had download errors:
+2025/08/02 19:07:55   info-7.1-2
+2025/08/02 19:07:55   openssl-3.0.17-1
+2025/08/02 19:21:43 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/texinfo/info/info-7.1-2.tar.zst
+2025/08/02 19:21:58 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/openssl/openssl-3.0.17-1-x86_64.tar.zst
+2025/08/02 19:21:58 Registry value set: HKEY_LOCAL_MACHINE\Software\Cygwin\setup\rootdir = "D:\02_sw\cygwin64"
+2025/08/02 19:21:58 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/popt/libpopt-common/libpopt-common-1.19-1.tar.xz
+2025/08/02 19:21:58 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/sqlite3/libsqlite3_0/libsqlite3_0-3.49.1-1.tar.xz
+2025/08/02 19:21:58 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/ncurses/terminfo/terminfo-6.5+20240427-1.tar.xz
+2025/08/02 19:21:58 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/noarch/release/tzdata/tzdata-2025b-1.tar.xz
+2025/08/02 19:22:00 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/cygwin/cygwin-3.6.4-1-x86_64.tar.xz
+2025/08/02 19:22:01 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libiconv/libiconv2/libiconv2-1.17-1.tar.xz
+2025/08/02 19:22:01 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gettext/libintl8/libintl8-0.22.5-1.tar.xz
+2025/08/02 19:22:01 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/ncurses/libncursesw10/libncursesw10-6.5+20240427-1.tar.xz
+2025/08/02 19:22:01 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/readline/libreadline7/libreadline7-8.2-2.tar.xz
+2025/08/02 19:22:01 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/bash/bash-5.2.21-1.tar.xz
+2025/08/02 19:22:03 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gcc/libgcc1/libgcc1-13.4.0-1-x86_64.tar.zst
+2025/08/02 19:22:03 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/noarch/release/crypto-policies/crypto-policies-20190218-1.tar.xz
+2025/08/02 19:22:03 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/noarch/release/base-cygwin/base-cygwin-3.8-2.tar.xz
+2025/08/02 19:22:03 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/zstd/libzstd1/libzstd1-1.5.7-1.tar.zst
+2025/08/02 19:22:03 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/zlib/zlib0/zlib0-1.3.1-1.tar.zst
+2025/08/02 19:22:03 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/krb5/libkrb5support0/libkrb5support0-1.15.2-2.tar.xz
+2025/08/02 19:22:03 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/e2fsprogs/libcom_err2/libcom_err2-1.44.5-1.tar.xz
+2025/08/02 19:22:03 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libedit/libedit0/libedit0-20221030-4.tar.xz
+2025/08/02 19:22:03 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libxcrypt/libcrypt2/libcrypt2-4.4.20-1.tar.xz
+2025/08/02 19:22:03 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/cygrunsrv/cygrunsrv-1.64-1.tar.xz
+2025/08/02 19:22:03 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/xxhash/libxxhash0/libxxhash0-0.8.3-1.tar.xz
+2025/08/02 19:22:03 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/which/which-2.23-1-x86_64.tar.xz
+2025/08/02 19:22:03 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/vim/vim-minimal/vim-minimal-9.1.1054-1.tar.xz
+2025/08/02 19:22:04 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/tzcode/tzcode-2025b-1.tar.xz
+2025/08/02 19:22:04 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/sed/sed-4.9-1.tar.xz
+2025/08/02 19:22:04 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/run/run-1.3.4-2.tar.xz
+2025/08/02 19:22:05 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/ncurses/ncurses-6.5+20240427-1.tar.xz
+2025/08/02 19:22:05 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/mintty/mintty-3.7.8-1.tar.xz
+2025/08/02 19:22:05 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/login/login-1.13-1.tar.xz
+2025/08/02 19:22:05 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/util-linux/libuuid1/libuuid1-2.40.2-2.tar.xz
+2025/08/02 19:22:06 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libtasn1/libtasn1_6/libtasn1_6-4.14-1.tar.xz
+2025/08/02 19:22:06 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gcc/libstdc++6/libstdc++6-13.4.0-1-x86_64.tar.zst
+2025/08/02 19:22:06 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/util-linux/libsmartcols1/libsmartcols1-2.40.2-2.tar.xz
+2025/08/02 19:22:06 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/readline/libreadline8/libreadline8-8.3-1-x86_64.tar.xz
+2025/08/02 19:22:06 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/popt/libpopt0/libpopt0-1.19-1.tar.xz
+2025/08/02 19:22:06 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libpipeline/libpipeline1/libpipeline1-1.5.8-1-x86_64.tar.xz
+2025/08/02 19:22:06 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/pcre2/libpcre2_8_0/libpcre2_8_0-10.45-1.tar.zst
+2025/08/02 19:22:06 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/pcre/libpcre1/libpcre1-8.45-1.tar.zst
+2025/08/02 19:22:06 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/xz/liblzma5/liblzma5-5.8.1-1-x86_64.tar.zst
+2025/08/02 19:22:06 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/lz4/liblz4_1/liblz4_1-1.9.4-1.tar.xz
+2025/08/02 19:22:06 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/util-linux/liblastlog2/liblastlog2-2.40.2-2.tar.xz
+2025/08/02 19:22:06 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gmp/libgmp10/libgmp10-6.3.0-1.tar.zst
+2025/08/02 19:22:06 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gdbm/libgdbm6/libgdbm6-1.24-1.tar.xz
+2025/08/02 19:22:06 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libffi/libffi6/libffi6-3.2.1-2.tar.xz
+2025/08/02 19:22:06 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/bzip2/libbz2_1/libbz2_1-1.0.8-1.tar.xz
+2025/08/02 19:22:06 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/util-linux/libblkid1/libblkid1-2.40.2-2.tar.xz
+2025/08/02 19:22:06 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/attr/libattr1/libattr1-2.5.1-1.20.g0981a7bfe487.tar.xz
+2025/08/02 19:22:06 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libargp/libargp-20230708-2.tar.xz
+2025/08/02 19:22:06 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/ipc-utils/ipc-utils-1.1-1.tar.xz
+2025/08/02 19:22:06 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/hostname/hostname-3.13-1.tar.bz2
+2025/08/02 19:22:06 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gzip/gzip-1.14-1-x86_64.tar.xz
+2025/08/02 19:22:07 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/editrights/editrights-1.04-1.tar.xz
+2025/08/02 19:22:07 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/diffutils/diffutils-3.12-1-x86_64.tar.xz
+2025/08/02 19:22:07 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/dash/dash-0.5.12-5.tar.xz
+2025/08/02 19:22:07 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/alternatives/alternatives-1.31-1.tar.xz
+2025/08/02 19:22:09 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/krb5/libk5crypto3/libk5crypto3-1.15.2-2.tar.xz
+2025/08/02 19:22:09 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/uchardet/libuchardet0/libuchardet0-0.0.8-1.tar.zst
+2025/08/02 19:22:09 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/cygutils/cygutils-1.4.17-4-x86_64.tar.xz
+2025/08/02 19:22:09 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/grep/grep-3.12-1-x86_64.tar.xz
+2025/08/02 19:22:10 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/less/less-668-1.tar.xz
+2025/08/02 19:22:10 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/xz/xz-5.8.1-1-x86_64.tar.zst
+2025/08/02 19:22:10 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/zstd/zstd-1.5.7-1.tar.zst
+2025/08/02 19:22:11 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/mpfr/libmpfr6/libmpfr6-4.2.2-1.tar.zst
+2025/08/02 19:22:11 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/p11-kit/libp11-kit0/libp11-kit0-0.23.20-1.tar.xz
+2025/08/02 19:22:11 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/file/file-5.44-1.tar.xz
+2025/08/02 19:22:11 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/bzip2/bzip2-1.0.8-1.tar.xz
+2025/08/02 19:22:11 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/util-linux/libfdisk1/libfdisk1-2.40.2-2.tar.xz
+2025/08/02 19:22:11 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/coreutils/coreutils-9.0-1.tar.xz
+2025/08/02 19:22:14 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/getent/getent-2.18.90-5.tar.xz
+2025/08/02 19:22:15 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/rebase/rebase-4.6.6-1.tar.xz
+2025/08/02 19:22:15 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/texinfo/info/info-7.1-2.tar.zst
+2025/08/02 19:22:15 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/noarch/release/_autorebase/_autorebase-001091-1.tar.zst
+2025/08/02 19:22:16 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/krb5/libkrb5_3/libkrb5_3-1.15.2-2.tar.xz
+2025/08/02 19:22:16 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/groff/groff-1.23.0-1.tar.zst
+2025/08/02 19:22:19 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gawk/gawk-5.3.2-1-x86_64.tar.xz
+2025/08/02 19:22:20 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/p11-kit/p11-kit-trust/p11-kit-trust-0.23.20-1.tar.xz
+2025/08/02 19:22:20 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/p11-kit/p11-kit-0.23.20-1.tar.xz
+2025/08/02 19:22:21 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/tar/tar-1.35-2.tar.zst
+2025/08/02 19:22:22 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/util-linux/util-linux-2.40.2-2.tar.xz
+2025/08/02 19:22:24 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/findutils/findutils-4.10.0-1.tar.xz
+2025/08/02 19:22:24 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/krb5/libgssapi_krb5_2/libgssapi_krb5_2-1.15.2-2.tar.xz
+2025/08/02 19:22:24 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/csih/csih-0.9.14-1.tar.xz
+2025/08/02 19:22:24 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/noarch/release/ca-certificates/ca-certificates-2024.2.69_v8.0.401-1.tar.zst
+2025/08/02 19:22:25 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/man-db/man-db-2.13.1-1-x86_64.tar.zst
+2025/08/02 19:22:29 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/noarch/release/base-files/base-files-4.3-3.tar.zst
+2025/08/02 19:22:29 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/openssl/libssl3/libssl3-3.0.17-1-x86_64.tar.zst
+2025/08/02 19:22:29 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/openssl/libssl1.1/libssl1.1-1.1.1w-1.tar.zst
+2025/08/02 19:22:29 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/libfido2/libfido2-1.15.0-1.tar.xz
+2025/08/02 19:22:29 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/openssl/openssl-3.0.17-1-x86_64.tar.zst
+2025/08/02 19:22:31 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/rsync/rsync-3.2.7-1.tar.xz
+2025/08/02 19:22:32 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/openssh/openssh-10.0p1-1-x86_64.tar.xz
+2025/08/02 19:22:32 running: D:\02_sw\cygwin64\bin\dash.exe "/etc/postinstall/0p_000_autorebase.dash"
+2025/08/02 19:22:42 running: D:\02_sw\cygwin64\bin\dash.exe "/etc/postinstall/0p_update-info-dir.dash"
+2025/08/02 19:22:47 running: D:\02_sw\cygwin64\bin\bash.exe --norc --noprofile "/etc/postinstall/000-cygwin-post-install.sh"
+2025/08/02 19:22:47 running: D:\02_sw\cygwin64\bin\bash.exe --norc --noprofile "/etc/postinstall/coreutils.sh"
+2025/08/02 19:22:48 running: D:\02_sw\cygwin64\bin\bash.exe --norc --noprofile "/etc/postinstall/base-files-mketc.sh"
+2025/08/02 19:22:49 running: D:\02_sw\cygwin64\bin\bash.exe --norc --noprofile "/etc/postinstall/base-files-profile.sh"
+2025/08/02 19:22:52 running: D:\02_sw\cygwin64\bin\bash.exe --norc --noprofile "/etc/postinstall/p11-kit.sh"
+2025/08/02 19:22:52 running: D:\02_sw\cygwin64\bin\bash.exe --norc --noprofile "/etc/postinstall/ca-certificates.sh"
+2025/08/02 19:23:49 running: D:\02_sw\cygwin64\bin\bash.exe --norc --noprofile "/etc/postinstall/crypto-policies.sh"
+2025/08/02 19:23:56 running: D:\02_sw\cygwin64\bin\bash.exe --norc --noprofile "/etc/postinstall/openssl.sh"
+2025/08/02 19:23:56 can't run /etc/postinstall/openssl.sh: No such file
+2025/08/02 19:23:56 running: D:\02_sw\cygwin64\bin\bash.exe --norc --noprofile "/etc/postinstall/man-db.sh"
+2025/08/02 19:23:57 running: D:\02_sw\cygwin64\bin\bash.exe --norc --noprofile "/etc/postinstall/mintty.sh"
+2025/08/02 19:23:57 running: D:\02_sw\cygwin64\bin\bash.exe --norc --noprofile "/etc/postinstall/openssh.sh"
+2025/08/02 19:23:57 running: D:\02_sw\cygwin64\bin\dash.exe "/etc/postinstall/zp_man-db-update-index.dash"
+2025/08/02 19:24:35 note: Installation Complete
+2025/08/02 19:24:35 Ending cygwin install
