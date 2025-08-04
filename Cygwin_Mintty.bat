@@ -3,4 +3,4 @@ setlocal enableExtensions
 set TERM=
 set HOME=/home/jaeho_s.lee
 cd /d "%~dp0bin"
-bash --login -i
+mintty.exe --dir . -i /Cygwin-Terminal.ico -
