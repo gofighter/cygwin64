@@ -1,6 +1,11 @@
 @echo off
-setlocal enableExtensions
+setlocal EnableDelayedExpansion
+
+if "%*" NEQ "" (cd /d %*)
+
 set TERM=
 set HOME=/home/jaeho_s.lee
-cd /d "%~dp0bin"
-bash --login -i
+
+!CYG.B!bash.exe -i
+
+exit /b

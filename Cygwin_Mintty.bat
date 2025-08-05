@@ -1,6 +1,11 @@
 @echo off
-setlocal enableExtensions
+setlocal EnableDelayedExpansion
+
+if "%*" NEQ "" (cd /d %*)
+
 set TERM=
 set HOME=/home/jaeho_s.lee
-cd /d "%~dp0bin"
-mintty.exe --dir . -i /Cygwin-Terminal.ico -
+
+!CYG.B!mintty.exe --dir . -i /Cygwin-Terminal.ico -
+
+exit /b

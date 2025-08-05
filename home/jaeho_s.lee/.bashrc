@@ -1,186 +1,249 @@
-# To the extent possible under law, the author(s) have dedicated all
-# copyright and related and neighboring rights to this software to the
-# public domain worldwide. This software is distributed without any warranty.
-# You should have received a copy of the CC0 Public Domain Dedication along
-# with this software.
-# If not, see <http://creativecommons.org/publicdomain/zero/1.0/>.
+function setCommonEnv() {
+    echo ----- [2] .bashrc                #
+    echo $0                               # /usr/bin/bash
+    echo $-                               # himBH
+    if [[ "$-" != *i* ]]; then            #
+        echo ===================================== [No] InteractiveShell
+        return                            #
+    else                                  #
+        echo ===================================== [Yes] InteractiveShell
+    fi                                    #
+    shopt login_shell                     # [[ login_shell ]] && login_shell on || login_shell off
+}
 
-# base-files version 4.3-3
+function setTestEnv() {
+    if env | egrep "HOST=vwp" ; then
+        testEnv=VWP
+    elif env | egrep 12.36.212.244 ; then
+        testEnv=Linux244
+    elif env | egrep mintty ; then
+        testEnv=WindowMintty
+    else
+        testEnv=LinuxEtc
+    fi
+    # echo -e "testEnv: $testEnv\n"
+}
 
-# ~/.bashrc: executed by bash(1) for interactive shells.
+function sourceBashrc() {
+    if [[ $testEnv == "Linux244" ]] ; then
+        source ~/.bashrc_244
+    else
+        commandPrompt
+    fi
+}
 
-# The latest version as installed by the Cygwin Setup program can
-# always be found at /etc/defaults/etc/skel/.bashrc
+function setLanguage() {
+    export LANG=ko_KR.UTF-8
+}
 
-# Modifying /etc/skel/.bashrc directly will prevent
-# setup from updating it.
+function set_PATH() {
+    PATH_ARG=$* && echo $PATH | grep --quiet $PATH_ARG || export PATH=$PATH_ARG${PATH:+:${PATH}}
+}
 
-# The copy in your home directory (~/.bashrc) is yours, please
-# feel free to customise it to create a shell
-# environment to your liking.  If you feel a change
-# would be benifitial to all, please feel free to send
-# a patch to the cygwin mailing list.
+function set_LD_LIBRARY_PATH() {
+    LD_LIB=$* && echo $LD_LIBRARY_PATH | grep --quiet $LD_LIB || export LD_LIBRARY_PATH=$LD_LIB${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+}
 
-# User dependent .bashrc file
+function setPath() {
+    set_PATH ~/.local/bin
+}
 
-# If not running interactively, don't do anything
-[[ "$-" != *i* ]] && return
+function setCygWinPath() {
+    set_PATH /usr/local/bin:/usr/bin
+}
 
-# Shell Options
-#
-# See man bash for more options...
-#
-# Don't wait for job termination notification
-# set -o notify
-#
-# Don't use ^D to exit
-# set -o ignoreeof
-#
-# Use case-insensitive filename globbing
-# shopt -s nocaseglob
-#
-# Make bash append rather than overwrite the history on disk
-# shopt -s histappend
-#
-# When changing directory small typos can be ignored by bash
-# for example, cd /vr/lgo/apaache would find /var/log/apache
-# shopt -s cdspell
+function setToolPath_244() {
+    gitUserName=$(git config --global user.name)
 
-# Programmable completion enhancements are enabled via
-# /etc/profile.d/bash_completion.sh when the package bash_completetion
-# is installed.  Any completions you add in ~/.bash_completion are
-# sourced last.
+    if [[ $gitUserName == "jaeho_s.lee" ]] ; then
+        set_PATH ~/.local/bin/gcc10.3.0
+    else
+        set_PATH ~/.local/bin/gcc5.5.0
+    fi
+}
 
-# History Options
-#
-# Don't put duplicate lines in the history.
-# export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
-#
-# Ignore some controlling instructions
-# HISTIGNORE is a colon-delimited list of patterns which should be excluded.
-# The '&' is a special pattern which suppresses duplicate entries.
-# export HISTIGNORE=$'[ \t]*:&:[fb]g:exit'
-# export HISTIGNORE=$'[ \t]*:&:[fb]g:exit:ls' # Ignore the ls command as well
-#
-# Whenever displaying the prompt, write the previous line to disk
-# export PROMPT_COMMAND="history -a"
+function commonHelperFunction() {
+    source ~/.local/bin/runBash/01_CB.sh
+}
 
-# Aliases
-#
-# Some people use a different file for aliases
-# if [ -f "${HOME}/.bash_aliases" ]; then
-#   source "${HOME}/.bash_aliases"
-# fi
-#
-# Some example alias instructions
-# If these are enabled they will be used instead of any instructions
-# they may mask.  For example, alias rm='rm -i' will mask the rm
-# application.  To override the alias instruction use a \ before, ie
-# \rm will call the real rm not the alias.
-#
-# Interactive operation...
-# alias rm='rm -i'
-# alias cp='cp -i'
-# alias mv='mv -i'
-#
-# Default to human readable figures
-# alias df='df -h'
-# alias du='du -h'
-#
-# Misc :)
-# alias less='less -r'                          # raw control characters
-# alias whence='type -a'                        # where, of a sort
-# alias grep='grep --color'                     # show differences in colour
-# alias egrep='egrep --color=auto'              # show differences in colour
-# alias fgrep='fgrep --color=auto'              # show differences in colour
-#
-# Some shortcuts for different directory listings
-# alias ls='ls -hF --color=tty'                 # classify files in colour
-# alias dir='ls --color=auto --format=vertical'
-# alias vdir='ls --color=auto --format=long'
-# alias ll='ls -l'                              # long list
-# alias la='ls -A'                              # all but . and ..
-# alias l='ls -CF'                              #
+function setUserBitMask() {
+    umask 077
+    # cmd="umask" && CommandRunner0
+}
 
-# Umask
-#
-# /etc/profile sets 022, removing write perms to group + others.
-# Set a more restrictive umask: i.e. no exec perms for others:
-# umask 027
-# Paranoid: neither group nor others have any perms:
-# umask 077
+function setToolPath() {
+    if [[ $testEnv == "Linux244" ]] ; then
+        setToolPath_244
+    fi
 
-# Functions
-#
-# Some people use a different file for functions
-# if [ -f "${HOME}/.bash_functions" ]; then
-#   source "${HOME}/.bash_functions"
-# fi
-#
-# Some example functions:
-#
-# a) function settitle
-# settitle ()
-# {
-#   echo -ne "\e]2;$@\a\e]1;$@\a";
-# }
-#
-# b) function cd_func
-# This function defines a 'cd' replacement function capable of keeping,
-# displaying and accessing history of visited directories, up to 10 entries.
-# To use it, uncomment it, source this file and try 'cd --'.
-# acd_func 1.0.5, 10-nov-2004
-# Petar Marinov, http:/geocities.com/h2428, this is public domain
-# cd_func ()
-# {
-#   local x2 the_new_dir adir index
-#   local -i cnt
-#
-#   if [[ $1 ==  "--" ]]; then
-#     dirs -v
-#     return 0
-#   fi
-#
-#   the_new_dir=$1
-#   [[ -z $1 ]] && the_new_dir=$HOME
-#
-#   if [[ ${the_new_dir:0:1} == '-' ]]; then
-#     #
-#     # Extract dir N from dirs
-#     index=${the_new_dir:1}
-#     [[ -z $index ]] && index=1
-#     adir=$(dirs +$index)
-#     [[ -z $adir ]] && return 1
-#     the_new_dir=$adir
-#   fi
-#
-#   #
-#   # '~' has to be substituted by ${HOME}
-#   [[ ${the_new_dir:0:1} == '~' ]] && the_new_dir="${HOME}${the_new_dir:1}"
-#
-#   #
-#   # Now change to the new dir and add to the top of the stack
-#   pushd "${the_new_dir}" > /dev/null
-#   [[ $? -ne 0 ]] && return 1
-#   the_new_dir=$(pwd)
-#
-#   #
-#   # Trim down everything beyond 11th entry
-#   popd -n +11 2>/dev/null 1>/dev/null
-#
-#   #
-#   # Remove any other occurence of this dir, skipping the top of the stack
-#   for ((cnt=1; cnt <= 10; cnt++)); do
-#     x2=$(dirs +${cnt} 2>/dev/null)
-#     [[ $? -ne 0 ]] && return 0
-#     [[ ${x2:0:1} == '~' ]] && x2="${HOME}${x2:1}"
-#     if [[ "${x2}" == "${the_new_dir}" ]]; then
-#       popd -n +$cnt 2>/dev/null 1>/dev/null
-#       cnt=cnt-1
-#     fi
-#   done
-#
-#   return 0
-# }
-#
-# alias cd=cd_func
+    setCXX
+}
+
+function setCXX() {
+    export CC=$(which gcc)
+    export CXX=$(which g++)
+}
+
+function setAlias() {
+    alias rm='rm -i'
+    # alias cp='cp -i'               # cp Interactive 로 인해서 잘 안되면 /bin/cp 사용
+    alias mv='mv -i'
+    alias less='less -r'             # raw control characters
+    alias whence='type -a'           # where, of a sort
+    alias grep='grep --color'
+    alias egrep='grep --extended-regexp --color=auto'
+    alias fgrep='grep --fixed-strings --color=auto'
+    alias ls='ls --color'
+    alias sort='LC_COLLATE=en_US.UTF-8 sort'
+}
+
+function sourceAliasFunc() {
+    source ~/.alias
+
+    if [[ $testEnv == "VWP" ]] ; then
+        source ~/.alias_VWP
+    elif [[ $testEnv == "Linux244" ]] ; then
+        source ~/.alias_office
+    fi
+}
+
+function printToolPath() {
+    cmd="which g++" && CommandRunner0
+    cmd="which python" && CommandRunner0
+    cmd="which bash" && CommandRunner0
+    cmd="which cmake" && CommandRunner0
+}
+
+function printToolVersion() {
+    cmd="g++ --version" && CommandRunner0
+    cmd="python --version" && CommandRunner0
+    cmd="bash --version" && CommandRunner0
+    cmd="cmake --version" && CommandRunner0
+    LogInfoRef_multiLine SHELL
+    LogInfoRef_multiLine PATH
+    LogInfoRef_multiLine LD_LIBRARY_PATH
+}
+
+function commandPrompt() {
+    if [[ $testEnv == "WindowMintty" ]] ; then
+        setPromptColor_MINGW
+    elif [[ $testEnv == "VWP" ]] ; then
+        setPromptColorGreen
+    else
+        setPromptColorBlue
+    fi
+    [[ $bash_arg == "green" ]] && setPromptColorGreen
+
+    getBranchName
+
+    #\u     the username of the current user
+    #\W     the  basename  of the current working directory
+
+    PS1='\[\033]0;$MSYSTEM : $branchName \w \007\]' # set window title
+    PS1="$PS1"'\[\e[${attr};${clfg};${clbg}m\]'     # Color for user@workingDir
+    PS1="$PS1"'[\u@\W]'                             # user@workingDir
+    PS1="$PS1"'\[\e[${attr};${clfg};${clbg_gb}m\]'  # Color for bash function
+    PS1="$PS1"'$branchName'                         # bash function
+    PS1="$PS1"'\$\[\e[0;0;0m\]'                     # reset format
+}
+
+function setPromptColor_MINGW() {
+    # https://misc.flogisoft.com/bash/tip_colors_and_formatting
+    ## Formatting
+        # for attr in 0 1 2 4 5 7 ;
+        # 1 Bold/Bright
+        # 2 Dim
+        # 4 Underlined
+        # 5 Blink
+        # 7 Reverse (invert the foreground and background colors)
+        # 8 Hidden (useful for passwords)
+
+    ## Foreground (text)
+        # for clfg in {30..37} {90..97} 39(Default) ;
+        # 39 Default foreground color (white 유사)
+        # 30 Black
+        # 31 Red
+        # 32 Green
+        # 33 Yellow
+        # 34 Blue
+        # 35 Magenta
+        # 36 Cyan
+        # 37 Light gray
+        # 90 Dark gray
+        # 91 Light red
+        # 92 Light green
+        # 93 Light yellow
+        # 94 Light blue
+        # 95 Light magenta
+        # 96 Light cyan
+        # 97 White
+
+    ## Background
+        # for clbg in {40..47} {100..107} 49(Default) ;
+        # 49  Default background color (Black 유사)
+        # 40  Black
+        # 41  Red
+        # 42  Green
+        # 43  Yellow
+        # 44  Blue
+        # 45  Magenta
+        # 46  Cyan
+        # 47  Light gray
+        # 100 Dark gray
+        # 101 Light red
+        # 102 Light green
+        # 103 Light yellow
+        # 104 Light blue
+        # 105 Light magenta
+        # 106 Light cyan
+        # 107 White
+
+    attr=5      # Blink (MinGW)
+    clfg=30     # Black
+    clbg=102    # Light green
+    clbg_gb=106 # Light cyan
+}
+
+function setPromptColorBlue() {
+    [[ $testEnv != "VWP" ]] && attr=1      # Bold/Bright # VS2022 terminal
+    clfg=34     # Blue
+    clbg=34     # Blue
+    clbg_gb=34  # Blue
+}
+
+function setPromptColorGreen() {
+    [[ $testEnv != "VWP" ]] && attr=7      # Reverse (Linux PC)
+    clfg=30     # Black
+    clbg=102    # Light green
+    clbg_gb=106 # Light cyan
+}
+
+function getBranchName() {
+    branchName_detach=`git.exe branch 2> /dev/null | grep -oP --color "\* [(]\K.+(?=[)])"`
+    if [[ $? == 0 ]]; then
+        branchName=$branchName_detach
+    else
+        branchName_noDetach=`git.exe branch 2> /dev/null | awk '/*/ {print $2}'`
+        branchName=$branchName_noDetach
+    fi
+
+    [[ $branchName != "" ]] && branchName="($branchName)"
+}
+
+##################################
+
+bash_arg=$1
+# setCommonEnv
+setTestEnv
+# sourceBashrc
+setLanguage
+setPath
+setCygWinPath
+commonHelperFunction
+setUserBitMask
+# setToolPath
+setAlias
+sourceAliasFunc
+# printToolPath
+# printToolVersion
+commandPrompt
