@@ -1,0 +1,1421 @@
+function ..() { cd .. ; commandPrompt ; pwd ; .gis && (gb ; gsm_st ; gs) ; }
+function ...() { cd .. ; cd .. ; commandPrompt ; pwd ; .gis && (gb ; gsm_st ; gs) ; }
+function ....() { cd .. ; cd .. ; cd .. ; commandPrompt ; pwd ; .gis && (gb ; gsm_st ; gs) ; }
+function .....() { cd .. ; cd .. ; cd .. ; cd .. ; commandPrompt ; pwd ; .gis && (gb ; gsm_st ; gs) ; }
+function .b() { source ~/.bashrc ; }
+function .bg() { source ~/.bashrc green ; }
+function .d() { dos2unix *.sh ; }
+function .g() { if .gis ; then while [[ ! -d .git ]]; do cd ..; done && commandPrompt ; pwd ; fi ; }
+function .ga() { ga $* ; }
+function .gac() { gac_amend_note $* ; }
+function .gacp() { gacp_n $* ; }
+function .gc() { gc_amend_note $* ; }
+function .gis() { git status > /dev/null 2>&1 ; }
+function .gm() { gm.dev $* ; }
+function .gp() { gp_n $* ; }
+function .grb() { grb.dev $* ; }
+function .gss() { git submodule summary $* ; }
+function MM.head { .g && echo -- [Old Head Commit] && git ls-tree HEAD $1 ; }
+function MM.rewind { .g && echo -e "\n---------- {NewSHA]..{OldSHA}\n" && gd $1 | grep rewind ; }
+function MM.rewind.head { .g && echo -- [Old Head Commit] && gd $1 | grep rewind | awk -F'[. ]' '{ print $5 }' ; }
+function MM.rewind.stage { .g && echo -- [New Stage Commit] && gd $1 | grep rewind | awk -F'[. ]' '{ print $3 }' ; }
+function MM.stage { .g && echo -- [New Stage Commit] && git ls-files --stage $1 ; }
+function UUID.auto_mount.open() { sudo vim /etc/fstab ; }
+function UUID.blkid() { sudo blkid | grep UUID ; }
+function UUID.lsblk() { lsblk --output NAME,SIZE,UUID ; }
+function UUID.type() { df --print-type ; }
+function UUID.type.sdb1() { df --print-type | grep /dev/sdb1 ; }
+function as() { echo ${BASH_ALIASES[$1]}; }
+function as.type() { type $1; }
+function bn() { basename $(pwd) ; }
+function bn_arg() { basename $* ; }
+function cb() { ~/.local/bin/runBash/01_CB.sh script $* ; }
+function cd.() { cd $* && commandPrompt ; pwd && ls ; .gis && (gb ; gsm_st ; gs) ; }
+function cmp.() { cmp $* && echo -- [ErrorLevel] %errorlevel% ; }
+function cmp.s() { cmp --silent $* && echo -- [ErrorLevel] %errorlevel% ; }
+function curl.3000.get() { curl http://localhost:3000/$1 ; }
+function curl.3000.post() { curl -X POST http://localhost:3000/$1 -H "Content-Type: application/json" -d "$2" ; }
+function curl.5000.get() { curl http://localhost:5000/$1 ; }
+function curl.5000.post() { curl -X POST http://localhost:5000/$1 -H "Content-Type: application/json" -d "$2" ; }
+function cwd_a() { cd . && commandPrompt ; pwd $* ; .gis && (gb ; gsm_st ; gs) ; }
+function cyg() { cygpath --windows $* ; }
+function cyg.unix() { cygpath --unix $(realpath .) ; }
+function cyg.unix.() { cygpath --unix $* ; }
+function cyg.windows() { cygpath --windows $(realpath .) ; }
+function cyg.windows.() { cygpath --windows $* ; }
+function cyg_u() { cygpath --unix $* ; }
+function cyg_u_a() { cygpath --absolute --unix $* ; }
+function cyg_w() { cygpath --windows $* ; }
+function cyg_w_a() { cygpath --absolute --windows $* ; }
+function diff.() { diff --brief --recursive --strip-trailing-cr $* ; }
+function diff.exclude.cde() { diff --brief --recursive --strip-trailing-cr --exclude=*.cde $1 $2 ; }
+function diff.exclude.ext() { diff --brief --recursive --strip-trailing-cr --exclude=*.$3 $1 $2 ; }
+function dn() { dirname $(pwd) ; }
+function dn_arg() { dirname $* ; }
+function ethtool.() { ip link show && sudo ethtool $* ; }
+function ethtool.enp0s25() { ip link show && sudo ethtool enp0s25 $* ; }
+function ethtool.lo() { ip link show && sudo ethtool lo $* ; }
+function eval_effect() { ~/.local/bin/runBash/01_CB.sh script eval_effect $* ; }
+function fd() { find . -type f -regextype posix-awk -regex ".*/*$*" ; }
+function fd.git.exclude.print() { find . -name ".git" -prune -or -print ; }
+function fd.git.exclude.print.max1() { find . -maxdepth 1 -name ".git" -prune -or -print ; }
+function fd.git.include.print() { find . -name ".git" -prune -and -print ; }
+function fd.group.all.before10Day.print() { find . -mtime +10 -a -print ; }
+function fd.group.all.before20Day.print() { find . -mtime +20 -a -print ; }
+function fd.group.all.before30Day.print() { find . -mtime +30 -a -print ; }
+function fd.group.all.before40Day.print() { find . -mtime +40 -a -print ; }
+function fd.group.all.before50Day.print() { find . -mtime +50 -a -print ; }
+function fd.group.all.exact10Day.print() { find . -mtime 10 -a -print ; }
+function fd.group.all.exact1Day.print() { find . -mtime 1 -a -print ; }
+function fd.group.all.exact20Day.print() { find . -mtime 20 -a -print ; }
+function fd.group.all.exact2Day.print() { find . -mtime 2 -a -print ; }
+function fd.group.all.exact30Day.print() { find . -mtime 30 -a -print ; }
+function fd.group.all.exact3Day.print() { find . -mtime 3 -a -print ; }
+function fd.group.all.exact40Day.print() { find . -mtime 40 -a -print ; }
+function fd.group.all.exact4Day.print() { find . -mtime 4 -a -print ; }
+function fd.group.all.exact50Day.print() { find . -mtime 50 -a -print ; }
+function fd.group.all.exact5Day.print() { find . -mtime 5 -a -print ; }
+function fd.group.all.exact6day.print() { find . -mtime 6 -a -print ; }
+function fd.group.all.exact7day.print() { find . -mtime 7 -a -print ; }
+function fd.group.all.exactToday.print() { find . -mtime 0 -a -print ; }
+function fd.group.all.from10DayToNow.print() { find . -mtime -10 -a -print ; }
+function fd.group.all.from20DayToNow.print() { find . -mtime -20 -a -print ; }
+function fd.group.all.from30DayToNow.print() { find . -mtime -30 -a -print ; }
+function fd.group.all.from40DayToNow.print() { find . -mtime -40 -a -print ; }
+function fd.group.all.from50DayToNow.print() { find . -mtime -50 -a -print ; }
+function fd.group.dir.before10Day.print() { find . \( -type d -a -mtime +10 \) -a -print ; }
+function fd.group.dir.before20Day.print() { find . \( -type d -a -mtime +20 \) -a -print ; }
+function fd.group.dir.before30Day.print() { find . \( -type d -a -mtime +30 \) -a -print ; }
+function fd.group.dir.before40Day.print() { find . \( -type d -a -mtime +40 \) -a -print ; }
+function fd.group.dir.before50Day.print() { find . \( -type d -a -mtime +50 \) -a -print ; }
+function fd.group.dir.exact10Day.print() { find . \( -type d -a -mtime 10 \) -a -print ; }
+function fd.group.dir.exact1Day.print() { find . \( -type d -a -mtime 1 \) -a -print ; }
+function fd.group.dir.exact20Day.print() { find . \( -type d -a -mtime 20 \) -a -print ; }
+function fd.group.dir.exact2Day.print() { find . \( -type d -a -mtime 2 \) -a -print ; }
+function fd.group.dir.exact30Day.print() { find . \( -type d -a -mtime 30 \) -a -print ; }
+function fd.group.dir.exact3Day.print() { find . \( -type d -a -mtime 3 \) -a -print ; }
+function fd.group.dir.exact40Day.print() { find . \( -type d -a -mtime 40 \) -a -print ; }
+function fd.group.dir.exact4Day.print() { find . \( -type d -a -mtime 4 \) -a -print ; }
+function fd.group.dir.exact50Day.print() { find . \( -type d -a -mtime 50 \) -a -print ; }
+function fd.group.dir.exact5Day.print() { find . \( -type d -a -mtime 5 \) -a -print ; }
+function fd.group.dir.exact6day.print() { find . \( -type d -a -mtime 6 \) -a -print ; }
+function fd.group.dir.exact7day.print() { find . \( -type d -a -mtime 7 \) -a -print ; }
+function fd.group.dir.exactToday.print() { find . \( -type d -a -mtime 0 \) -a -print ; }
+function fd.group.dir.from10DayToNow.print() { find . \( -type d -a -mtime -10 \) -a -print ; }
+function fd.group.dir.from20DayToNow.print() { find . \( -type d -a -mtime -20 \) -a -print ; }
+function fd.group.dir.from30DayToNow.print() { find . \( -type d -a -mtime -30 \) -a -print ; }
+function fd.group.dir.from40DayToNow.print() { find . \( -type d -a -mtime -40 \) -a -print ; }
+function fd.group.dir.from50DayToNow.print() { find . \( -type d -a -mtime -50 \) -a -print ; }
+function fd.group.file.before10Day.print() { find . \( -type f -a -mtime +10 \) -a -print ; }
+function fd.group.file.before20Day.print() { find . \( -type f -a -mtime +20 \) -a -print ; }
+function fd.group.file.before30Day.print() { find . \( -type f -a -mtime +30 \) -a -print ; }
+function fd.group.file.before40Day.print() { find . \( -type f -a -mtime +40 \) -a -print ; }
+function fd.group.file.before50Day.print() { find . \( -type f -a -mtime +50 \) -a -print ; }
+function fd.group.file.exact10Day.print() { find . \( -type f -a -mtime 10 \) -a -print ; }
+function fd.group.file.exact1Day.print() { find . \( -type f -a -mtime 1 \) -a -print ; }
+function fd.group.file.exact20Day.print() { find . \( -type f -a -mtime 20 \) -a -print ; }
+function fd.group.file.exact2Day.print() { find . \( -type f -a -mtime 2 \) -a -print ; }
+function fd.group.file.exact30Day.print() { find . \( -type f -a -mtime 30 \) -a -print ; }
+function fd.group.file.exact3Day.print() { find . \( -type f -a -mtime 3 \) -a -print ; }
+function fd.group.file.exact40Day.print() { find . \( -type f -a -mtime 40 \) -a -print ; }
+function fd.group.file.exact4Day.print() { find . \( -type f -a -mtime 4 \) -a -print ; }
+function fd.group.file.exact50Day.print() { find . \( -type f -a -mtime 50 \) -a -print ; }
+function fd.group.file.exact5Day.print() { find . \( -type f -a -mtime 5 \) -a -print ; }
+function fd.group.file.exact6day.print() { find . \( -type f -a -mtime 6 \) -a -print ; }
+function fd.group.file.exact7day.print() { find . \( -type f -a -mtime 7 \) -a -print ; }
+function fd.group.file.exactToday.print() { find . \( -type f -a -mtime 0 \) -a -print ; }
+function fd.group.file.from10DayToNow.print() { find . \( -type f -a -mtime -10 \) -a -print ; }
+function fd.group.file.from20DayToNow.print() { find . \( -type f -a -mtime -20 \) -a -print ; }
+function fd.group.file.from30DayToNow.print() { find . \( -type f -a -mtime -30 \) -a -print ; }
+function fd.group.file.from40DayToNow.print() { find . \( -type f -a -mtime -40 \) -a -print ; }
+function fd.group.file.from50DayToNow.print() { find . \( -type f -a -mtime -50 \) -a -print ; }
+function fd.group.multi.name.sh.bat.print() { find . \( -name "*.sh" -o -name "*.bat" \) -a -print ; }
+function fd.group.sh.before10Day.print() { find . \( -name "*.sh" -a -mtime +10 \) -a -print ; }
+function fd.group.sh.before10Min.print() { find . \( -name "*.sh" -a -mmin +10 \) -a -print ; }
+function fd.group.sh.before20Day.print() { find . \( -name "*.sh" -a -mtime +20 \) -a -print ; }
+function fd.group.sh.before20Min.print() { find . \( -name "*.sh" -a -mmin +20 \) -a -print ; }
+function fd.group.sh.before30Day.print() { find . \( -name "*.sh" -a -mtime +30 \) -a -print ; }
+function fd.group.sh.before30Min.print() { find . \( -name "*.sh" -a -mmin +30 \) -a -print ; }
+function fd.group.sh.before40Day.print() { find . \( -name "*.sh" -a -mtime +40 \) -a -print ; }
+function fd.group.sh.before40Min.print() { find . \( -name "*.sh" -a -mmin +40 \) -a -print ; }
+function fd.group.sh.before50Day.print() { find . \( -name "*.sh" -a -mtime +50 \) -a -print ; }
+function fd.group.sh.before50Min.print() { find . \( -name "*.sh" -a -mmin +50 \) -a -print ; }
+function fd.group.sh.exact10Day.print() { find . \( -name "*.sh" -a -mtime 10 \) -a -print ; }
+function fd.group.sh.exact10Min.print() { find . \( -name "*.sh" -a -mmin 10 \) -a -print ; }
+function fd.group.sh.exact1Day.print() { find . \( -name "*.sh" -a -mtime 1 \) -a -print ; }
+function fd.group.sh.exact1Min.print() { find . \( -name "*.sh" -a -mmin 1 \) -a -print ; }
+function fd.group.sh.exact20Day.print() { find . \( -name "*.sh" -a -mtime 20 \) -a -print ; }
+function fd.group.sh.exact20Min.print() { find . \( -name "*.sh" -a -mmin 20 \) -a -print ; }
+function fd.group.sh.exact2Day.print() { find . \( -name "*.sh" -a -mtime 2 \) -a -print ; }
+function fd.group.sh.exact2Min.print() { find . \( -name "*.sh" -a -mmin 2 \) -a -print ; }
+function fd.group.sh.exact30Day.print() { find . \( -name "*.sh" -a -mtime 30 \) -a -print ; }
+function fd.group.sh.exact30Min.print() { find . \( -name "*.sh" -a -mmin 30 \) -a -print ; }
+function fd.group.sh.exact3Day.print() { find . \( -name "*.sh" -a -mtime 3 \) -a -print ; }
+function fd.group.sh.exact3Min.print() { find . \( -name "*.sh" -a -mmin 3 \) -a -print ; }
+function fd.group.sh.exact40Day.print() { find . \( -name "*.sh" -a -mtime 40 \) -a -print ; }
+function fd.group.sh.exact40Min.print() { find . \( -name "*.sh" -a -mmin 40 \) -a -print ; }
+function fd.group.sh.exact4Day.print() { find . \( -name "*.sh" -a -mtime 4 \) -a -print ; }
+function fd.group.sh.exact4Min.print() { find . \( -name "*.sh" -a -mmin 4 \) -a -print ; }
+function fd.group.sh.exact50Day.print() { find . \( -name "*.sh" -a -mtime 50 \) -a -print ; }
+function fd.group.sh.exact50Min.print() { find . \( -name "*.sh" -a -mmin 50 \) -a -print ; }
+function fd.group.sh.exact5Day.print() { find . \( -name "*.sh" -a -mtime 5 \) -a -print ; }
+function fd.group.sh.exact5Min.print() { find . \( -name "*.sh" -a -mmin 5 \) -a -print ; }
+function fd.group.sh.exact6day.print() { find . \( -name "*.sh" -a -mmin 6 \) -a -print ; }
+function fd.group.sh.exact6day.print() { find . \( -name "*.sh" -a -mtime 6 \) -a -print ; }
+function fd.group.sh.exact7day.print() { find . \( -name "*.sh" -a -mmin 7 \) -a -print ; }
+function fd.group.sh.exact7day.print() { find . \( -name "*.sh" -a -mtime 7 \) -a -print ; }
+function fd.group.sh.exactToday.print() { find . \( -name "*.sh" -a -mtime 0 \) -a -print ; }
+function fd.group.sh.from10DayToNow.print() { find . \( -name "*.sh" -a -mtime -10 \) -a -print ; }
+function fd.group.sh.from10MinToNow.print() { find . \( -name "*.sh" -a -mmin -10 \) -a -print ; }
+function fd.group.sh.from20DayToNow.print() { find . \( -name "*.sh" -a -mtime -20 \) -a -print ; }
+function fd.group.sh.from20MinToNow.print() { find . \( -name "*.sh" -a -mmin -20 \) -a -print ; }
+function fd.group.sh.from30DayToNow.print() { find . \( -name "*.sh" -a -mtime -30 \) -a -print ; }
+function fd.group.sh.from30MinToNow.print() { find . \( -name "*.sh" -a -mmin -30 \) -a -print ; }
+function fd.group.sh.from40DayToNow.print() { find . \( -name "*.sh" -a -mtime -40 \) -a -print ; }
+function fd.group.sh.from40MinToNow.print() { find . \( -name "*.sh" -a -mmin -40 \) -a -print ; }
+function fd.group.sh.from50DayToNow.print() { find . \( -name "*.sh" -a -mtime -50 \) -a -print ; }
+function fd.group.sh.from50MinToNow.print() { find . \( -name "*.sh" -a -mmin -50 \) -a -print ; }
+function fd.list() { find $1 maxdepth 1 -ctime +$2 ; }
+function fd.nas.eaDir.exclude.print() { find . -name "@eaDir" -prune -or -print ; }
+function fd.nas.eaDir.include.print() { find . -name "@eaDir" -prune -and -print ; }
+function fd.remove() { find $1 maxdepth 1 -ctime +$2 -type d -exec rm -rf {} \; ; }
+function fd_cpp() { find . -type f -regextype posix-awk -regex ".*/*[.]+(c|cpp|h|hpp|hxx)$" | xargs grep --color --with-filename --line-number "$*" ; }
+function fd_delete_all() { find . -delete $* ; }
+function fd_delete_dir() { find . -type d -delete $* ; }
+function fd_delete_file() { find . -type f -delete $* ; }
+function fd_depth() { find . -mindepth $1 -maxdepth $2 $3 ; }
+function fd_depth_1() { find . -mindepth 1 -maxdepth 1 $* ; }
+function fd_depth_dir_1() { find . -maxdepth 1 -type d ; }
+function fd_depth_file_1() { find . -maxdepth 1 -type f ; }
+function fd_exclude_git() { find . -type f -not -path "./.git/*" ; }
+function fd_grep_exec() { find . -type f -regextype posix-awk -regex ".*/*$1" -exec grep --color --with-filename --line-number "$2" {} + ; }
+function fd_grep_xargs() { find . -type f -regextype posix-awk -regex ".*/*$1" | xargs grep --color --with-filename --line-number "$2" ; }
+function fd_in_only_gitFiles() { ggr "$*" ; }
+function fd_js() { find . -type f -regextype posix-awk -regex ".*/*[.]+(js)$" | xargs grep --color --with-filename --line-number "$*" ; }
+function fd_max() { find . -maxdepth $* ; }
+function fd_maxDepth() { find . -maxdepth $* ; }
+function fd_max_all_ctime() { find . -ctime $* ; }
+function fd_max_all_mtime() { find . -mtime $* ; }
+function fd_max_dir() { find . -type d -maxdepth $* ; }
+function fd_max_dir_ctime() { find . -type d -ctime $* ; }
+function fd_max_dir_mtime() { find . -type d -mtime $* ; }
+function fd_max_file() { find . -type f -maxdepth $* ; }
+function fd_max_file_ctime() { find . -type f -ctime $* ; }
+function fd_max_file_mtime() { find . -type f -mtime $* ; }
+function fd_min() { find . -mindepth $* ; }
+function fd_minDepth() { find . -mindepth $* ; }
+function fd_name() { find . -name $* ; }
+function fd_reg() { find . -type f -regextype posix-awk -regex ".*/*" ; }
+function fd_reg_all() { find . -regextype posix-awk -regex ".*/*$*" ; }
+function fd_reg_cpp() { find . -maxdepth $* -type f -regextype posix-awk -regex ".*\.(cpp)" ; }
+function fd_reg_cpp_h() { find . -maxdepth $* -type f -regextype posix-awk -regex ".*\.(cpp|h)" ; }
+function fd_reg_dir() { find . -type d -regextype posix-awk -regex ".*/*$*" ; }
+function fd_reg_file() { find . -type f -regextype posix-awk -regex ".*/*$*" ; }
+function fd_reg_h() { find . -maxdepth $* -type f -regextype posix-awk -regex ".*\.(h)" ; }
+function fd_script() { find . -type f -regextype posix-awk -regex ".*/*[.]+(py|bat|cmd|sh|js|ini|xml|json|cde)$" | xargs grep --color --with-filename --line-number "$*" ; }
+function ffmpeg.concat_2() { ffmpeg -i "concat:$1.mp3|$2.mp3" -c copy $3.mp3 ; }
+function ffmpeg.concat_3() { ffmpeg -i "concat:$1.mp3|$2.mp3|$3.mp3" -c copy $4.mp3 ; }
+function ffmpeg.mkv.mp3() { ffmpeg -i "$1.mkv" -q:a 0 -map a "$1.mp3" ; }
+function file.() { file $* ; }
+function file.mime() { file --mime $* ; }
+function find_dir_only_depth1() { find . -maxdepth 1 -type d ; }
+function ga() { git add --verbose $* ; }
+function ga_all() { git add --verbose . $* ; }
+function ga_f() { git add --verbose --force $* ; }
+function ga_force() { git add --verbose --force . $* ; }
+function ga_interactive() { git add --verbose --interactive . $* ; }
+function ga_interactive_force() { git add --verbose --interactive --force . $* ; }
+function ga_interactive_update() { git add --verbose --interactive --update . $* ; }
+function ga_m() { git add --verbose --update . $* ; }
+function ga_onefile() { git add --verbose $* ; }
+function ga_onefile_force() { git add --verbose --force $* ; }
+function ga_onefile_manage() { git add --verbose --update $* ; }
+function gac() { git add --verbose --update . && git commit --verbose --verify --message "$*" ; }
+function gac.() { git add --verbose --update . && git commit --verbose --verify --allow-empty ; }
+function gac_all() { git add --verbose . && git commit --verbose --verify --allow-empty --message "$*" ; }
+function gac_allow_empty() { git add --verbose --update . && git commit --verbose --verify --message "$*" ; }
+function gac_amend() { git add --verbose --update . && git commit --verbose --verify --allow-empty --amend --message "$*" ; }
+function gac_amend_note() { git add --verbose --update . && git commit --verbose --verify --allow-empty --amend $* ; }
+function gac_auto_all() { git add --verbose . && git commit --verbose --verify --allow-empty --message "update" $* ; }
+function gac_auto_manage() { git add --verbose --update . && git commit --verbose --verify --allow-empty --message "update" $* ; }
+function gac_emptyFile_onlyMsg() { git commit --allow-empty --message "only msg" ; }
+function gac_emptyFile_onlyMsg_custom() { git commit --allow-empty --message "$*" ; }
+function gac_f() { git add --verbose --force . && git commit --verbose --verify --allow-empty --message "$*" ; }
+function gac_f.() { git add --verbose --force . && git commit --verbose --verify --allow-empty ; }
+function gac_f_auto() { git add --verbose --force . && git commit --verbose --verify --allow-empty --message "update" $* ; }
+function gac_i() { git add --verbose --update . && git commit --verbose --verify --allow-empty $* ; }
+function gac_m1() { git commit --verbose --verify --all --allow-empty --message "update" $* ; }
+function gac_note() { git add --verbose --update . && git commit --verbose --verify --allow-empty $* ; }
+function gacp() { git add --verbose --update . && git commit --verbose --verify --message "update" && git push --verbose --progress --verify --recurse-submodules=on-demand --set-upstream origin HEAD:$* ; }
+function gacp_all() { git add --verbose . && git commit --verbose --verify --allow-empty --message "update" && git push --verbose --progress --verify --recurse-submodules=on-demand --set-upstream origin HEAD:$* ; }
+function gacp_allow_empty() { git add --verbose --update . && git commit --verbose --verify --allow-empty --message "update" && git push --verbose --progress --verify --recurse-submodules=on-demand --set-upstream origin HEAD:$* ; }
+function gacp_amend() { git add --verbose --update . && git commit --verbose --verify --allow-empty --amend --message "update" && git push --verbose --progress --verify --recurse-submodules=on-demand --set-upstream origin HEAD:$* ; }
+function gacp_amend_note() { git add --verbose --update . && git commit --verbose --verify --allow-empty --amend && git push --verbose --progress --verify --recurse-submodules=on-demand --set-upstream origin HEAD:$* ; }
+function gacp_f() { git add --verbose --force . && git commit --verbose --verify --allow-empty --message "update" && git push --verbose --progress --verify --recurse-submodules=on-demand --set-upstream origin HEAD:$* ; }
+function gacp_manage() { git add --verbose --update . && git commit --verbose --verify --allow-empty --message "update" && git push --verbose --progress --verify --recurse-submodules=on-demand --set-upstream origin HEAD:$* ; }
+function gacp_n() { git add --verbose --update . && git commit --verbose --no-verify --message "update" && git push --verbose --progress --no-verify --recurse-submodules=on-demand --set-upstream origin HEAD:$* ; }
+function gacp_note() { git add --verbose --update . && git commit --verbose --verify --allow-empty && git push --verbose --progress --verify --recurse-submodules=on-demand --set-upstream origin HEAD:$* ; }
+function gam() { git am --keep $* ; }
+function gam_3() { git am --keep --3way $* ; }
+function gam_a() { git am --abort $* ; }
+function gam_c() { git am --continue $* ; }
+function gam_n() { git am --keep --no-verify $* ; }
+function gam_q() { git am --quit $* ; }
+function gam_s() { git am --skip $* ; }
+function gar() { git archive --verbose --output latest.zip HEAD $* ; }
+function gb() { git branch --verbose --verbose --color=never $* ; }
+function gb.() { git update-ref refs/heads/$1 $2 && git branch --verbose --verbose --color=never ; }
+function gb.d() { git update-ref -d refs/heads/$1 && git branch --verbose --verbose --color=never ; }
+function gb.dev() { git update-ref refs/heads/develop $1 && git branch --verbose --verbose --color=never ; }
+function gb.dev.h() { git update-ref refs/heads/develop HEAD && git branch --verbose --verbose --color=never ; }
+function gb.h() { git update-ref refs/heads/$1 HEAD && git branch --verbose --verbose --color=never ; }
+function gb.mas() { git update-ref refs/heads/master $1 && git branch --verbose --verbose --color=never ; }
+function gb.mas.h() { git update-ref refs/heads/master HEAD && git branch --verbose --verbose --color=never ; }
+function gb@head() { git update-ref refs/heads/$1 HEAD && git branch --verbose --verbose --color=never ; }
+function gb_a() { git branch --verbose --verbose --all --color=never $* ; }
+function gb_c() { git branch --verbose --verbose --force $1 $2 ; }
+function gb_cur_branchName() { git rev-parse --abbrev-ref HEAD ; }
+function gb_d() { git branch --verbose --verbose --force --delete $* ; }
+function gb_d_remote() { git branch --verbose --verbose --force --delete --remote origin/$* ; }
+function gb_list_() { git branch --list --verbose --ignore-case $** ; }
+function gb_list_local() { git branch --list --all --verbose --ignore-case local/$** ; }
+function gb_list_origin() { git branch --list --all --verbose --ignore-case origin/$** ; }
+function gb_list_work() { git branch --list --all --verbose --ignore-case work*/$** ; }
+function gb_m() { git branch --verbose --verbose --merged $* ; }
+function gb_nm() { git branch --verbose --verbose --no-merged $* ; }
+function gb_remote() { git branch --verbose --verbose --color=never --remote $* ; }
+function gb_s() { git branch --verbose --verbose --show-current $* ; }
+function gb_set_upstream() { git branch --verbose --verbose --set-upstream-to=origin/$* && git branch --verbose --verbose --color=never ; }
+function gb_set_upstream_develop() { git branch --verbose --verbose --set-upstream-to=origin/develop $* && git branch --verbose --verbose --color=never ; }
+function gb_su() { git branch --verbose --verbose --set-upstream-to=origin/$* && git branch --verbose --verbose --color=never ; }
+function gb_tracking() { git branch --verbose --verbose --track $* ; }
+function gb_tracking_curBranch() { git branch --verbose --verbose --track $1 ; }
+function gb_tracking_local_develop() { git branch --verbose --verbose --track $1 develop ; }
+function gb_tracking_origin_develop() { git branch --verbose --verbose --track $1 origin/develop ; }
+function gb_tracking_target() { git branch --verbose --verbose --track $1 $2 ; }
+function gb_unset_upstream() { git branch --verbose --verbose --unset-upstream $* && git branch --verbose --verbose --color=never ; }
+function gb_unset_upstream_curhead() { git branch --verbose --verbose --unset-upstream $* && git branch --verbose --verbose --color=never ; }
+function gb_unset_upstream_develop() { git branch --verbose --verbose --unset-upstream develop $* && git branch --verbose --verbose --color=never ; }
+function gb_unset_upstream_head() { git branch --verbose --verbose --unset-upstream head $* && git branch --verbose --verbose --color=never ; }
+function gb_us() { git branch --verbose --verbose --unset-upstream $* && git branch --verbose --verbose --color=never ; }
+function gbranch_a() { ~/.local/bin/runBash/01_CB.sh script git_all_branch $* ; }
+function gbranch_l() { ~/.local/bin/runBash/01_CB.sh script git_local_branch $* ; }
+function gbranch_l_heads() { ~/.local/bin/runBash/01_CB.sh script git_local_refs_heads $* ; }
+function gbranch_l_remotes() { ~/.local/bin/runBash/01_CB.sh script git_local_refs_remotes $* ; }
+function gbranch_l_tags() { ~/.local/bin/runBash/01_CB.sh script git_local_refs_tags $* ; }
+function gbranch_latest_heads_basename() { ~/.local/bin/runBash/01_CB.sh script git_latest_heads_basename $* ; }
+function gbranch_latest_heads_dirname() { ~/.local/bin/runBash/01_CB.sh script git_latest_heads_dirname $* ; }
+function gbranch_r() { ~/.local/bin/runBash/01_CB.sh script git_remote_branch $* ; }
+function gbranch_r_heads() { ~/.local/bin/runBash/01_CB.sh script git_remote_heads $* ; }
+function gbranch_r_pull() { ~/.local/bin/runBash/01_CB.sh script git_remote_pull $* ; }
+function gbranch_r_refs() { ~/.local/bin/runBash/01_CB.sh script git_remote_refs $* ; }
+function gbranch_r_tags() { ~/.local/bin/runBash/01_CB.sh script git_remote_tags $* ; }
+function gc() { git commit --verbose --verify --message "$*" ; }
+function gc.() { git commit --verbose --verify --allow-empty ; }
+function gc.auto_0() { git config --local gc.auto 0 ; }
+function gc.auto_0_submodule() { git submodule foreach git config --local gc.auto 0 ; }
+function gc.e() { git commit --verbose --no-verify --allow-empty --message "only msg" ; }
+function gc.empty() { git commit --verbose --no-verify --allow-empty --message "only msg" ; }
+function gc.empty_custom() { git commit --verbose --no-verify --allow-empty --message "$*" ; }
+function gc_allow_empty() { git commit --verbose --verify --allow-empty --message "$*" ; }
+function gc_amend() { git commit --verbose --verify --allow-empty --amend --message "$*" ; }
+function gc_amend_note() { git commit --verbose --verify --allow-empty --amend $* ; }
+function gc_auto() { git commit --verbose --verify --allow-empty --message "update" $* ; }
+function gc_interactive_npp() { git commit --verbose --verify --interactive $* ; }
+function gc_note() { git commit --verbose --verify --allow-empty $* ; }
+function gc_withFile_emptyMsg() { git commit --allow-empty-message $* ; }
+function gc_withFile_emptyMsg_blank() { git commit --allow-empty-message --message "" ; }
+function gc_withFile_emptyMsg_custom() { git commit --allow-empty-message --message "$*" ; }
+function gcf() { git cat-file $* ; }
+function gcf_b() { git cat-file blob $* ; }
+function gcf_e() { git cat-file -e $* ; }
+function gcf_head() { git cat-file -p $1 | head -$2 ; }
+function gcf_p() { git cat-file -p $* ; }
+function gcf_p_d() { git cat-file -p develop $* ; }
+function gcf_p_h() { git cat-file -p HEAD $* ; }
+function gcf_p_od() { git cat-file -p origin/develop $* ; }
+function gcf_pt() { git cat-file -p "$1^{tree}" ; }
+function gcf_pt_d() { git cat-file -p "develop^{tree}" $* ; }
+function gcf_pt_h() { git cat-file -p "HEAD^{tree}" $* ; }
+function gcf_pt_m() { git cat-file -p "master^{tree}" $* ; }
+function gcf_pt_od() { git cat-file -p "origin/develop^{tree}" $* ; }
+function gcf_s() { git cat-file -s $* ; }
+function gcf_t() { git cat-file -t $* ; }
+function gcf_tail() { git cat-file -p $1 | tail -$2 ; }
+function gcfg() { git config --list --show-scope --show-origin $* ; }
+function gcfg_f() { git config --file .gitmodules $* ; }
+function gcfg_filemode() { git config --list --show-origin | grep --color filemode $* ; }
+function gcfg_filemode_false() { git config --list --show-origin | grep --color filemode && git config core.filemode false $* && git config --list --show-origin | grep --color filemode ; }
+function gcfg_filemode_true() { git config --list --show-origin | grep --color filemode && git config core.filemode true $* && git config --list --show-origin | grep --color filemode ; }
+function gcfg_g() { git config --global $* ; }
+function gcfg_gr() { git config --get-regexp $* ; }
+function gcfg_gr_f() { git config --get-regexp --file .gitmodules $* ; }
+function gcfg_gr_g() { git config --get-regexp --global $* ; }
+function gcfg_gr_l() { git config --get-regexp --local $* ; }
+function gcfg_gr_s() { git config --get-regexp --system $* ; }
+function gcfg_gr_sc() { git config --get-regexp --show-scope $* ; }
+function gcfg_gr_sc_f() { git config --get-regexp --show-scope --file .gitmodules $* ; }
+function gcfg_gr_sc_g() { git config --get-regexp --show-scope --global $* ; }
+function gcfg_gr_sc_l() { git config --get-regexp --show-scope --local $* ; }
+function gcfg_gr_sc_s() { git config --get-regexp --show-scope --system $* ; }
+function gcfg_l() { git config --local $* ; }
+function gcfg_s() { git config --system $* ; }
+function gcfg_safe_global() { git config --global --add safe.directory $* ; }
+function gcfg_safe_local() { git config --local --add safe.directory $* ; }
+function gcfg_sc() { git config --list --show-scope $* ; }
+function gcfg_sc_so() { git config --list --show-scope --show-origin $* ; }
+function gcfg_set() { git config --global --replace-all $1 $2 ; }
+function gcfg_set_removeDuplicate_all() { git config --global --replace-all $1 $2 ; }
+function gcfg_set_removeDuplicate_local() { git config --local --replace-all $1 $2 ; }
+function gcfg_so() { git config --list --show-origin $* ; }
+function gcfg_user.email_get() { git config --get-regexp user.email $* ; }
+function gcfg_user.email_set_high385() { git config --global user.email high385@naver.com && git config --get-regexp user.email $* ; }
+function gcfg_user.email_set_jaeho_s.lee() { git config --global user.email jaeho_s.lee@samsung.com && git config --get-regexp user.email $* ; }
+function gcfg_user.name_get() { git config --get-regexp user.name $* ; }
+function gcfg_user.name_set() { git config --global user.name jaeho_s.lee && git config --get-regexp user.name $* ; }
+function gchp() { git cherry-pick --allow-empty $* ; }
+function gchp_a() { git cherry-pick --abort $* ; }
+function gchp_c() { git cherry-pick --continue $* ; }
+function gchp_e() { git cherry-pick --allow-empty --edit $* ; }
+function gchp_ff() { git cherry-pick --allow-empty --ff $* ; }
+function gchp_n() { git cherry-pick --allow-empty --no-commit $* ; }
+function gchp_q() { git cherry-pick --quit $* ; }
+function gchp_s() { git cherry-pick --skip $* ; }
+function gck() { git update-ref refs/heads/develop $1 && git checkout --force develop && git branch --verbose --verbose --color=never ; commandPrompt ; .gis && (gsm_st ; gs) ; }
+function gck.() { git checkout $* ; }
+function gck.b() { git update-ref refs/heads/develop $1 && git checkout develop && git branch --verbose --verbose --color=never ; }
+function gck.b_f() { git update-ref refs/heads/develop $1 && git checkout --force develop && git branch --verbose --verbose --color=never ; }
+function gck.branch() { git update-ref refs/heads/$1 HEAD && git checkout $1 && git branch --verbose --verbose --color=never ; }
+function gck.branch_custom() { git update-ref refs/heads/$1 $2 && git checkout $1 && git branch --verbose --verbose --color=never ; }
+function gck.branch_custom_f() { git update-ref refs/heads/$1 $2 && git checkout --force $1 && git branch --verbose --verbose --color=never ; }
+function gck.branch_f() { git update-ref refs/heads/$1 HEAD && git checkout --force $1 && git branch --verbose --verbose --color=never ; }
+function gck.dev() { git update-ref refs/heads/develop origin/develop && git checkout --force develop && git branch --verbose --verbose --color=never ; commandPrompt ; .gis && (gsm_st ; gs) ; }
+function gck.dev_no_force() { git update-ref refs/heads/develop origin/develop && git checkout develop && git branch --verbose --verbose --color=never ; commandPrompt ; .gis && (gsm_st ; gs) ; }
+function gck.file() { git checkout HEAD -- $* ; }
+function gck.file_custom() { git checkout $1 -- $2 ; }
+function gck.file_develop() { git checkout develop -- $1 ; }
+function gck.file_master() { git checkout master -- $1 ; }
+function gck.file_stage() { git diff --staged --name-only --diff-filter=AMD | xargs git checkout HEAD -- $* ; }
+function gck.file_wt() { git diff --name-only --diff-filter=AMD | xargs git checkout HEAD -- $* ; }
+function gck.head() { git update-ref refs/heads/develop HEAD && git checkout develop && git branch --verbose --verbose --color=never ; }
+function gck.head_f() { git update-ref refs/heads/develop HEAD && git checkout --force develop && git branch --verbose --verbose --color=never ; }
+function gck.master() { git update-ref refs/heads/master origin/master && git checkout --force master && git branch --verbose --verbose --color=never ; commandPrompt ; .gis && (gsm_st ; gs) ; }
+function gck.nf() { git update-ref refs/heads/develop $1 && git checkout develop && git branch --verbose --verbose --color=never ; }
+function gck.s() { git restore --staged $1 && git checkout $1 ; }
+function gck@() { git branch --verbose --verbose --color=never && git checkout --recurse-submodules --force -B develop $* && echo && git branch --verbose --verbose --color=never ; }
+function gck_b() { git branch --verbose --verbose --color=never && git checkout --force -B $* && echo && git branch --verbose --verbose --color=never ; }
+function gck_b1() { git branch --verbose --verbose --color=never && git checkout -b $* && echo && git branch --verbose --verbose --color=never ; }
+function gck_commit_all() { git branch --verbose --verbose --color=never && git checkout --force $1 . $* && git branch --verbose --verbose --color=never ; }
+function gck_commit_file() { git branch --verbose --verbose --color=never && git checkout --force $1 -- $2 && git branch --verbose --verbose --color=never ; }
+function gck_d() { git branch --verbose --verbose --color=never && git checkout --recurse-submodules --detach $* && echo && git branch --verbose --verbose --color=never ; }
+function gck_dash() { git branch --verbose --verbose --color=never && git checkout - && git branch --verbose --verbose --color=never ; }
+function gck_detach() { git checkout --detach $* ; }
+function gck_f() { git branch --verbose --verbose --color=never && git checkout --recurse-submodules --force $* && echo && git branch --verbose --verbose --color=never ; }
+function gck_force() { git branch --verbose --verbose --color=never && git checkout --force - && git branch --verbose --verbose --color=never ; }
+function gck_freeBranch() { git branch --verbose --verbose --color=never && git checkout --recurse-submodules --force -B $* && echo && git branch --verbose --verbose --color=never ; }
+function gck_h() { git branch --verbose --verbose --color=never && git checkout --force HEAD && echo && git branch --verbose --verbose --color=never ; }
+function gck_head() { git branch --verbose --verbose --color=never && git checkout --force HEAD $* && git branch --verbose --verbose --color=never ; }
+function gck_head_all_staged() { git branch --verbose --verbose --color=never && git checkout --force HEAD . $* && git branch --verbose --verbose --color=never ; }
+function gck_head_all_worktree() { git branch --verbose --verbose --color=never && git checkout --force HEAD . $* && git branch --verbose --verbose --color=never ; }
+function gck_head_file_staged() { git branch --verbose --verbose --color=never && git checkout --force HEAD -- $* && git branch --verbose --verbose --color=never ; }
+function gck_head_file_worktree() { git branch --verbose --verbose --color=never && git checkout --force HEAD -- $* && git branch --verbose --verbose --color=never ; }
+function gck_n() { git branch --verbose --verbose --color=never && git checkout --no-recurse-submodules $* && echo && git branch --verbose --verbose --color=never ; }
+function gck_t() { git branch --verbose --verbose --color=never && git checkout --track origin/$* && git branch --verbose --verbose --color=never ; }
+function gck_t1() { git branch --verbose --verbose --color=never && git checkout --track origin/$1 -B $1 && git branch --verbose --verbose --color=never ; }
+function gck_t2() { git branch --verbose --verbose --color=never && git checkout --track origin/$1 -B $2 && git branch --verbose --verbose --color=never ; }
+function gck_us() { git branch --verbose --verbose --color=never && git checkout --force -B $* $(git rev-parse --symbolic-full-name --abbrev-ref @{u}) && echo && git branch --verbose --verbose --color=never ; }
+function gckm() { git branch --verbose --verbose --color=never && git checkout --recurse-submodules --force -B develop $1 && echo && git branch --verbose --verbose --color=never && git merge --no-edit --verbose --progress origin/develop && git submodule update --progress --init ; }
+function gcl() { git clone --verbose --progress --recurse-submodules $* ; }
+function gcl_branch() { git clone --verbose --progress --recurse-submodules --branch $1 ; }
+function gclean() { git clean -ffdx -- $* ; }
+function gclean_d() { git clean -ffdx --dry-run -- $* ; }
+function gclean_fdx() { git clean -fdx -- $* ; }
+function gclean_ffdx() { git clean -ffdx -- $* ; }
+function gclean_ffdx_dry() { git clean -ffdx --dry-run -- $* ; }
+function gclean_quiet() { git clean -ffdx --quiet -- $* ; }
+function gclean_r() { git clean -ffdx -- $* && git restore $* ; }
+function gclean_sb() { git clean -ffdx -- $* && git submodule foreach git clean -ffdx ; }
+function gclean_sb_d() { git clean -ffdx --dry-run -- $* && git submodule foreach git clean -ffdx --dry-run ; }
+function gcon() { git diff --name-only --diff-filter=U ; }
+function gcon1() { git diff --check | grep --color conflict ; }
+function gcon2() { git diff --check | ggr "<<<<<<< HEAD" ; }
+function gcon3() { git diff --name-only --diff-filter=U | xargs git status ; }
+function gcon_add() { git diff --name-only --diff-filter=U | xargs git add --verbose --force ; }
+function gcon_rm() { git diff --name-only --diff-filter=U | xargs git status | grep --color DU | cut --fields=2 --delimiter=' ' | xargs git rm --force ; }
+function gcp() { git commit --verbose --verify --message "update" && git push --verbose --progress --verify --recurse-submodules=on-demand --set-upstream origin HEAD:$* ; }
+function gd() { git diff --name-status $* && echo && git diff --patch --unified=0 --raw --stat $* ; }
+function gd_..() { git diff --name-status $1..$2 $3 && echo && git diff --patch --unified=0 --raw --stat $1..$2 $3 ; }
+function gd_...() { git diff --name-status $1...$2 $3 && echo && git diff --patch --unified=0 --raw --stat $1...$2 $3 ; }
+function gd_..._stat() { git diff --name-status $1...$2 $3 && echo && git diff --raw --stat $1...$2 $3 ; }
+function gd_.._stat() { git diff --name-status $1..$2 $3 && echo && git diff --raw --stat $1..$2 $3 ; }
+function gd_10() { git diff --name-status $* && echo && git diff --patch --unified=10 --raw --stat $* ; }
+function gd_20() { git diff --name-status $* && echo && git diff --patch --unified=20 --raw --stat $* ; }
+function gd_30() { git diff --name-status $* && echo && git diff --patch --unified=30 --raw --stat $* ; }
+function gd_40() { git diff --name-status $* && echo && git diff --patch --unified=40 --raw --stat $* ; }
+function gd_cach() { git diff --name-status --cached $* && echo && git diff --patch --unified=0 --raw --stat --cached $* ; }
+function gd_cach_10() { git diff --name-status --cached $* && echo && git diff --patch --unified=10 --raw --stat --cached $* ; }
+function gd_cach_20() { git diff --name-status --cached $* && echo && git diff --patch --unified=20 --raw --stat --cached $* ; }
+function gd_cach_30() { git diff --name-status --cached $* && echo && git diff --patch --unified=30 --raw --stat --cached $* ; }
+function gd_cach_40() { git diff --name-status --cached $* && echo && git diff --patch --unified=40 --raw --stat --cached $* ; }
+function gd_ch() { git diff --check $* ; }
+function gd_ch_head() { git diff --check HEAD~..HEAD $* ; }
+function gd_ch_head_work() { git diff --check HEAD $* ; }
+function gd_ch_rev() { git diff --check $* && echo && git log --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* ; }
+function gd_ch_stage_work() { git diff --check --staged $* ; }
+function gd_ch_unStage_work() { git diff --check $* ; }
+function gd_head() { git diff --name-status HEAD~...HEAD $* && echo && git diff --patch --unified=0 --raw --stat HEAD~...HEAD $* ; }
+function gd_head_10() { git diff --name-status HEAD~...HEAD $* && echo && git diff --patch --unified=10 --raw --stat HEAD~...HEAD $* ; }
+function gd_head_20() { git diff --name-status HEAD~...HEAD $* && echo && git diff --patch --unified=20 --raw --stat HEAD~...HEAD $* ; }
+function gd_head_30() { git diff --name-status HEAD~...HEAD $* && echo && git diff --patch --unified=30 --raw --stat HEAD~...HEAD $* ; }
+function gd_head_40() { git diff --name-status HEAD~...HEAD $* && echo && git diff --patch --unified=40 --raw --stat HEAD~...HEAD $* ; }
+function gd_head_commit() { git diff --name-status $1...HEAD $2 && echo && git diff --patch --unified=0 --raw --stat $1...HEAD $2 ; }
+function gd_head_commit_10() { git diff --name-status $1...HEAD $2 && echo && git diff --patch --unified=10 --raw --stat $1...HEAD $2 ; }
+function gd_head_commit_20() { git diff --name-status $1...HEAD $2 && echo && git diff --patch --unified=20 --raw --stat $1...HEAD $2 ; }
+function gd_head_commit_30() { git diff --name-status $1...HEAD $2 && echo && git diff --patch --unified=30 --raw --stat $1...HEAD $2 ; }
+function gd_head_commit_40() { git diff --name-status $1...HEAD $2 && echo && git diff --patch --unified=40 --raw --stat $1...HEAD $2 ; }
+function gd_head_commit_nameOnly() { git diff --name-only $1...HEAD $2 ; }
+function gd_head_commit_nameStatus() { git diff --name-status $1...HEAD $2 ; }
+function gd_head_no() { git diff --name-status HEAD~$1...HEAD $2 && echo && git diff --patch --unified=0 --raw --stat HEAD~$1...HEAD $2 ; }
+function gd_head_no_10() { git diff --name-status HEAD~$1...HEAD $2 && echo && git diff --patch --unified=10 --raw --stat HEAD~$1...HEAD $2 ; }
+function gd_head_no_20() { git diff --name-status HEAD~$1...HEAD $2 && echo && git diff --patch --unified=20 --raw --stat HEAD~$1...HEAD $2 ; }
+function gd_head_no_30() { git diff --name-status HEAD~$1...HEAD $2 && echo && git diff --patch --unified=30 --raw --stat HEAD~$1...HEAD $2 ; }
+function gd_head_no_40() { git diff --name-status HEAD~$1...HEAD $2 && echo && git diff --patch --unified=40 --raw --stat HEAD~$1...HEAD $2 ; }
+function gd_head_work() { git diff --name-status HEAD $* && echo && git diff --patch --unified=0 --raw --stat HEAD $* ; }
+function gd_nameOnly() { git diff --name-only $* ; }
+function gd_nameOnly_head() { git diff --name-only HEAD~..HEAD $* ; }
+function gd_nameOnly_head_work() { git diff --name-only HEAD $* ; }
+function gd_nameOnly_rev() { git diff --name-only $* && echo && git log --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* ; }
+function gd_nameOnly_stage_work() { git diff --name-only --staged $* ; }
+function gd_nameOnly_unStage_work() { git diff --name-only $* ; }
+function gd_nameStatus() { git diff --name-status $* ; }
+function gd_nameStatus_A() { git diff --name-status $* | grep --color A ; }
+function gd_nameStatus_AD() { git diff --name-status $* | grep --color "^[AD]" ; }
+function gd_nameStatus_AD_invert() { git diff --name-status $* | grep --color --invert-match "^[AD]" ; }
+function gd_nameStatus_D() { git diff --name-status $* | grep --color D ; }
+function gd_nameStatus_M() { git diff --name-status $* | grep --color M ; }
+function gd_nameStatus_MR() { git diff --name-status $* | grep --color "^[MR]" ; }
+function gd_nameStatus_R() { git diff --name-status $* | grep --color R ; }
+function gd_nameStatus_head() { git diff --name-status HEAD~..HEAD $* ; }
+function gd_nameStatus_head_work() { git diff --name-status HEAD $* ; }
+function gd_nameStatus_rev() { git diff --name-status $* && echo && git log --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* ; }
+function gd_nameStatus_stage_work() { git diff --name-status --staged $* ; }
+function gd_nameStatus_unStage_work() { git diff --name-status $* ; }
+function gd_noIndex() { git diff --no-index --patch --unified=0 --raw --stat $* ; }
+function gd_noIndex_u0() { git diff --no-index --patch --unified=0 --raw --stat $* ; }
+function gd_noIndex_u3() { git diff --no-index --patch --unified=3 --raw --stat $* ; }
+function gd_numStat() { echo -e 'added | deleted \n' && git diff --numstat $* ; }
+function gd_numStat_head() { echo -e 'added | deleted \n' && git diff --numstat HEAD~..HEAD $* ; }
+function gd_numStat_head_work() { echo -e 'added | deleted \n' && git diff --numstat HEAD $* ; }
+function gd_numStat_rev() { echo -e 'added | deleted \n' && git diff --numstat $* && echo && git log --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* ; }
+function gd_numStat_stage_work() { echo -e 'added | deleted \n' && git diff --numstat --staged $* ; }
+function gd_numStat_unStage_work() { echo -e 'added | deleted \n' && git diff --numstat $* ; }
+function gd_range() { git diff --patch --unified=0 --raw --stat $1...$2 $3 ; }
+function gd_range_stat() { git diff --raw --stat $1...$2 $3 ; }
+function gd_raw() { git diff --patch --unified=0 --raw $* ; }
+function gd_rev() { git diff --patch --unified=0 --raw --stat $* && echo && git log --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* ; }
+function gd_stage_work() { git diff --patch --unified=0 --raw --stat --staged $* ; }
+function gd_stat() { git diff --raw --stat $* ; }
+function gd_stat_count() { git diff --raw --stat-count=$1 $2 ; }
+function gd_stat_graphWidth() { git diff --raw --stat-graph-width=$1 $2 ; }
+function gd_stat_nameWidth() { git diff --raw --stat-name-width=$1 $2 ; }
+function gd_stat_unified0() { git diff --patch --unified=0 --raw --stat $* ; }
+function gd_stat_unified0_staged() { git diff --patch --unified=0 --raw --stat --staged $* ; }
+function gd_stat_width() { git diff --raw --stat-width=$1 $2 ; }
+function gd_unStage_work() { git diff --patch --unified=0 --raw --stat $* ; }
+function gdes() { git describe $* ; }
+function gdes_contains() { git describe --always --contains $* ; }
+function gdes_contains_head() { git describe --always --contains HEAD $* ; }
+function gdes_head() { git describe HEAD $* ; }
+function gdt() { ~/.local/bin/runBash/01_CB.sh script GitDifftool_Compare_HEAD_WorkingTree_OpenAllFiles $* ; }
+function gdt_..() { ~/.local/bin/runBash/01_CB.sh script GitDifftool_Compare_RevRange_OpenAllFiles $1..$2 ; }
+function gdt_...() { ~/.local/bin/runBash/01_CB.sh script GitDifftool_Compare_RevRange_OpenAllFiles $1...$2 ; }
+function gdt_...us() { ~/.local/bin/runBash/01_CB.sh script GitDifftool_Compare_RevRange_OpenAllFiles HEAD...$(git rev-parse --symbolic-full-name --abbrev-ref @{u}) ; }
+function gdt_b_w() { ~/.local/bin/runBash/01_CB.sh script GitDifftool_Compare_BaseCommit_WorkingTree_OpenAllFiles $* ; }
+function gdt_baseCommit_work() { ~/.local/bin/runBash/01_CB.sh script GitDifftool_Compare_BaseCommit_WorkingTree_OpenAllFiles $* ; }
+function gdt_c() { git difftool --no-prompt --check --no-prompt -- $* ; }
+function gdt_copy() { ~/.local/bin/runBash/01_CB.sh script Check_CopyRight $* ; }
+function gdt_d() { git difftool --no-prompt --dir-diff --no-prompt -- $* ; }
+function gdt_h() { git difftool --no-prompt -- $* ; }
+function gdt_head() { ~/.local/bin/runBash/01_CB.sh script GitDifftool_Compare_HEAD_OpenAllFiles $* ; }
+function gdt_head_work() { ~/.local/bin/runBash/01_CB.sh script GitDifftool_Compare_HEAD_WorkingTree_OpenAllFiles $* ; }
+function gdt_merge1_merge2() { ~/.local/bin/runBash/01_CB.sh script GitDifftool_merge1_merge2 ; }
+function gdt_merge2_merge1() { ~/.local/bin/runBash/01_CB.sh script GitDifftool_merge2_merge1 ; }
+function gdt_merge_1() { ~/.local/bin/runBash/01_CB.sh script GitDifftool_merge1 ; }
+function gdt_merge_2() { ~/.local/bin/runBash/01_CB.sh script GitDifftool_merge2 ; }
+function gdt_n() { git difftool --name-only --no-prompt -- $* ; }
+function gdt_ni() { git difftool --no-index --patch --unified=0 --raw --stat $* ; }
+function gdt_ni_u0() { git difftool --no-index --patch --unified=0 --raw --stat $* ; }
+function gdt_ni_u3() { git difftool --no-index --patch --unified=3 --raw --stat $* ; }
+function gdt_one_head() { ~/.local/bin/runBash/01_CB.sh script GitDifftool_Compare_HEAD_OpenOneByOne $* ; }
+function gdt_one_head_work() { ~/.local/bin/runBash/01_CB.sh script GitDifftool_Compare_HEAD_WorkingTree_OpenOneByOne $* ; }
+function gdt_one_ni() { ~/.local/bin/runBash/01_CB.sh script GitDifftool_Compare_NoIndex $* ; }
+function gdt_one_rev() { ~/.local/bin/runBash/01_CB.sh script GitDifftool_Compare_RevRange_OpenOneByOne $* ; }
+function gdt_one_stage_work() { ~/.local/bin/runBash/01_CB.sh script GitDifftool_Compare_IndexStage_WorkingTree_OpenOneByOne $* ; }
+function gdt_one_unStage_work() { ~/.local/bin/runBash/01_CB.sh script GitDifftool_Compare_IndexUnStage_WorkingTree_OpenOneByOne $* ; }
+function gdt_rev() { ~/.local/bin/runBash/01_CB.sh script GitDifftool_Compare_RevRange_OpenAllFiles $* ; }
+function gdt_rev_no() { ~/.local/bin/runBash/01_CB.sh script GitDifftool_Compare_RevRange_No_OpenAllFiles $1 $2 ; }
+function gdt_s() { git difftool --staged --no-prompt -- $* ; }
+function gdt_stage_work() { ~/.local/bin/runBash/01_CB.sh script GitDifftool_Compare_IndexStage_WorkingTree_OpenAllFiles $* ; }
+function gdt_unStage_work() { ~/.local/bin/runBash/01_CB.sh script GitDifftool_Compare_IndexUnStage_WorkingTree_OpenAllFiles $* ; }
+function gdt_us() { ~/.local/bin/runBash/01_CB.sh script GitDifftool_Compare_RevRange_OpenAllFiles $(git rev-parse --symbolic-full-name --abbrev-ref @{u})...HEAD ; }
+function gem_count3_remote_origin() { ~/.local/bin/runBash/01_CB.sh script git_email_count3_remotes_origin $* ; }
+function gem_heads() { ~/.local/bin/runBash/01_CB.sh script git_email_heads $* ; }
+function gem_tag() { ~/.local/bin/runBash/01_CB.sh script git_email_tags $* ; }
+function gf() { git fetch --progress --show-forced-updates --no-all --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes origin $* ; }
+function gf.() { git fetch --progress --show-forced-updates --no-all --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes $* ; }
+function gf.clone() { mkdir $1 && cd $1 && git init && git remote add origin $2 && git remote --verbose && git fetch --verbose --progress --show-forced-updates --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes --depth 1 origin $3 && git checkout --force -B develop FETCH_HEAD ; }
+function gf.clone.gitignore() { mkdir gitignore && cd gitignore && git init && git remote add origin git@github.com:gofighter/gitignore.git && git remote --verbose && git fetch --verbose --progress --show-forced-updates --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes --depth 1 origin master && git checkout --force -B develop FETCH_HEAD ; }
+function gf.gitignore() { git fetch --verbose --progress --show-forced-updates --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes --depth 1 origin master && git checkout --force -B develop FETCH_HEAD ; }
+function gf.origin() { git fetch --progress --show-forced-updates --no-all --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes origin ; }
+function gf.work01() { git fetch --progress --show-forced-updates --no-all --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes work01 ; }
+function gf.work02() { git fetch --progress --show-forced-updates --no-all --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes work02 ; }
+function gf.work03() { git fetch --progress --show-forced-updates --no-all --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes work03 ; }
+function gf.work04() { git fetch --progress --show-forced-updates --no-all --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes work04 ; }
+function gf.work05() { git fetch --progress --show-forced-updates --no-all --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes work05 ; }
+function gf.work06() { git fetch --progress --show-forced-updates --no-all --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes work06 ; }
+function gf.work07() { git fetch --progress --show-forced-updates --no-all --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes work07 ; }
+function gf.work08() { git fetch --progress --show-forced-updates --no-all --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes work08 ; }
+function gf.work09() { git fetch --progress --show-forced-updates --no-all --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes work09 ; }
+function gf.work10() { git fetch --progress --show-forced-updates --no-all --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes work10 ; }
+function gf.xwork01() { git fetch --progress --show-forced-updates --no-all --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes xwork01 ; }
+function gf.xwork02() { git fetch --progress --show-forced-updates --no-all --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes xwork02 ; }
+function gf.xwork03() { git fetch --progress --show-forced-updates --no-all --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes xwork03 ; }
+function gf.xwork04() { git fetch --progress --show-forced-updates --no-all --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes xwork04 ; }
+function gf.xwork05() { git fetch --progress --show-forced-updates --no-all --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes xwork05 ; }
+function gf.xwork06() { git fetch --progress --show-forced-updates --no-all --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes xwork06 ; }
+function gf.xwork07() { git fetch --progress --show-forced-updates --no-all --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes xwork07 ; }
+function gf.xwork08() { git fetch --progress --show-forced-updates --no-all --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes xwork08 ; }
+function gf.xwork09() { git fetch --progress --show-forced-updates --no-all --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes xwork09 ; }
+function gf.xwork10() { git fetch --progress --show-forced-updates --no-all --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes xwork10 ; }
+function gf@() { git fetch --verbose --progress --show-forced-updates --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes --depth 1 origin $1 && git checkout --force -B develop FETCH_HEAD ; }
+function gf_default() { git fetch --verbose --progress --show-forced-updates --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes && echo && git branch --verbose --verbose --all --color=never ; }
+function gf_dryRun() { git fetch --verbose --progress --show-forced-updates --prune --prune-tags --tags --jobs=8 --recurse-submodules=yes --dry-run ; }
+function gf_fail() { ~/.local/bin/runBash/01_CB.sh script git_fetch_fail $* ; }
+function gf_gitAction() { git fetch --progress --show-forced-updates --no-tags --prune --no-recurse-submodules --depth=1 origin +$1:$2 ; }
+function gf_script() { ~/.local/bin/runBash/01_CB.sh script git_fetch $* ; }
+function gf_sm() { gsm_gf && gf ; }
+function gf_sm.() { gsm_gf && gf. $* ; }
+function gfp() { git format-patch --keep-subject $* ; }
+function gfp_am() { git format-patch --progress --keep-subject --stdout $* | git am --3way --keep ; }
+function gfp_am_n() { rm -rf .git/rebase-apply && git format-patch --keep-subject $* && echo && for var in $(ls --color *.patch); do echo $var && git am --no-verify --keep $var && rm -f $var; done ; }
+function gfp_am_v() { rm -rf .git/rebase-apply && git format-patch --keep-subject $* && echo && for var in $(ls --color *.patch); do echo $var && git am --keep $var && rm -f $var; done ; }
+function gfsck() { git fsck $* ; }
+function gfsck_dangling_head() { git fsck --dangling HEAD $* ; }
+function ggc() { git gc $* ; }
+function ggc_prune_now() { git gc --prune=now $* ; }
+function ggr() { git grep --line-number -I $* ; }
+function ggr..() { ggr $* $(git rev-list origin/develop..HEAD) ; }
+function ggr_HEAD() { ggr $* $(git rev-list HEAD~..HEAD) ; }
+function ggr_c1() { ggr -1 $* ; }
+function ggr_c10() { ggr -10 $* ; }
+function ggr_c2() { ggr -2 $* ; }
+function ggr_c20() { ggr -20 $* ; }
+function ggr_c3() { ggr -3 $* ; }
+function ggr_c30() { ggr -30 $* ; }
+function ggr_context1() { ggr --context=1 $* ; }
+function ggr_context10() { ggr --context=10 $* ; }
+function ggr_context2() { ggr --context=2 $* ; }
+function ggr_context20() { ggr --context=20 $* ; }
+function ggr_context3() { ggr --context=3 $* ; }
+function ggr_context30() { ggr --context=30 $* ; }
+function ggr_count() { ggr --count $* ; }
+function ggr_cpp_filename_text_space_tab() { ggr_filename $' \t' $* -- $(glsf_print_text_cpp) ; }
+function ggr_cpp_filename_text_tab() { ggr_filename $'\t' $* -- $(glsf_print_text_cpp) ; }
+function ggr_cpp_filename_text_tab_space() { ggr_filename $'\t ' $* -- $(glsf_print_text_cpp) ; }
+function ggr_cpp_text_space_tab() { ggr $' \t' $* -- $(glsf_print_text_cpp) ; }
+function ggr_cpp_text_tab() { ggr $'\t' $* -- $(glsf_print_text_cpp) ; }
+function ggr_cpp_text_tab_space() { ggr $'\t ' $* -- $(glsf_print_text_cpp) ; }
+function ggr_exclude_dir() { ggr "$1" | grep -E -v "^($2|$3|$4)" | ggr "$1" ; }
+function ggr_filename() { ggr --files-with-matches $* ; }
+function ggr_filename.all() { for var in $*; do LogInfo $var && ggr --files-with-matches $var; done ; }
+function ggr_filename_space_tab() { ggr_filename $' \t' $* ; }
+function ggr_filename_tab() { ggr_filename $'\t' $* ; }
+function ggr_filename_tab_space() { ggr_filename $'\t ' $* ; }
+function ggr_filename_text_space_tab() { ggr_filename $' \t' $* -- $(glsf_print_text) ; }
+function ggr_filename_text_tab() { ggr_filename $'\t' $* -- $(glsf_print_text) ; }
+function ggr_filename_text_tab_space() { ggr_filename $'\t ' $* -- $(glsf_print_text) ; }
+function ggr_fun_con() { ggr --function-context $* ; }
+function ggr_print_filename() { ggr --files-with-matches $* ; }
+function ggr_script_filename_text_space_tab() { ggr_filename $' \t' $* -- $(glsf_print_text_script) ; }
+function ggr_script_filename_text_tab() { ggr_filename $'\t' $* -- $(glsf_print_text_script) ; }
+function ggr_script_filename_text_tab_space() { ggr_filename $'\t ' $* -- $(glsf_print_text_script) ; }
+function ggr_script_text_space_tab() { ggr $' \t' $* -- $(glsf_print_text_script) ; }
+function ggr_script_text_tab() { ggr $'\t' $* -- $(glsf_print_text_script) ; }
+function ggr_script_text_tab_space() { ggr $'\t ' $* -- $(glsf_print_text_script) ; }
+function ggr_show_function() { ggr --show-function $* ; }
+function ggr_space_tab() { ggr $' \t' $* ; }
+function ggr_tab() { ggr $'\t' $* ; }
+function ggr_tab_space() { ggr $'\t ' $* ; }
+function ggr_text() { ggr $* -- $(glsf_print_text) ; }
+function ggr_text_cpp() { ggr $* -- $(glsf_print_text_cpp) ; }
+function ggr_text_script() { ggr $* -- $(glsf_print_text_script) ; }
+function ggr_text_space_tab() { ggr $' \t' $* -- $(glsf_print_text) ; }
+function ggr_text_tab() { ggr $'\t' $* -- $(glsf_print_text) ; }
+function ggr_text_tab_space() { ggr $'\t ' $* -- $(glsf_print_text) ; }
+function ggri() { ggr --ignore-case $* ; }
+function ggri..() { ggri $* $(git rev-list origin/develop..HEAD) ; }
+function ggri_HEAD() { ggri $* $(git rev-list HEAD~..HEAD) ; }
+function ggri_c1() { ggri -1 $* ; }
+function ggri_c10() { ggri -10 $* ; }
+function ggri_c2() { ggri -2 $* ; }
+function ggri_c20() { ggri -20 $* ; }
+function ggri_c3() { ggri -3 $* ; }
+function ggri_c30() { ggri -30 $* ; }
+function ggri_context1() { ggri --context=1 $* ; }
+function ggri_context10() { ggri --context=10 $* ; }
+function ggri_context2() { ggri --context=2 $* ; }
+function ggri_context20() { ggri --context=20 $* ; }
+function ggri_context3() { ggri --context=3 $* ; }
+function ggri_context30() { ggri --context=30 $* ; }
+function ggri_count() { ggri --count $* ; }
+function ggri_cpp_filename_text_space_tab() { ggri_filename $' \t' $* -- $(glsf_print_text_cpp) ; }
+function ggri_cpp_filename_text_tab() { ggri_filename $'\t' $* -- $(glsf_print_text_cpp) ; }
+function ggri_cpp_filename_text_tab_space() { ggri_filename $'\t ' $* -- $(glsf_print_text_cpp) ; }
+function ggri_cpp_text_space_tab() { ggri $' \t' $* -- $(glsf_print_text_cpp) ; }
+function ggri_cpp_text_tab() { ggri $'\t' $* -- $(glsf_print_text_cpp) ; }
+function ggri_cpp_text_tab_space() { ggri $'\t ' $* -- $(glsf_print_text_cpp) ; }
+function ggri_exclude_dir() { ggri "$1" | grep -E -v "^($2|$3|$4)" | ggri "$1" ; }
+function ggri_filename() { ggri --files-with-matches $* ; }
+function ggri_filename_space_tab() { ggri_filename $' \t' $* ; }
+function ggri_filename_tab() { ggri_filename $'\t' $* ; }
+function ggri_filename_tab_space() { ggri_filename $'\t ' $* ; }
+function ggri_filename_text_space_tab() { ggri_filename $' \t' $* -- $(glsf_print_text) ; }
+function ggri_filename_text_tab() { ggri_filename $'\t' $* -- $(glsf_print_text) ; }
+function ggri_filename_text_tab_space() { ggri_filename $'\t ' $* -- $(glsf_print_text) ; }
+function ggri_fun_con() { ggri --function-context $* ; }
+function ggri_print_filename() { ggri --files-with-matches $* ; }
+function ggri_script_filename_text_space_tab() { ggri_filename $' \t' $* -- $(glsf_print_text_script) ; }
+function ggri_script_filename_text_tab() { ggri_filename $'\t' $* -- $(glsf_print_text_script) ; }
+function ggri_script_filename_text_tab_space() { ggri_filename $'\t ' $* -- $(glsf_print_text_script) ; }
+function ggri_script_text_space_tab() { ggri $' \t' $* -- $(glsf_print_text_script) ; }
+function ggri_script_text_tab() { ggri $'\t' $* -- $(glsf_print_text_script) ; }
+function ggri_script_text_tab_space() { ggri $'\t ' $* -- $(glsf_print_text_script) ; }
+function ggri_show_function() { ggri --show-function $* ; }
+function ggri_space_tab() { ggri $' \t' $* ; }
+function ggri_tab() { ggri $'\t' $* ; }
+function ggri_tab_space() { ggri $'\t ' $* ; }
+function ggri_text() { ggri $* -- $(glsf_print_text) ; }
+function ggri_text_cpp() { ggri $* -- $(glsf_print_text_cpp) ; }
+function ggri_text_script() { ggri $* -- $(glsf_print_text_script) ; }
+function ggri_text_space_tab() { ggri $' \t' $* -- $(glsf_print_text) ; }
+function ggri_text_tab() { ggri $'\t' $* -- $(glsf_print_text) ; }
+function ggri_text_tab_space() { ggri $'\t ' $* -- $(glsf_print_text) ; }
+function gi() { git init $* && gcfg_filemode_false ; }
+function gi_p() { git init && touch README.md && git add --verbose . && git commit --verbose --verify --allow-empty --message "init" && git remote --verbose add origin $* && git push --verbose --progress --verify --set-upstream origin HEAD:master ; }
+function gl() { git log --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* ; }
+function gl..() { git log --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" origin/develop..HEAD $* ; }
+function gl..r() { git log --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" HEAD..origin/develop $* ; }
+function gl.1() { git log -1 $* ; }
+function gl.10() { git log -10 $* ; }
+function gl.100() { git log -100 $* ; }
+function gl.2() { git log -2 $* ; }
+function gl.20() { git log -20 $* ; }
+function gl.3() { git log -3 $* ; }
+function gl.30() { git log -30 $* ; }
+function gl.4() { git log -4 $* ; }
+function gl.40() { git log -40 $* ; }
+function gl.5() { git log -5 $* ; }
+function gl.50() { git log -50 $* ; }
+function gl.6() { git log -6 $* ; }
+function gl.60() { git log -60 $* ; }
+function gl.7() { git log -7 $* ; }
+function gl.70() { git log -70 $* ; }
+function gl.8() { git log -8 $* ; }
+function gl.80() { git log -80 $* ; }
+function gl.9() { git log -9 $* ; }
+function gl.90() { git log -90 $* ; }
+function gl.n() { git log --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" --name-only $* ; }
+function gl.ns() { git log --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" --name-status $* ; }
+function gl.p() { git log --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" --patch $* ; }
+function gl.s() { git log --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" --stat $* ; }
+function gl.submodule() { git log --all --graph --decorate --oneline --patch --submodule=log $* ; }
+function gl0() { ~/.local/bin/runBash/01_CB.sh script git_log_HEAD_default $* ; }
+function gl_..() { git log --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $1..$2 $3 ; }
+function gl_...() { git log --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $1...$2 $3 ; }
+function gl_..._all() { git log --all --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $1...$2 $3 ; }
+function gl_.._all() { git log --all --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $1..$2 $3 ; }
+function gl_..us() { git log --graph --format=format:'%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s' $*..$(git rev-parse --symbolic-full-name --abbrev-ref @{u}) ; }
+function gl_0() { git log --format=format:"%C(yellow)%<|(10)%h%Creset%C(red)%<|(26,trunc)%an%Creset%C(green)%<|(47,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* ; }
+function gl_0_a() { git log --all --format=format:"%C(yellow)%<|(10)%h%Creset%C(red)%<|(26,trunc)%an%Creset%C(green)%<|(47,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* ; }
+function gl_0_r() { git log --reverse --format=format:"%C(yellow)%<|(10)%h%Creset%C(red)%<|(26,trunc)%an%Creset%C(green)%<|(47,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* ; }
+function gl_1() { git log --graph --format=format:"%C(yellow)%>|(26)%h%>|(28)%x2D%<|(30)%x3E%<|(38)%p%Creset%C(red)%<|(54,trunc)%an%Creset%C(green)%<|(75,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* ; }
+function gl_1_a() { git log --all --graph --format=format:"%C(yellow)%>|(26)%h%>|(28)%x2D%<|(30)%x3E%<|(38)%p%Creset%C(red)%<|(54,trunc)%an%Creset%C(green)%<|(75,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* ; }
+function gl_2() { git log --graph --format=format:"%C(yellow)%>|(26)%h%>|(28)%x2D%<|(30)%x3E%<|(38)%p%Creset%C(red)%<|(54,trunc)%an%<|(75,trunc)%ar%Creset%C(green)%<|(91,trunc)%cn%<|(112,trunc)%cr%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* ; }
+function gl_2_a() { git log --all --graph --format=format:"%C(yellow)%>|(26)%h%>|(28)%x2D%<|(30)%x3E%<|(38)%p%Creset%C(red)%<|(54,trunc)%an%<|(75,trunc)%ar%Creset%C(green)%<|(91,trunc)%cn%<|(112,trunc)%cr%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* ; }
+function gl_SHA_40() { git log -1 --format=%H HEAD $* ; }
+function gl_SHA_40_quote() { git log -1 --format='%H' HEAD $* ; }
+function gl_a() { git log --all --graph --decorate --oneline --patch --submodule=log $* | grep -E --color "^[*| ]+([0-9a-f]{7} |Submodule |> )" ; }
+function gl_all_a() { git log --all --graph --decorate --oneline --patch --submodule=log $* | grep -E --color "^[*| ]+([0-9a-f]{7} |Submodule |> )" ; }
+function gl_all_commit_color_graph() { git log --all --graph --oneline $* | grep -E --color "^[*| ]+([0-9a-f]{7})" ; }
+function gl_all_commit_color_graph_only_submodule() { git log --all --graph --decorate --oneline --patch --submodule=log $* | grep -E --color --before-context=1 "^[*| ]+(Submodule |> )" ; }
+function gl_all_commit_color_graph_only_submodule_B0() { git log --all --graph --decorate --oneline --patch --submodule=log $* | grep -E --color --before-context=0 "^[*| ]+(Submodule |> )" ; }
+function gl_all_commit_color_graph_only_submodule_B1() { git log --all --graph --decorate --oneline --patch --submodule=log $* | grep -E --color --before-context=1 "^[*| ]+(Submodule |> )" ; }
+function gl_all_commit_color_graph_only_submodule_B1_CDE() { git log --all --graph --decorate --oneline --patch --submodule=log $* | grep -E --color --before-context=1 "^[*| ]+(Submodule CDE)" ; }
+function gl_all_commit_color_graph_only_submodule_B1_path() { git log --all --graph --decorate --oneline --patch --submodule=log $2 $3 $4 | grep -E --color --before-context=1 "^[*| ]+(Submodule $1)" ; }
+function gl_all_commit_color_graph_only_submodule_B1_script() { git log --all --graph --decorate --oneline --patch --submodule=log $* | grep -E --color --before-context=1 "^[*| ]+(Submodule script)" ; }
+function gl_all_commit_color_graph_only_submodule_B1_source() { git log --all --graph --decorate --oneline --patch --submodule=log $* | grep -E --color --before-context=1 "^[*| ]+(Submodule source)" ; }
+function gl_all_commit_color_graph_only_submodule_B1_submodule_CDE() { git log --all --graph --decorate --oneline --patch --submodule=log $* | grep -E --color --before-context=1 "^[*| ]+(Submodule submodule_CDE)" ; }
+function gl_all_commit_color_graph_only_submodule_B1_submodule_source() { git log --all --graph --decorate --oneline --patch --submodule=log $* | grep -E --color --before-context=1 "^[*| ]+(Submodule submodule_source)" ; }
+function gl_all_commit_color_graph_with_submodule() { git log --all --graph --decorate --oneline --patch --submodule=log $* | grep -E --color "^[*| ]+([0-9a-f]{7} |Submodule |> )" ; }
+function gl_all_commit_color_normal() { git log --all --oneline $* | grep -E --color "^[0-9a-f]{7}" ; }
+function gl_all_s() { git log --all --graph --decorate --oneline --patch --submodule=log $* | grep -E --color --before-context=1 "^[*| ]+(Submodule |> )" ; }
+function gl_decorate_auto() { git log --oneline --decorate=auto $* ; }
+function gl_decorate_full() { git log --oneline --decorate=full $* ; }
+function gl_decorate_no() { git log --oneline --decorate=no $* ; }
+function gl_decorate_short() { git log --oneline --decorate=short $* ; }
+function gl_default() { git log --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* ; }
+function gl_default_all() { git log --all --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* ; }
+function gl_default_head() { git log --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* ; }
+function gl_f() { git log --oneline --follow -- $* ; }
+function gl_head_a() { git log --graph --decorate --oneline --patch --submodule=log $* | grep -E --color "^[*| ]+([0-9a-f]{7} |Submodule |> )" ; }
+function gl_head_commit_color_graph() { git log --graph --oneline $* | grep -E --color "^[*| ]+([0-9a-f]{7})" ; }
+function gl_head_commit_color_graph_only_submodule() { git log --graph --decorate --oneline --patch --submodule=log $* | grep -E --color --before-context=1 "^[*| ]+(Submodule |> )" ; }
+function gl_head_commit_color_graph_only_submodule_B0() { git log --graph --decorate --oneline --patch --submodule=log $* | grep -E --color --before-context=0 "^[*| ]+(Submodule |> )" ; }
+function gl_head_commit_color_graph_only_submodule_B1() { git log --graph --decorate --oneline --patch --submodule=log $* | grep -E --color --before-context=1 "^[*| ]+(Submodule |> )" ; }
+function gl_head_commit_color_graph_only_submodule_B1_CDE() { git log --graph --decorate --oneline --patch --submodule=log $* | grep -E --color --before-context=1 "^[*| ]+(Submodule CDE)" ; }
+function gl_head_commit_color_graph_only_submodule_B1_path() { git log --graph --decorate --oneline --patch --submodule=log $2 $3 $4 | grep -E --color --before-context=1 "^[*| ]+(Submodule $1)" ; }
+function gl_head_commit_color_graph_only_submodule_B1_script() { git log --graph --decorate --oneline --patch --submodule=log $* | grep -E --color --before-context=1 "^[*| ]+(Submodule script)" ; }
+function gl_head_commit_color_graph_only_submodule_B1_source() { git log --graph --decorate --oneline --patch --submodule=log $* | grep -E --color --before-context=1 "^[*| ]+(Submodule source)" ; }
+function gl_head_commit_color_graph_only_submodule_B1_submodule_CDE() { git log --graph --decorate --oneline --patch --submodule=log $* | grep -E --color --before-context=1 "^[*| ]+(Submodule submodule_CDE)" ; }
+function gl_head_commit_color_graph_only_submodule_B1_submodule_source() { git log --graph --decorate --oneline --patch --submodule=log $* | grep -E --color --before-context=1 "^[*| ]+(Submodule submodule_source)" ; }
+function gl_head_commit_color_graph_with_submodule() { git log --graph --decorate --oneline --patch --submodule=log $* | grep -E --color "^[*| ]+([0-9a-f]{7} |Submodule |> )" ; }
+function gl_head_commit_color_normal() { git log --oneline $* | grep -E --color "^[0-9a-f]{7}" ; }
+function gl_head_s() { git log --graph --decorate --oneline --patch --submodule=log $* | grep -E --color --before-context=1 "^[*| ]+(Submodule |> )" ; }
+function gl_m1() { git log --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" "HEAD^1" "^HEAD^2" $* ; }
+function gl_m2() { git log --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" "HEAD^2" "^HEAD^1" $* ; }
+function gl_o() { git log --oneline --decorate $* ; }
+function gl_p() { git log --patch --oneline --submodule $* ; }
+function gl_p1() { git log --patch --oneline -1 $* ; }
+function gl_p_submodule_diff() { git log --patch --oneline --submodule=diff $* ; }
+function gl_p_submodule_log() { git log --patch --oneline --submodule=log $* ; }
+function gl_p_submodule_short() { git log --patch --oneline --submodule=short $* ; }
+function gl_s() { git log --all --graph --decorate --oneline --patch --submodule=log $* | grep -E --color --before-context=1 "^[*| ]+(Submodule |> )" ; }
+function gl_subject_0() { git log --format=format:"%C(yellow)%<|(10)%h%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* ; }
+function gl_subject_1() { git log --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* ; }
+function gl_subject_all_0() { git log --all --format=format:"%C(yellow)%<|(10)%h%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* ; }
+function gl_subject_all_1() { git log --all --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* ; }
+function gl_us() { git log --graph --format=format:'%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s' $(git rev-parse --symbolic-full-name --abbrev-ref @{u})..$* ; }
+function glsf() { git ls-files $* ; }
+function glsf_all_eol_i() { git ls-files --format="%(objectmode) %x09 %(eolinfo:index) %x09 %(objectname) %x09 %(path)" -- ":(glob)$1**" ; }
+function glsf_all_eol_iw() { git ls-files --stage --eol --abbrev=7 -- ":(glob)$1**" ; }
+function glsf_all_eol_w() { git ls-files --format="%(objectmode) %x09 %(eolinfo:worktree) %x09 %(objectname) %x09 %(path)" -- ":(glob)$1**" ; }
+function glsf_all_mf() { git ls-files --format="%(objectmode) %x09 %(path)" -- ":(glob)$1**" ; }
+function glsf_all_o() { git ls-files --others -- ":(glob)$1**" ; }
+function glsf_all_submodules_eol_i() { git ls-files --recurse-submodules --format="%(objectmode) %x09 %(eolinfo:index) %x09 %(objectname) %x09 %(path)" -- ":(glob)$1**" ; }
+function glsf_all_submodules_eol_iw() { git ls-files --recurse-submodules --stage --eol --abbrev=7 -- ":(glob)$1**" ; }
+function glsf_all_submodules_eol_w() { git ls-files --recurse-submodules --format="%(objectmode) %x09 %(eolinfo:worktree) %x09 %(objectname) %x09 %(path)" -- ":(glob)$1**" ; }
+function glsf_all_submodules_mf() { git ls-files --recurse-submodules --format="%(objectmode) %x09 %(path)" -- ":(glob)$1**" ; }
+function glsf_all_submodules_o() { git ls-files --others --recurse-submodules -- ":(glob)$1**" ; }
+function glsf_cwd_eol_i() { git ls-files --format="%(objectmode) %x09 %(eolinfo:index) %x09 %(objectname) %x09 %(path)" -- ":(glob)$1*" ; }
+function glsf_cwd_eol_iw() { git ls-files --stage --eol --abbrev=7 -- ":(glob)$1*" ; }
+function glsf_cwd_eol_w() { git ls-files --format="%(objectmode) %x09 %(eolinfo:worktree) %x09 %(objectname) %x09 %(path)" -- ":(glob)$1*" ; }
+function glsf_cwd_mf() { git ls-files --format="%(objectmode) %x09 %(path)" -- ":(glob)$1*" ; }
+function glsf_cwd_o() { git ls-files --others -- ":(glob)$1*" ; }
+function glsf_depth_1() { git ls-files $* | awk -F'/' 'NF=1' ; }
+function glsf_depth_1_2() { git ls-files $* | awk -F'/' 'NF>=1 && NF<=2' ; }
+function glsf_depth_1_2() { git ls-files $* | awk -F'/' 'NF>=1 && NF<=2' ; }
+function glsf_depth_1_3() { git ls-files $* | awk -F'/' 'NF>=1 && NF<=3' ; }
+function glsf_depth_1_4() { git ls-files $* | awk -F'/' 'NF>=1 && NF<=4' ; }
+function glsf_depth_1_5() { git ls-files $* | awk -F'/' 'NF>=1 && NF<=5' ; }
+function glsf_depth_2() { git ls-files $* | awk -F'/' 'NF=2' ; }
+function glsf_depth_2_3() { git ls-files $* | awk -F'/' 'NF>=2 && NF<=3' ; }
+function glsf_depth_3() { git ls-files $* | awk -F'/' 'NF=3' ; }
+function glsf_depth_3_4() { git ls-files $* | awk -F'/' 'NF>=3 && NF<=4' ; }
+function glsf_depth_4() { git ls-files $* | awk -F'/' 'NF=4' ; }
+function glsf_depth_4_5() { git ls-files $* | awk -F'/' 'NF>=4 && NF<=5' ; }
+function glsf_depth_5() { git ls-files $* | awk -F'/' 'NF=5' ; }
+function glsf_eu() { git ls-files --error-unmatch $* ; }
+function glsf_exclude() { exclude=$* && for var in ${exclude} ; do exclude_str="$exclude_str :!:$var" ; done && git ls-files $* -- $exclude_str ; }
+function glsf_exclude_bmp() { git ls-files $* -- :!:*.bmp ; }
+function glsf_exclude_bmp_jpg() { git ls-files $* -- :!:*.bmp :!:*.jpg ; }
+function glsf_exclude_jpg() { git ls-files $* -- :!:*.jpg ; }
+function glsf_exclude_raw() { git ls-files $* -- :!:*.raw ; }
+function glsf_o() { git ls-files --others ; }
+function glsf_o_gl_1_depth() { git ls-files --others -- ":(glob)*" $* ; }
+function glsf_o_gl_1_depth_prefix() { git ls-files --others -- ":(glob)$1*" ; }
+function glsf_o_gl_1_depth_suffix() { git ls-files --others -- ":(glob)*$1" ; }
+function glsf_o_gl_all_depth() { git ls-files --others -- ":(glob)**" $* ; }
+function glsf_o_gl_all_depth_prefix() { git ls-files --others -- ":(glob)$1**" ; }
+function glsf_o_gr_d() { git ls-files --others -- */ $* ; }
+function glsf_o_ignore() { git ls-files --others --ignored --exclude-standard ; }
+function glsf_o_ignore_1_depth() { git ls-files --others --ignored --exclude-standard -- ":(glob)$1*" ; }
+function glsf_o_ignore_all_depth() { git ls-files --others --ignored --exclude-standard -- ":(glob)$1**" ; }
+function glsf_od() { git ls-files --others --directory -- ":(glob)$1**" ; }
+function glsf_od_gl_1_depth() { git ls-files --others --directory -- ":(glob)*" $* ; }
+function glsf_od_gl_1_depth_prefix() { git ls-files --others --directory -- ":(glob)$1*" ; }
+function glsf_od_gl_1_depth_suffix() { git ls-files --others --directory -- ":(glob)*$1" ; }
+function glsf_od_gl_all_depth() { git ls-files --others --directory -- ":(glob)**" $* ; }
+function glsf_od_gl_all_depth_prefix() { git ls-files --others --directory -- ":(glob)$1**" ; }
+function glsf_od_gr_d() { git ls-files --others --directory -- */ $* ; }
+function glsf_print_no_text() { git ls-files $* | xargs file --mime | grep -v text | cut --delimiter=: -f1 ; }
+function glsf_print_no_text_depth_1() { git ls-files $* | awk -F'/' 'NF=1' | xargs file --mime | grep -v text | cut --delimiter=: -f1 ; }
+function glsf_print_text() { git ls-files $* | xargs file --mime | grep text | cut --delimiter=: -f1 ; }
+function glsf_print_text() { glsf_print_text_base | cut --delimiter=: -f1 ; }
+function glsf_print_text_base() { git ls-files $* | xargs file --mime | grep text ; }
+function glsf_print_text_cpp() { glsf_print_text_base | grep -E '.(c|cpp|h|hpp|hxx):' | cut --delimiter=: -f1 ; }
+function glsf_print_text_depth_1() { git ls-files $* | awk -F'/' 'NF=1' | xargs file --mime | grep text | cut --delimiter=: -f1 ; }
+function glsf_print_text_script() { glsf_print_text_base | grep -E '.(py|bat|cmd|sh|js|ini|xml|json|cde):' | cut --delimiter=: -f1 ; }
+function glsf_s() { git ls-files --stage $* ; }
+function glsf_s16() { git ls-files --stage | grep --color 160000 "$*" ; }
+function glsr() { git ls-remote $* ; }
+function glsr_h() { git ls-remote --heads $* ; }
+function glsr_o() { git ls-remote origin $* ; }
+function glsr_o_heads() { git ls-remote --heads origin $* ; }
+function glsr_o_pull() { git ls-remote --refs origin *pull* $* ; }
+function glsr_o_refs() { git ls-remote --refs origin $* ; }
+function glsr_o_tags() { git ls-remote --tags origin $* ; }
+function glsr_od() { git ls-remote origin develop $* ; }
+function glsr_s() { git ls-remote --symref $* ; }
+function glsr_t() { git ls-remote --tags $* ; }
+function glsr_to() { git ls-remote --tags origin $* ; }
+function glsr_u() { git ls-remote --get-url $* ; }
+function glsr_ul() { git ls-remote --get-url local $* ; }
+function glsr_uo() { git ls-remote --get-url origin $* ; }
+function glstr() { git ls-tree HEAD . --abbrev=7 $* ; }
+function glstr_c() { git ls-tree --abbrev=7 $* . ; }
+function glstr_ch() { git ls-tree $* . --abbrev=7 --object-only $* ; }
+function glstr_chf() { git ls-tree $* . --abbrev=7 --format="%(objectname) %x09 %(path)" $* ; }
+function glstr_cmf() { git ls-tree $* . --abbrev=7 --format="%(objectmode) %x09 %(path)" $* ; }
+function glstr_cn() { git ls-tree $* . --abbrev=7 --name-only $* ; }
+function glstr_csb() { git ls-tree $* -r . --abbrev=7 | grep --color 160000 "$*" ; }
+function glstr_dsb() { git ls-tree --abbrev=7 origin/develop -r . | grep --color 160000 "$*" ; }
+function glstr_h() { git ls-tree HEAD . --abbrev=7 --object-only $* ; }
+function glstr_hf() { git ls-tree HEAD . --abbrev=7 --format="%(objectname) %x09 %(path)" $* ; }
+function glstr_mf() { git ls-tree HEAD . --abbrev=7 --format="%(objectmode) %x09 %(path)" $* ; }
+function glstr_n() { git ls-tree HEAD . --abbrev=7 --name-only $* ; }
+function gm() { git merge --no-edit --verbose --progress $1 && (git submodule update --progress --init) || (echo -- [ConflictFiles] && echo && git diff --name-only --diff-filter=U && echo && git submodule update --progress --init) ; }
+function gm.con() { git fetch && git merge --no-edit --verbose --progress origin/develop || (echo -- [ConflictFiles] && echo && git diff --name-only --diff-filter=U) ; }
+function gm.dev() { git merge --no-edit --verbose --progress origin/develop $* && (git submodule update --progress --init) || (echo -- [ConflictFiles] && echo && git diff --name-only --diff-filter=U && echo && git submodule update --progress --init) ; }
+function gm.edit() { git merge --edit --verbose --progress $* ; }
+function gm.ini() { git merge --no-edit --verbose --progress $* && git submodule update --progress --init ; }
+function gm.only() { git merge --no-edit --verbose --progress $* ; }
+function gm.only.dev() { git merge --no-edit --verbose --progress origin/develop $* ; }
+function gm@() { git diff --name-only --diff-filter=U | xargs git status | grep --color DU | cut --fields=2 --delimiter=' ' | xargs git rm --force && git diff --name-only --diff-filter=U | xargs git add --verbose --force && git commit --verbose --verify --allow-empty --message "Merge remote-tracking branch 'origin/develop' into develop" && git submodule update --progress --init ; }
+function gm@add() { git diff --name-only --diff-filter=U | xargs git add --verbose --force ; }
+function gm@commit() { git commit --verbose --verify --allow-empty --message "Merge remote-tracking branch 'origin/develop' into develop" ; }
+function gm@rm() { git diff --name-only --diff-filter=U | xargs git status | grep --color DU | cut --fields=2 --delimiter=' ' | xargs git rm --force ; }
+function gm_a() { git fetch && git merge --no-edit --verbose --progress --abort $* ; }
+function gm_c() { git fetch && git merge --no-edit --verbose --progress --continue $* ; }
+function gm_custom() { git fetch && git merge --no-edit --verbose --progress $* && git diff --name-only --diff-filter=U && git submodule update --progress --init ; }
+function gm_naive() { git fetch && git merge --no-edit --verbose --progress $* && (git submodule update --progress --init) || (echo -- [ConflictFiles] && echo && git diff --name-only --diff-filter=U && git submodule update --progress --init) ; }
+function gm_naive() { git fetch && git merge --no-edit --verbose --progress origin/develop && git diff --name-only --diff-filter=U && git submodule update --progress --init ; }
+function gm_ours() { git fetch && git merge --no-edit --verbose --progress origin/develop && git diff --name-only --diff-filter=U | xargs git checkout --ours && git add --verbose --update . && git commit --verbose --verify --allow-empty --message "Merge remote-tracking branch 'origin/develop' into develop" && git submodule update --progress --init ; }
+function gm_ours_b() { git fetch && git merge --no-edit --verbose --progress $* && git diff --name-only --diff-filter=U | xargs git checkout --ours && git add --verbose --update . && git commit --verbose --verify --allow-empty --message "Merge remote-tracking branch '$*' into develop" && git submodule update --progress --init ; }
+function gm_q() { git fetch && git merge --no-edit --verbose --progress --quit $* ; }
+function gm_simple() { git fetch && git merge --no-edit --verbose --progress $* && git submodule update --progress --init ; }
+function gm_theirs() { git fetch && git merge --no-edit --verbose --progress origin/develop && git diff --name-only --diff-filter=U | xargs git checkout --theirs && git add --verbose --update . && git commit --verbose --verify --allow-empty --message "Merge remote-tracking branch 'origin/develop' into develop" && git submodule update --progress --init ; }
+function gm_theirs_b() { git fetch && git merge --no-edit --verbose --progress $* && git diff --name-only --diff-filter=U | xargs git checkout --theirs && git add --verbose --update . && git commit --verbose --verify --allow-empty --message "Merge remote-tracking branch '$*' into develop" && git submodule update --progress --init ; }
+function gmb() { git merge-base $* | cut --characters=-7 ; }
+function gmb_is() { git merge-base --is-ancestor $1 $2 ; }
+function gmb_option() { git merge-base $* ; }
+function gmv() { git mv --verbose --force $* ; }
+function gmv_dryRun() { git mv --verbose --force --dry-run $* ; }
+function gp() { git push --verbose --progress --verify --recurse-submodules=on-demand --set-upstream origin HEAD:$* ; }
+function gp_all() { git push --verbose --progress --verify --recurse-submodules=on-demand --set-upstream origin --all $* ; }
+function gp_all_local_to_remote() { git push --verbose --progress --verify --recurse-submodules=on-demand --set-upstream origin --all $* ; }
+function gp_d() { git push --verbose --progress --no-verify origin --delete $* ; }
+function gp_d_tag() { git push --verbose --progress --no-verify origin --delete $* ; }
+function gp_dryRun() { git push --verbose --progress --verify --recurse-submodules=on-demand --set-upstream --dry-run origin HEAD:$* ; }
+function gp_f() { git push --force --verbose --progress --verify --recurse-submodules=on-demand --set-upstream origin HEAD:$* ; }
+function gp_n() { git push --verbose --progress --no-verify --recurse-submodules=on-demand --set-upstream origin HEAD:$* ; }
+function gp_n_sha() { git update-ref refs/heads/$1 $2 && git push --verbose --progress --no-verify --recurse-submodules=on-demand --set-upstream origin $1:$1 ; }
+function gp_n_tag() { git push --verbose --progress --no-verify origin $* ; }
+function gp_nf() { git push --force --verbose --progress --no-verify --recurse-submodules=on-demand --set-upstream origin HEAD:$* ; }
+function gp_sha() { git update-ref refs/heads/$1 $2 && git push --verbose --progress --verify --recurse-submodules=on-demand --set-upstream origin $1:$1 ; }
+function gp_us() { git push --verbose --progress --verify --recurse-submodules=on-demand --set-upstream $* origin HEAD:$(git rev-parse --symbolic-full-name --abbrev-ref @{u}) ; }
+function gpl() { git pull origin $* ; }
+function gpl_dev() { git pull origin develop $* ; }
+function gpr() { git count-objects && git repack && git prune && git count-objects ; }
+function grb#i() { git rebase --verbose --interactive $* ; }
+function grb#o() { git rebase --verbose --onto $* ; }
+function grb() { git rebase --verbose --no-verify --interactive --onto $1 $1 HEAD $2 && (git checkout --force -B develop HEAD && git submodule update --progress --init && git branch --verbose --verbose --color=never) || (echo -- [ConflictFiles] && echo && git diff --name-only --diff-filter=U && echo && git submodule update --progress --init && git branch --verbose --verbose --color=never) ; }
+function grb.dev() { git rebase --verbose --no-verify --interactive --onto origin/develop origin/develop HEAD $* && (git checkout --force -B develop HEAD && git submodule update --progress --init && git branch --verbose --verbose --color=never) || (echo -- [ConflictFiles] && echo && git diff --name-only --diff-filter=U && echo && git submodule update --progress --init && git branch --verbose --verbose --color=never) ; }
+function grb.ini() { git rebase --verbose --no-verify --interactive --onto $1 $1 HEAD && git submodule update --progress --init ; }
+function grb.only() { git rebase --verbose --no-verify --interactive --onto $1 $1 HEAD $2 ; }
+function grb.only.dev() { git rebase --verbose --no-verify --interactive --onto origin/develop origin/develop HEAD $* ; }
+function grb.post() { git rebase --verbose --no-verify --interactive --onto $* && echo && git update-ref refs/heads/develop HEAD && git checkout develop && git submodule update --progress --init && echo && git branch --verbose --verbose --color=never ; }
+function grb1() { rm -rf .git/rebase-merge && git rebase --verbose --no-verify --interactive --strategy-option=ours --onto $1 $1 HEAD && echo && git update-ref refs/heads/develop HEAD && git checkout develop && git submodule update --progress --init && echo && git branch --verbose --verbose --color=never ; }
+function grb12() { rm -rf .git/rebase-merge && git rebase --verbose --no-verify --interactive --strategy-option=ours --onto $1 $1 $2 && echo && git update-ref refs/heads/develop HEAD && git checkout develop && git submodule update --progress --init && echo && git branch --verbose --verbose --color=never ; }
+function grb@() { rm -rf .git/rebase-merge && git rebase --verbose --no-verify --interactive --strategy-option=ours --onto origin/develop origin/develop HEAD && echo && git checkout --force -B develop HEAD && echo && git branch --verbose --verbose --color=never ; }
+function grb@custom() { rm -rf .git/rebase-merge && git rebase --verbose --no-verify --interactive --strategy-option=ours --onto $* && echo && git checkout --force -B develop HEAD && git submodule update --progress --init && echo && git branch --verbose --verbose --color=never ; }
+function grb@dev() { git rebase --verbose --no-verify --interactive --onto origin/develop origin/develop HEAD && git update-ref refs/heads/develop HEAD && git checkout develop ; }
+function grb@err() { git rebase --verbose --no-verify --interactive --onto origin/develop origin/develop HEAD || (echo -- [ConflictFiles] && echo && git diff --name-only --diff-filter=U) ; }
+function grb@naive() { git rebase --verbose --no-verify --interactive --onto $1 $1 HEAD && git update-ref refs/heads/develop HEAD && git checkout develop ; }
+function grb@ours() { rm -rf .git/rebase-merge && git rebase --verbose --no-verify --interactive --strategy-option=ours --onto origin/develop origin/develop HEAD && echo && git update-ref refs/heads/develop HEAD && git checkout develop && git submodule update --progress --init && echo && git branch --verbose --verbose --color=never ; }
+function grb@submodule() { git rebase --verbose --no-verify --interactive --onto $1 $1 HEAD && git update-ref refs/heads/develop HEAD && git checkout develop && git submodule update --progress --init && echo && git branch --verbose --verbose --color=never ; }
+function grb@theirs() { rm -rf .git/rebase-merge && git rebase --verbose --no-verify --interactive --strategy-option=theirs --onto origin/develop origin/develop HEAD && echo && git update-ref refs/heads/develop HEAD && git checkout develop && git submodule update --progress --init && echo && git branch --verbose --verbose --color=never ; }
+function grb_a() { git rebase --abort $* ; }
+function grb_c() { git rebase --continue $* ; }
+function grb_changeCommit() { git commit --no-verify --allow-empty --message "only msg" && git rebase --interactive --onto origin/develop...HEAD origin/develop...HEAD HEAD && git rebase --interactive --onto origin/develop...HEAD origin/develop...HEAD HEAD ; }
+function grb_changeCommit_custom() { git commit --no-verify --allow-empty --message "only msg" && git rebase --interactive --onto $1...$2 $1...$2 $2 && git rebase --interactive --onto $1...$2 $1...$2 $2 ; }
+function grb_interactive() { rm -rf .git/rebase-merge && git rebase --verbose --verify --interactive --onto $* && echo && git checkout --force -B develop HEAD && git submodule update --progress --init && echo && git branch --verbose --verbose --color=never ; }
+function grb_n() { rm -rf .git/rebase-merge && git rebase --verbose --no-verify --interactive --onto $* && echo && git checkout --force -B develop HEAD && echo && git branch --verbose --verbose --color=never ; }
+function grb_naive() { rm -rf .git/rebase-merge && git rebase --verbose --no-verify --interactive --onto $* && echo && git checkout --force -B develop HEAD && git submodule update --progress --init && echo && git branch --verbose --verbose --color=never ; }
+function grb_onto() { git rebase --verbose --no-verify --interactive --onto $* ; }
+function grb_onto_1() { git rebase --verbose --no-verify --interactive --onto origin/develop...HEAD ; }
+function grb_onto_2() { git rebase --verbose --no-verify --interactive --onto origin/develop... ; }
+function grb_ours() { rm -rf .git/rebase-merge && git rebase --verbose --no-verify --interactive --strategy-option=ours --onto $* && echo && git checkout --force -B develop HEAD && git submodule update --progress --init && echo && git branch --verbose --verbose --color=never ; }
+function grb_q() { git rebase --quit $* ; }
+function grb_s() { git rebase --skip $* ; }
+function grb_theirs() { rm -rf .git/rebase-merge && git rebase --verbose --no-verify --interactive --strategy-option=theirs --onto $* && echo && git checkout --force -B develop HEAD && git submodule update --progress --init && echo && git branch --verbose --verbose --color=never ; }
+function gre() { git remote --verbose $* ; }
+function gre_a() { git remote --verbose add origin $* ; }
+function gre_a_customOrigin() { git remote --verbose add $* ; }
+function gre_a_l() { git remote --verbose add local $* ; }
+function gre_a_o() { git remote --verbose add origin $* ; }
+function gre_gu() { git remote get-url $* ; }
+function gre_gu_l() { git remote get-url local $* ; }
+function gre_gu_o() { git remote get-url origin $* ; }
+function gre_re() { git remote --verbose rename $* ; }
+function gre_rm() { git remote --verbose remove $* ; }
+function gre_s() { git remote --verbose show $* ; }
+function gre_s_l() { git remote --verbose show local $* ; }
+function gre_s_o() { git remote --verbose show origin $* ; }
+function gref() { git for-each-ref --format="%(HEAD) %(align:30)%(refname:lstrip=2)%(end)%(objectname:short) %(align:13)%(authordate:relative)%(end) %(align:45)%(if)%(upstream)%(then)[%(upstream:lstrip=2)]%(end)%(upstream:track)%(end) %(contents:subject)" --sort="-authordate" refs/heads ; }
+function gref_a() { git for-each-ref --format="%(HEAD) %(align:30)%(refname:lstrip=2)%(end)%(objectname:short) %(align:13)%(authordate:relative)%(end) %(align:45)%(if)%(upstream)%(then)[%(upstream:lstrip=2)]%(end)%(upstream:track)%(end) %(contents:subject)" --sort="-authordate" refs/remotes --count=3 ; }
+function gref_a15() { git for-each-ref --format="%(HEAD) %(align:30)%(refname:lstrip=2)%(end)%(objectname:short) %(align:13)%(authordate:relative)%(end) %(align:45)%(if)%(upstream)%(then)[%(upstream:lstrip=2)]%(end)%(upstream:track)%(end) %(contents:subject)" --sort="-authordate" refs/remotes --count=15 ; }
+function gref_a20() { git for-each-ref --format="%(HEAD) %(align:30)%(refname:lstrip=2)%(end)%(objectname:short) %(align:13)%(authordate:relative)%(end) %(align:45)%(if)%(upstream)%(then)[%(upstream:lstrip=2)]%(end)%(upstream:track)%(end) %(contents:subject)" --sort="-authordate" refs/remotes --count=20 ; }
+function gref_a3() { git for-each-ref --format="%(HEAD) %(align:30)%(refname:lstrip=2)%(end)%(objectname:short) %(align:13)%(authordate:relative)%(end) %(align:45)%(if)%(upstream)%(then)[%(upstream:lstrip=2)]%(end)%(upstream:track)%(end) %(contents:subject)" --sort="-authordate" refs/remotes --count=3 ; }
+function gref_a5() { git for-each-ref --format="%(HEAD) %(align:30)%(refname:lstrip=2)%(end)%(objectname:short) %(align:13)%(authordate:relative)%(end) %(align:45)%(if)%(upstream)%(then)[%(upstream:lstrip=2)]%(end)%(upstream:track)%(end) %(contents:subject)" --sort="-authordate" refs/remotes --count=5 ; }
+function gref_a7() { git for-each-ref --format="%(HEAD) %(align:30)%(refname:lstrip=2)%(end)%(objectname:short) %(align:13)%(authordate:relative)%(end) %(align:45)%(if)%(upstream)%(then)[%(upstream:lstrip=2)]%(end)%(upstream:track)%(end) %(contents:subject)" --sort="-authordate" refs/remotes --count=7 ; }
+function gref_a9() { git for-each-ref --format="%(HEAD) %(align:30)%(refname:lstrip=2)%(end)%(objectname:short) %(align:13)%(authordate:relative)%(end) %(align:45)%(if)%(upstream)%(then)[%(upstream:lstrip=2)]%(end)%(upstream:track)%(end) %(contents:subject)" --sort="-authordate" refs/remotes --count=9 ; }
+function gref_all() { git for-each-ref --format="%(refname:strip=-2)" $* ; }
+function gref_all_head() { ~/.local/bin/runBash/01_CB.sh script git_ref_all_head ; }
+function gref_am() { git for-each-ref --merged=develop --format="%(if)%(HEAD)%(then)* %(else) %(end)%(refname:short)" refs/heads refs/remotes $* ; }
+function gref_anm() { git for-each-ref --no-merged=develop --format="%(if)%(HEAD)%(then)* %(else) %(end)%(refname:short)" refs/heads refs/remotes $* ; }
+function gref_authordate() { git for-each-ref --format="%(authordate:relative)" $* ; }
+function gref_authoremail() { git for-each-ref --format="%(authoremail)" $* ; }
+function gref_authorname() { git for-each-ref --format="%(authorname)" $* ; }
+function gref_body() { git for-each-ref --format="%(body)" $* ; }
+function gref_h_a() { ~/.local/bin/runBash/01_CB.sh script git_ref_all_head ; }
+function gref_h_l() { ~/.local/bin/runBash/01_CB.sh script git_ref_local_heads ; }
+function gref_h_r() { ~/.local/bin/runBash/01_CB.sh script git_ref_upstream ; }
+function gref_heads() { git for-each-ref --format="%(refname:strip=-2)" refs/heads $* ; }
+function gref_l() { git for-each-ref --format="%(if)%(HEAD)%(then)* %(else) %(end)%(refname:short)" refs/heads $* ; }
+function gref_local_heads() { ~/.local/bin/runBash/01_CB.sh script git_ref_local_heads ; }
+function gref_main() { git for-each-ref --format="%(objectname:short=7) %(refname)" $* ; }
+function gref_objectname() { git for-each-ref --format="%(objectname)" $* ; }
+function gref_objectname_refname() { git for-each-ref --format="%(objectname:short=7) %(refname)" $* ; }
+function gref_objectname_short7() { git for-each-ref --format="%(objectname:short=7)" $* ; }
+function gref_objecttype() { git for-each-ref --format="%(objecttype)" $* ; }
+function gref_r() { git for-each-ref --format="%(if)%(HEAD)%(then)* %(else) %(end)%(refname:short)" refs/remotes $* ; }
+function gref_refname() { git for-each-ref --format="%(refname)" $* ; }
+function gref_remotes() { git for-each-ref --format="%(refname:strip=-2)" refs/remotes $* ; }
+function gref_shell() { git for-each-ref --format="%(objectname:short=7) %(refname)" --shell $* ; }
+function gref_sort_top10() { git for-each-ref --format="%(objectname:short) %(authordate:relative) %(refname)" --sort="-authordate" --count=10 $* ; }
+function gref_sort_top3_origin_authordate() { git for-each-ref --format="%(objectname:short) %(authordate:relative) %(refname)" --sort="-authordate" --count=3 refs/remotes/origin $* ; }
+function gref_sort_top5() { git for-each-ref --format="%(objectname:short) %(authordate:relative) %(refname)" --sort="-authordate" --count=5 $* ; }
+function gref_sort_top5_default() { git for-each-ref --format="%(objectname:short) %(authordate:default) %(refname)" --sort="-authordate" --count=5 $* ; }
+function gref_sort_top5_format_c() { git for-each-ref --format="%(objectname:short) %(authordate:format:%c)" --sort="-authordate" --count=5 $* ; }
+function gref_sort_top5_human() { git for-each-ref --format="%(objectname:short) %(authordate:human) %(refname)" --sort="-authordate" --count=5 $* ; }
+function gref_sort_top5_iso() { git for-each-ref --format="%(objectname:short) %(authordate:iso) %(refname)" --sort="-authordate" --count=5 $* ; }
+function gref_sort_top5_iso8601() { git for-each-ref --format="%(objectname:short) %(authordate:iso8601) %(refname)" --sort="-authordate" --count=5 $* ; }
+function gref_sort_top5_iso_strict() { git for-each-ref --format="%(objectname:short) %(authordate:iso-strict) %(refname)" --sort="-authordate" --count=5 $* ; }
+function gref_sort_top5_local() { git for-each-ref --format="%(objectname:short) %(authordate:local) %(refname)" --sort="-authordate" --count=5 $* ; }
+function gref_sort_top5_raw() { git for-each-ref --format="%(objectname:short) %(authordate:raw) %(refname)" --sort="-authordate" --count=5 $* ; }
+function gref_sort_top5_relative() { git for-each-ref --format="%(objectname:short) %(authordate:relative) %(refname)" --sort="-authordate" --count=5 $* ; }
+function gref_sort_top5_rfc() { git for-each-ref --format="%(objectname:short) %(authordate:rfc) %(refname)" --sort="-authordate" --count=5 $* ; }
+function gref_sort_top5_short() { git for-each-ref --format="%(objectname:short) %(authordate:short) %(refname)" --sort="-authordate" --count=5 $* ; }
+function gref_sort_top5_unix() { git for-each-ref --format="%(objectname:short) %(authordate:unix) %(refname)" --sort="-authordate" --count=5 $* ; }
+function gref_sort_top_latest_authordate() { git for-each-ref --format="%(objectname:short) %(authordate:relative) %(refname)" --sort="-authordate" $* ; }
+function gref_sort_top_latest_committerdate() { git for-each-ref --format="%(objectname:short) %(committerdate:relative) %(refname)" --sort="-committerdate" $* ; }
+function gref_sort_top_latest_creatordate() { git for-each-ref --format="%(objectname:short) %(creatordate:relative) %(refname)" --sort="-creatordate" $* ; }
+function gref_sort_top_latest_taggerdate() { git for-each-ref --format="%(objectname:short) %(taggerdate:relative) %(refname)" --sort="-taggerdate" $* ; }
+function gref_subject() { git for-each-ref --format="%(subject)" $* ; }
+function gref_tags() { git for-each-ref --format="%(refname:strip=-2)" refs/tags $* ; }
+function gref_upstream() { ~/.local/bin/runBash/01_CB.sh script git_ref_upstream ; }
+function gref_upstream_top15() { ~/.local/bin/runBash/01_CB.sh script git_ref_upstream_top 15 ; }
+function gref_upstream_top3() { ~/.local/bin/runBash/01_CB.sh script git_ref_upstream_top 3 ; }
+function gref_upstream_top5() { ~/.local/bin/runBash/01_CB.sh script git_ref_upstream_top 5 ; }
+function gref_upstream_top7() { ~/.local/bin/runBash/01_CB.sh script git_ref_upstream_top 7 ; }
+function gref_upstream_top9() { ~/.local/bin/runBash/01_CB.sh script git_ref_upstream_top 9 ; }
+function grep.re.group.ending() { ls -1 | grep -E --color "(c|cpp|h|hpp|hxx)$" ; }
+function grep.re.group.ending.invert() { ls -1 | grep -E --color -v "(c|cpp|h|hpp|hxx)$" ; }
+function grep.re.group.start() { ls -1 | grep -E --color "^(test|utils)" ; }
+function grep.re.group.start.invert() { ls -1 | grep -E --color -v "^(test|utils)" ; }
+function grep.re.group_cpp() { ls -1 | grep -E --color "[.](c|cpp|h|hpp|hxx)" ; }
+function grep_line() { grep --color --line-number -I $* ; }
+function grep_line_quiet() { grep --color --line-number --quiet $* ; }
+function grep_pipe_file() { echo $1 | grep --color --with-filename $2 ; }
+function grep_pipe_file_line() { echo $1 | grep --color --with-filename --line-number $2 ; }
+function grep_positiveLookAhead() { grep --perl-regexp --only-matching ".+(?=$1)" $2 ; }
+function grep_positiveLookAheadSort() { grep --perl-regexp --only-matching ".+(?=$1)" $2 | sort --unique ; }
+function grep_positiveLookBehind() { grep --perl-regexp --only-matching "(?<=$1).+" $2 ; }
+function grep_positiveLookBehindSort() { grep --perl-regexp --only-matching "(?<=$1).+" $2 | sort --unique ; }
+function grep_re.group_script() { ls -1 | grep -E --color "[.](py|bat|cmd|sh|js|ini|xml|json|cde)" ; }
+function gres() { git reset $* ; }
+function gres_h() { git reset --hard $* ; }
+function gres_m() { git reset --mixed $* ; }
+function gres_s() { git reset --soft $* ; }
+function grest() { git restore $* ; }
+function grest_all_staged() { git restore --staged . $* ; }
+function grest_all_worktree() { git restore --worktree . $* ; }
+function grest_file_staged() { git restore --staged -- $* ; }
+function grest_file_worktree() { git restore --worktree -- $* ; }
+function grevert() { git revert $* ; }
+function grg() { git reflog $* ; }
+function grg_expire_all() { git reflog expire --expire=now --all $* ; }
+function grl() { git rev-list --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* | grep -E --color "^[*| ]+([0-9a-f]{7})" | grep -E --color "[|] [0-9a-f]{7}" ; }
+function grl..() { git rev-list --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" origin/develop..HEAD | grep -E --color "^+([0-9a-f]{7})" ; }
+function grl.._commit() { git rev-list --abbrev-commit origin/develop..HEAD ; }
+function grl..r() { git rev-list --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" HEAD..origin/develop | grep -E --color "^+([0-9a-f]{7})" ; }
+function grl_..() { git rev-list --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $1..$2 $3 | grep -E "^[*| ]+([0-9a-f]{7})" | grep -E --color "[|] [0-9a-f]{7}" ; }
+function grl_...() { git rev-list --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $1...$2 $3 | grep -E "^[*| ]+([0-9a-f]{7})" | grep -E --color "[|] [0-9a-f]{7}" ; }
+function grl_..._all() { git rev-list --all --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $1...$2 $3 | grep -E "^[*| ]+([0-9a-f]{7})" | grep -E --color "[|] [0-9a-f]{7}" ; }
+function grl_.._all() { git rev-list --all --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $1..$2 $3 | grep -E "^[*| ]+([0-9a-f]{7})" | grep -E --color "[|] [0-9a-f]{7}" ; }
+function grl_0() { git rev-list --format=format:"%C(yellow)%<|(10)%h%Creset%C(red)%<|(26,trunc)%an%Creset%C(green)%<|(47,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* | grep -E "^[*| ]+([0-9a-f]{7})" | grep -E --color "[|] [0-9a-f]{7}" ; }
+function grl_0_a() { git rev-list --all --format=format:"%C(yellow)%<|(10)%h%Creset%C(red)%<|(26,trunc)%an%Creset%C(green)%<|(47,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* | grep -E "^[*| ]+([0-9a-f]{7})" | grep -E --color "[|] [0-9a-f]{7}" ; }
+function grl_0_r() { git rev-list --reverse --format=format:"%C(yellow)%<|(10)%h%Creset%C(red)%<|(26,trunc)%an%Creset%C(green)%<|(47,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* | grep -E "^[*| ]+([0-9a-f]{7})" | grep -E --color "[|] [0-9a-f]{7}" ; }
+function grl_1() { git rev-list --graph --format=format:"%C(yellow)%>|(26)%h%>|(28)%x2D%<|(30)%x3E%<|(38)%p%Creset%C(red)%<|(54,trunc)%an%Creset%C(green)%<|(75,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* | grep -E "^[*| ]+([0-9a-f]{7})" | grep -E --color "[|] [0-9a-f]{7}" ; }
+function grl_1_a() { git rev-list --all --graph --format=format:"%C(yellow)%>|(26)%h%>|(28)%x2D%<|(30)%x3E%<|(38)%p%Creset%C(red)%<|(54,trunc)%an%Creset%C(green)%<|(75,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* | grep -E "^[*| ]+([0-9a-f]{7})" | grep -E --color "[|] [0-9a-f]{7}" ; }
+function grl_2() { git rev-list --graph --format=format:"%C(yellow)%>|(26)%h%>|(28)%x2D%<|(30)%x3E%<|(38)%p%Creset%C(red)%<|(54,trunc)%an%<|(75,trunc)%ar%Creset%C(green)%<|(91,trunc)%cn%<|(112,trunc)%cr%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* | grep -E "^[*| ]+([0-9a-f]{7})" | grep -E --color "[|] [0-9a-f]{7}" ; }
+function grl_2_a() { git rev-list --all --graph --format=format:"%C(yellow)%>|(26)%h%>|(28)%x2D%<|(30)%x3E%<|(38)%p%Creset%C(red)%<|(54,trunc)%an%<|(75,trunc)%ar%Creset%C(green)%<|(91,trunc)%cn%<|(112,trunc)%cr%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* | grep -E "^[*| ]+([0-9a-f]{7})" | grep -E --color "[|] [0-9a-f]{7}" ; }
+function grl_all_commit_color_graph() { git rev-list --all --graph --oneline $* | grep -E --color "^[*| ]+([0-9a-f]{7})" ; }
+function grl_all_commit_color_graph_0() { git rev-list --all --graph --oneline $* | grep -E "^[*| ]+([0-9a-f]{7})" | grep -E --color "[*] [0-9a-f]{7}" ; }
+function grl_all_commit_color_normal() { git rev-list --all --oneline $* | grep -E --color "^[0-9a-f]{7}" ; }
+function grl_all_commit_color_reverse() { git rev-list --all --reverse --oneline $* | grep -E --color "^[*| ]+([0-9a-f]{7})" ; }
+function grl_all_commit_color_submodule() { git rev-list --all --oneline $* | grep -E --color --ignore-case "^[0-9a-f]{7}[ ]+submodule" ; }
+function grl_c() { git rev-list --count $* ; }
+function grl_count_merges() { git rev-list --count --merges $* ; }
+function grl_count_merges_head_originDevelop() { git rev-list --count --merges HEAD..origin/develop $* ; }
+function grl_default() { git rev-list --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* | grep -E "^[*| ]+([0-9a-f]{7})" | grep -E --color "[|] [0-9a-f]{7}" ; }
+function grl_default_all() { git rev-list --all --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* | grep -E "^[*| ]+([0-9a-f]{7})" | grep -E --color "[|] [0-9a-f]{7}" ; }
+function grl_default_head() { git rev-list --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(red)%<|(35,trunc)%ar%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* | grep -E "^[*| ]+([0-9a-f]{7})" | grep -E --color "[|] [0-9a-f]{7}" ; }
+function grl_head_commit_color_graph() { git rev-list --graph --oneline HEAD $* | grep -E --color "^[*| ]+([0-9a-f]{7})" ; }
+function grl_head_commit_color_normal() { git rev-list --oneline HEAD $* | grep -E --color "^[0-9a-f]{7}" ; }
+function grl_head_commit_color_reverse() { git rev-list --reverse --oneline HEAD $* | grep -E --color "^[*| ]+([0-9a-f]{7})" ; }
+function grl_head_commit_color_submodule() { git rev-list --oneline HEAD $* | grep -E --color --ignore-case "^[0-9a-f]{7}[ ]+submodule" ; }
+function grl_o() { git rev-list --oneline $* ; }
+function grl_r() { git rev-list --reverse $* ; }
+function grl_subject_0() { git rev-list --format=format:"%C(yellow)%<|(10)%h%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* | grep -E "^[*| ]+([0-9a-f]{7})" | grep -E --color "[|] [0-9a-f]{7}" ; }
+function grl_subject_1() { git rev-list --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* | grep -E "^[*| ]+([0-9a-f]{7})" | grep -E --color "[|] [0-9a-f]{7}" ; }
+function grl_subject_all_0() { git rev-list --all --format=format:"%C(yellow)%<|(10)%h%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* | grep -E "^[*| ]+([0-9a-f]{7})" | grep -E --color "[|] [0-9a-f]{7}" ; }
+function grl_subject_all_1() { git rev-list --all --graph --format=format:"%C(yellow)%<|(20)%h%Creset%C(bold blue)%d%Creset%<(70,trunc) %s" $* | grep -E "^[*| ]+([0-9a-f]{7})" | grep -E --color "[|] [0-9a-f]{7}" ; }
+function grm() { git rm --force $* ; }
+function grm_c_allPath() { git rm -r --force --cached -- . $* ; }
+function grm_c_allPath_checkout() { git rm -r --force --cached -- . && echo && git checkout --force HEAD $* && echo && git ls-files --stage --eol --abbrev=7 -- ":(glob)*" ; }
+function grm_c_allPath_dryRun() { git rm -r --force --cached --dry-run -- . $* ; }
+function grm_c_file() { git rm --force --cached -- $* ; }
+function grm_c_file_checkout() { git rm --force --cached -- $* && echo && git checkout --force HEAD && echo && git ls-files --stage --eol --abbrev=7 -- ":(glob)*" ; }
+function grm_c_file_dryRun() { git rm --force --cached --dry-run -- $* ; }
+function grp() { git rev-parse $* ; }
+function grp_SHA_40() { git rev-parse HEAD $* ; }
+function grp_SHA_short() { git rev-parse --short HEAD $* ; }
+function grp_abs() { git rev-parse --absolute-git-dir $* ; }
+function grp_common_dir() { git rev-parse --git-common-dir $* ; }
+function grp_git_dir() { git rev-parse --git-dir $* ; }
+function grp_git_path() { git rev-parse --git-path $* ; }
+function grp_git_path_config() { git rev-parse --git-path config $* ; }
+function grp_git_path_pre_push() { git rev-parse --git-path hooks/pre-push ; }
+function grp_head() { git rev-parse --short HEAD@{$*} ; }
+function grp_head_0() { git rev-parse --short HEAD@{0} $* ; }
+function grp_head_1() { git rev-parse --short HEAD@{1} $* ; }
+function grp_head_2() { git rev-parse --short HEAD@{2} $* ; }
+function grp_head_3() { git rev-parse --short HEAD@{3} $* ; }
+function grp_is_inside_git_dir() { git rev-parse --is-inside-git-dir $* ; }
+function grp_is_inside_work_tree() { git rev-parse --is-inside-work-tree $* ; }
+function grp_parent() { git rev-parse --short "HEAD^@" $* 2>nul ; }
+function grp_parent1() { git rev-parse --short "HEAD^1" $* 2>nul ; }
+function grp_parent2() { git rev-parse --short "HEAD^2" $* 2>nul ; }
+function grp_parent3() { git rev-parse --short "HEAD^3" $* 2>nul ; }
+function grp_resolve_git_dir() { git rev-parse --resolve-git-dir $* ; }
+function grp_rr_parent1_except_rev_include() { git rev-parse --short "HEAD^-1" $* 2>nul ; }
+function grp_rr_parent2_except_rev_include() { git rev-parse --short "HEAD^-2" $* 2>nul ; }
+function grp_rr_parentAll_except_rev_include() { git rev-parse --short "HEAD^!" $* 2>nul ; }
+function grp_rr_parentAll_include_rev_except() { git rev-parse --short "HEAD^@" $* 2>nul ; }
+function grp_rr_rev_exclude() { git rev-parse --short ^$* ; }
+function grp_rr_rev_exclude_head() { git rev-parse --short ^HEAD $* ; }
+function grp_rr_rev_head() { git rev-parse --short HEAD $* ; }
+function grp_short() { git rev-parse --short $* ; }
+function grp_short_head() { git rev-parse --short HEAD $* ; }
+function grp_show_object_format() { git rev-parse --show-object-format $* ; }
+function grp_show_prefix() { git rev-parse --show-prefix $* ; }
+function grp_show_toplevel() { git rev-parse --show-toplevel $* ; }
+function grp_show_toplevel_basename() { basename $(git rev-parse --show-toplevel $*) ; }
+function grp_superproject_path() { git rev-parse --show-superproject-working-tree $* ; }
+function grp_upstream() { git rev-parse --symbolic-full-name --abbrev-ref $*@{u} ; }
+function grp_upstream_develop() { git rev-parse --symbolic-full-name --abbrev-ref develop@{u} ; }
+function grp_upstream_full() { git rev-parse --symbolic-full-name $*@{u} ; }
+function grp_upstream_full_develop() { git rev-parse --symbolic-full-name develop@{u} ; }
+function grp_upstream_short() { git rev-parse --symbolic-full-name --abbrev-ref $*@{u} ; }
+function grp_upstream_short_develop() { git rev-parse --symbolic-full-name --abbrev-ref develop@{u} ; }
+function grp_verify() { git rev-parse --verify $* ; }
+function gs() { [[ $(git rev-parse --show-toplevel) == $(realpath ~) ]] && git status --ahead-behind --short --branch --untracked-files=no --column --ignore-submodules=none $* || git status --ahead-behind --short --branch --untracked-files=all --column --ignore-submodules=none $*; }
+function gs.sub() { git status --ahead-behind --no-short --no-branch --untracked-files=all --column --ignore-submodules=none | grep --color '*' ; }
+function gs_no() { git status --ahead-behind --short --branch --untracked-files=no --column --ignore-submodules=none $* ; }
+function gs_s() { git status --short --untracked-files=all --column --ignore-submodules=none $* ; }
+function gs_s_b() { git status --short --branch --untracked-files=all --column --ignore-submodules=none $* ; }
+function gs_s_nb() { git status --short --no-branch --untracked-files=all --column --ignore-submodules=none $* ; }
+function gs_s_submoduleAll() { git status --short --branch --untracked-files=all --column --ignore-submodules=none $* ; }
+function gs_s_submoduleIgnore() { git status --short --branch --untracked-files=all --column --ignore-submodules=all $* ; }
+function gs_us() { git status --ahead-behind --no-short --no-branch --untracked-files=all --column --ignore-submodules=none $* ; }
+function gs_us_b() { git status --no-short --branch --untracked-files=all --column --ignore-submodules=none $* ; }
+function gs_us_nb() { git status --no-short --no-branch --untracked-files=all --column --ignore-submodules=none $* ; }
+function gs_us_submoduleAll() { git status --untracked-files=all --column --ignore-submodules=none $* ; }
+function gs_us_submoduleIgnore() { git status --untracked-files=all --column --ignore-submodules=all $* ; }
+function gsb() { git show-branch --all --sha1-name $* ; }
+function gsb_all() { git show-branch --all $* ; }
+function gsb_l_a() { git show-branch --list --all $* ; }
+function gsb_l_l() { git show-branch --list $* ; }
+function gsb_l_r() { git show-branch --list --remote $* ; }
+function gsb_local() { git show-branch $* ; }
+function gsb_ref() { git show-branch --reflog="10, 1 hour ago" $* ; }
+function gsb_ref_b() { git show-branch --reflog="10, 1 hour ago" --list $* ; }
+function gsb_remotes() { git show-branch --remotes $* ; }
+function gsb_sha() { git show-branch --sha1-name $* ; }
+function gsb_sha_all() { git show-branch --sha1-name --all $* ; }
+function gsb_sha_local() { git show-branch --sha1-name $* ; }
+function gsb_sha_remotes() { git show-branch --sha1-name --remotes $* ; }
+function gsh() { git show --no-patch $* ; }
+function gsh_ad() { git show --no-patch --format=%ad "$*^{commit}" ; }
+function gsh_an() { git show --no-patch --format=%an "$*^{commit}" ; }
+function gsh_c() { git show "$*^{commit}" ; }
+function gsh_date() { git show --no-patch --format=%ad --date=format:"%Y%m%d_%H%M%S" $* ; }
+function gsh_date_HHMMSS() { git show --no-patch --format=%ad --date=format:"%H%M%S" $* ; }
+function gsh_date_YYMMDD() { git show --no-patch --format=%ad --date=format:"%Y%m%d" $* ; }
+function gsh_date_YYMMDD_HHMMSS() { git show --no-patch --format=%ad --date=format:"%Y%m%d_%H%M%S" $* ; }
+function gsh_date_author() { git show --no-patch --format=%ad --date=format:"%Y%m%d_%H%M%S" $* ; }
+function gsh_date_committer() { git show --no-patch --format=%cd --date=format:"%Y%m%d_%H%M%S" $* ; }
+function gsh_h() { git show --no-patch --format=%h "$*^{commit}" ; }
+function gsh_p() { git show --patch $* ; }
+function gsh_s() { git show --no-patch --format=%s "$*^{commit}" ; }
+function gsh_t() { git show "$*^{tree}" ; }
+function gsl() { git shortlog $* ; }
+function gsl_summary() { git shortlog --summary $* ; }
+function gsm() { ~/.local/bin/runBash/01_CB.sh script git_submodule $* ; }
+function gsm_a() { ~/.local/bin/runBash/01_CB.sh script git_submodule_all $* ; }
+function gsm_add() { git submodule add --force -- $1 $2 ; }
+function gsm_add_branch() { git submodule add --force -b $1 -- $2 $3 ; }
+function gsm_cf() { git submodule foreach git status --short --branch $* && echo -e '\n[new commits of origin/develop]\n' && git submodule foreach git rev-list --count HEAD..origin/develop $* ; }
+function gsm_checkout() { git submodule update --init --progress --force --checkout -- $1 ; }
+function gsm_checkout_remote() { git submodule update --init --progress --force --remote --checkout -- $1 ; }
+function gsm_cn() { git submodule foreach git status --short --branch $* && echo -e '\n[new commits of HEAD]\n' && git submodule foreach git rev-list --count origin/develop..HEAD $* ; }
+function gsm_config_list() { git submodule foreach 'git config --list --show-origin'; }
+function gsm_deinit() { git submodule deinit --all $* ; }
+function gsm_deinit_path() { git submodule deinit -- $* ; }
+function gsm_fd() { git submodule foreach git branch --force -delete $* ; }
+function gsm_filemode() { git submodule foreach 'git config --list --show-origin | grep --color filemode' ; }
+function gsm_filemode_false() { git submodule foreach 'git config --list --show-origin | grep --color filemode && git config core.filemode false' ; }
+function gsm_filemode_false_check() { git submodule foreach 'git config --list --show-origin | grep --color filemode && git config core.filemode false && git config --list --show-origin | grep --color filemode' ; }
+function gsm_filemode_false_check.all() { gcfg_filemode_false && gsm_filemode_false_check ; }
+function gsm_flo() { git submodule foreach git log --decorate --oneline $*git submodule sync ; }
+function gsm_flo1() { git submodule foreach git log --decorate --oneline -1 $* ; }
+function gsm_fs() { git submodule foreach git status --short --branch $* ; }
+function gsm_fs1() { git submodule foreach git status $* ; }
+function gsm_gf() { git submodule foreach git fetch $* ; }
+function gsm_ini() { git submodule update --init --force --progress $* ; }
+function gsm_ini_fetch_depth() { git submodule update --init --force --depth=$1 --progress ; }
+function gsm_ini_fetch_depth_1() { git submodule update --init --force --depth=1 --progress $* ; }
+function gsm_init_add() { rm -rf .git/modules/$1 && rm -rf $1 && git submodule add --force -b $2 -- $3 $1 ; }
+function gsm_l_p_f() { git config --file .gitmodules --get-regexp path | cut --fields=2 --delimiter=' ' $* ; }
+function gsm_l_u_f() { git config --file .gitmodules --get-regexp url | cut --fields=2 --delimiter=' ' $* ; }
+function gsm_s() { git submodule summary $* ; }
+function gsm_set_branch() { git submodule set-branch -b $1 -- $2 ; }
+function gsm_set_url() { git submodule set-utl -- $1 $2 ; }
+function gsm_st() { git submodule summary $* && git submodule status $* ; }
+function gsm_sync() { git submodule sync $* ; }
+function gsm_t() { git submodule status $* ; }
+function gsr() { git show-ref --abbrev=7 $* ; }
+function gsr_head_all() { git show-ref --abbrev=7 --head $* ; }
+function gsr_head_local_remote_tag() { git show-ref --abbrev=7 --head $* ; }
+function gsr_heads_local() { git show-ref --abbrev=7 --heads $* ; }
+function gsr_pattern() { git show-ref --abbrev=7 -- $* ; }
+function gsr_tags() { git show-ref --abbrev=7 --tags $* ; }
+function gsr_verify() { git show-ref --verify $* ; }
+function gsub() { git fetch --recurse-submodules=yes && git update-ref refs/heads/develop $1 && git checkout --force develop && git branch --verbose --verbose --color=never && git submodule foreach 'git rebase --verbose --no-verify --interactive --onto origin/develop origin/develop HEAD && git update-ref refs/heads/develop HEAD' && git rebase --verbose --no-verify --interactive --onto origin/develop origin/develop HEAD && git submodule foreach 'git checkout --force develop' ; }
+function gsub_@_1main() { git fetch --recurse-submodules=yes && git update-ref refs/heads/develop $1 && git checkout --force develop && git branch --verbose --verbose --color=never ; }
+function gsub_@_2sub() { git submodule foreach 'git rebase --verbose --no-verify --interactive --onto origin/develop origin/develop HEAD && git update-ref refs/heads/develop HEAD' ; }
+function gsub_@_3main() { git rebase --verbose --no-verify --interactive --onto origin/develop origin/develop HEAD && git submodule foreach 'git checkout --force develop' ; }
+function gsub_full() { git fetch --recurse-submodules=yes && git update-ref refs/heads/develop $1 && git checkout --force develop && git branch --verbose --verbose --color=never && git submodule foreach 'git rebase --verbose --no-verify --interactive --onto origin/develop origin/develop HEAD && git update-ref refs/heads/develop HEAD' && git rebase --verbose --no-verify --interactive --onto origin/develop origin/develop HEAD && git submodule foreach 'git checkout --force develop' ; }
+function gsw() { git branch --verbose --verbose --color=never && git switch --progress --recurse-submodules --force $* && git branch --verbose --verbose --color=never ; }
+function gsw-() { git branch --verbose --verbose --color=never && git switch --progress - && git branch --verbose --verbose --color=never ; }
+function gsw-f() { git branch --verbose --verbose --color=never && git switch --progress --force - && git branch --verbose --verbose --color=never ; }
+function gsw_c() { git branch --verbose --verbose --color=never && git switch --progress --force-create $* && git branch --verbose --verbose --color=never ; }
+function gsw_c_force() { git branch --verbose --verbose --color=never && git switch --progress --force-create $* && git branch --verbose --verbose --color=never ; }
+function gsw_c_noForce() { git branch --verbose --verbose --color=never && git switch --progress --create $* && git branch --verbose --verbose --color=never ; }
+function gsw_c_target() { git branch --verbose --verbose --color=never && git switch --progress --force-create $1 $2 && git branch --verbose --verbose --color=never ; }
+function gsw_force() { git branch --verbose --verbose --color=never && git switch --progress --recurse-submodules --force $* && git branch --verbose --verbose --color=never ; }
+function gsw_forceBranch_forceCreate() { git branch --verbose --verbose --color=never && git switch --progress --force $2 && git switch --progress --force-create $1 $2 && git branch --verbose --verbose --color=never ; }
+function gt() { git tag $* ; }
+function gt_a() { git tag --annotate $* ; }
+function gt_am() { git tag --annotate $1 --message "$2" ; }
+function gt_d() { git tag --delete $* ; }
+function gt_l() { git tag --list $* ; }
+function gt_l_grep() { git tag --list $* | grep --color $* ; }
+function gt_l_ic() { git tag --list --ignore-case $* ; }
+function gt_v() { git tag --verify $* ; }
+function gtop() { git for-each-ref --format="%(objectname:short) %(authordate:relative) %(align:40)%(refname)%(end) %(contents:subject)" --sort="-authordate" --count=3 $* ; }
+function gtop_15() { git for-each-ref --format="%(objectname:short) %(authordate:relative) %(align:40)%(refname)%(end) %(contents:subject)" --sort="-authordate" --count=20 $* ; }
+function gtop_20() { git for-each-ref --format="%(objectname:short) %(authordate:relative) %(align:40)%(refname)%(end) %(contents:subject)" --sort="-authordate" --count=15 $* ; }
+function gtop_3() { git for-each-ref --format="%(objectname:short) %(authordate:relative) %(align:40)%(refname)%(end) %(contents:subject)" --sort="-authordate" --count=3 $* ; }
+function gtop_5() { git for-each-ref --format="%(objectname:short) %(authordate:relative) %(align:40)%(refname)%(end) %(contents:subject)" --sort="-authordate" --count=5 $* ; }
+function gtop_7() { git for-each-ref --format="%(objectname:short) %(authordate:relative) %(align:40)%(refname)%(end) %(contents:subject)" --sort="-authordate" --count=7 $* ; }
+function gtop_9() { git for-each-ref --format="%(objectname:short) %(authordate:relative) %(align:40)%(refname)%(end) %(contents:subject)" --sort="-authordate" --count=9 $* ; }
+function gup() { git update-index $* ; }
+function gup_chmod_x() { git update-index --chmod=+x $1 && git ls-files --stage --eol --abbrev=7 -- $1 && rm -f $1 && ls --color --all -l $1 ; }
+function gup_chmod_x_remove() { git update-index --chmod=-x $1 && git ls-files --stage --eol --abbrev=7 -- $1 && rm -f $1 && ls --color --all -l $1 ; }
+function gup_nx() { git update-index --chmod -x $1 && git ls-files --stage --eol --abbrev=7 -- ":(glob)$1**" ; }
+function gup_nx1() { git update-index --chmod=-x $1 && git ls-files --stage --eol --abbrev=7 -- ":(glob)$1**" ; }
+function gup_x() { git update-index --chmod +x $1 && git ls-files --stage --eol --abbrev=7 -- ":(glob)$1**" ; }
+function gup_x1() { git update-index --chmod=+x $1 && git ls-files --stage --eol --abbrev=7 -- ":(glob)$1**" ; }
+function gur() { git update-ref $* && git branch --verbose --verbose --color=never ; }
+function gur_delete() { git update-ref -d refs/heads/$1 && git branch --verbose --verbose --color=never ; }
+function gur_make() { git update-ref refs/heads/$1 $2 && git branch --verbose --verbose --color=never ; }
+function gur_make_HEAD() { git update-ref refs/heads/$1 HEAD && git branch --verbose --verbose --color=never ; }
+function gv() { git version $* ; }
+function gv_bo() { git version --build-options $* ; }
+function gvar() { git var $* ; }
+function gvar_get() { git var $* ; }
+function gvar_list() { git var -l $* ; }
+function gwt_a() { git worktree add $* ; }
+function gwt_l() { git worktree list $* ; }
+function gwt_r() { git worktree remove -f $* ; }
+function gzip.() { gzip $* ; }
+function gzip@() { gzip --fast --verbose --force $* ; }
+function gzip_c_1() { gzip --fast --verbose --force $* ; }
+function gzip_c_1k() { gzip --fast --verbose --force --keep $* ; }
+function gzip_c_9() { gzip --best --verbose --force $* ; }
+function gzip_c_9k() { gzip --best --verbose --force --keep $* ; }
+function gzip_d() { gzip --decompress --verbose --force $*.gz ; }
+function gzip_d_k() { gzip --decompress --verbose --force --keep $*.gz ; }
+function his() { history | tail -$* ; }
+function his.f() { history | tail -f $* ; }
+function his.1() { history | tail -1 $* ; }
+function his.2() { history | tail -2 $* ; }
+function his.3() { history | tail -3 $* ; }
+function his.4() { history | tail -4 $* ; }
+function his.5() { history | tail -5 $* ; }
+function his.10() { history | tail -10 $* ; }
+function his.20() { history | tail -20 $* ; }
+function his.30() { history | tail -30 $* ; }
+function his.40() { history | tail -40 $* ; }
+function his.50() { history | tail -50 $* ; }
+function his.100() { history | tail -100 $* ; }
+function id.get() { getent passwd $* ; }
+function id.get.jaeho_s.lee() { getent passwd jaeho_s.lee $* ; }
+function id.set.chown() { id=$1; home=$2; sudo chown -R $id:$id $home ; }
+function id.set.chown.jaeho_s.lee() { id=jaeho_s.lee; home=/data/jaeho_s.lee; sudo chown -R $id:$id $home ; }
+function id.set.home() { newhome=$1; id=$2; sudo usermod -d $newhome $id ; }
+function id.set.home.jaeho.s.lee() { sudo usermod -d /data/jaeho.s.lee jaeho.s.lee $* ; }
+function id.set.move.home() { homeOld=$1; homeNew=$2; shopt -s dotglob; sudo mv -f $homeOld/* $homeNew ; shopt -u dotglob ; }
+function id.set.move.home.jaeho.s.lee() { homeOld=/home/jaeho.s.lee; homeNew=/data/jaeho.s.lee; shopt -s dotglob; sudo mv -f $homeOld/* $homeNew ; shopt -u dotglob ; }
+function id.set.newHome() { id=$1; homeOld=/data/$id; homeNew=/data/$id; id.set.home $homeNew $id; id.get $id; id.set.move.home $homeOld $homeNew; id.set.chown $id $homeNew ; }
+function id.set.newHome.jaeho_s.lee() { id=jaeho_s.lee; homeOld=/data/$id; homeNew=/data/$id; id.set.home $homeNew $id; id.get $id; id.set.move.home $homeOld $homeNew; id.set.chown $id $homeNew ; }
+function ldf() { df --human-readable $* ; }
+function ldf.home() { df --human-readable /home $* ; }
+function ldf.root() { df --human-readable / $* ; }
+function ldf.sda1() { df --human-readable /dev/sda1 $* ; }
+function ldf.sdb1() { df --human-readable /dev/sdb1 $* ; }
+function ldu() { du --human-readable --max-depth=1 --total $* ; }
+function ldu.1() { du --human-readable --max-depth=1 --total $* | sort --human-numeric-sort --reverse ; }
+function ldu.1_log() { du --human-readable --max-depth=1 --total $* | sort --human-numeric-sort --reverse | tee log.txt ; }
+function ldu.2() { du --human-readable --max-depth=2 --total $* | sort --human-numeric-sort --reverse ; }
+function ldu.2_log() { du --human-readable --max-depth=2 --total $* | sort --human-numeric-sort --reverse | tee log.txt ; }
+function ldu.all() { du --all --human-readable --max-depth=1 --total $* ; }
+function ldu.all.sort() { du --all --human-readable --max-depth=1 --total $* | sort --human-numeric-sort --reverse ; }
+function ldu.all_1() { du --all --human-readable --max-depth=1 --total $* | sort --human-numeric-sort --reverse ; }
+function ldu.all_1_log() { du --all --human-readable --max-depth=1 --total $* | sort --human-numeric-sort --reverse | tee log.txt ; }
+function ldu.all_2() { du --all --human-readable --max-depth=2 --total $* | sort --human-numeric-sort --reverse ; }
+function ldu.all_2_log() { du --all --human-readable --max-depth=2 --total $* | sort --human-numeric-sort --reverse | tee log.txt ; }
+function ldu.all_n() { du --all --human-readable --max-depth=$* --total | sort --human-numeric-sort --reverse ; }
+function ldu.all_n_log() { du --all --human-readable --max-depth=n --total $* | sort --human-numeric-sort --reverse | tee log.txt ; }
+function ldu.diretory() { du --human-readable --max-depth=1 --total $* ; }
+function ldu.diretory.sort() { du --human-readable --max-depth=1 --total $* | sort --human-numeric-sort --reverse ; }
+function ldu.diretory_1() { du --human-readable --max-depth=1 --total $* | sort --human-numeric-sort --reverse ; }
+function ldu.diretory_1_log() { du --human-readable --max-depth=1 --total $* | sort --human-numeric-sort --reverse | tee log.txt ; }
+function ldu.diretory_2() { du --human-readable --max-depth=2 --total $* | sort --human-numeric-sort --reverse ; }
+function ldu.diretory_2_log() { du --human-readable --max-depth=2 --total $* | sort --human-numeric-sort --reverse | tee log.txt ; }
+function ldu.diretory_n() { du --human-readable --max-depth=$* --total | sort --human-numeric-sort --reverse ; }
+function ldu.diretory_n_log() { du --human-readable --max-depth=n --total $* | sort --human-numeric-sort --reverse | tee log.txt ; }
+function ldu.n() { du --human-readable --max-depth=$* --total | sort --human-numeric-sort --reverse ; }
+function ldu.n_log() { du --human-readable --max-depth=n --total $* | sort --human-numeric-sort --reverse | tee log.txt ; }
+function ldu.s() { du --human-readable --summarize $* ; }
+function ll() { ls --color --all -l $* ; }
+function loc() { locale $* ; }
+function loc_a() { locale --all-locales $* ; }
+function loc_ak() { locale --all-locales | grep --color "ko_KR.utf8" ; }
+function ls_all() { ls --color --all $* ; }
+function ls_all_long() { ls --color --all -l $* ; }
+function ls_classify_all() { ls --color --classify $* ; }
+function ls_classify_dir() { ls --color --classify | grep --color / $* ; }
+function ls_classify_dir_name() { ls --color --classify | grep --color / | cut --fields=1 --delimiter='/' $* ; }
+function ls_classify_file() { ls --color --classify | grep --color --invert-match / $* ; }
+function ls_dir_indicator() { ls --color --directory */ $* ; }
+function ls_dir_name() { ls --color --directory */ | cut --fields=1 --delimiter='/' $* ; }
+function ls_dir_only_depth1() { ls -d */ | cut --fields=1 --delimiter='/' $* ; }
+function ls_humanSize() { ls --color -l --human-readable $* ; }
+function ls_indicator_all() { ls --color --indicator-style=slash $* ; }
+function ls_indicator_dir() { ls --color --indicator-style=slash | grep --color / $* ; }
+function ls_indicator_dir_name() { ls --color --indicator-style=slash | grep --color / | cut --fields=1 --delimiter='/' $* ; }
+function ls_indicator_file() { ls --color --indicator-style=slash | grep --color --invert-match / $* ; }
+function ls_indicator_none() { ls --color --indicator-style=none $* ; }
+function ls_long() { ls --color -l $* ; }
+function ls_long_dir_dirFile() { ls --color -l --directory */ && ls --color -l --all --classify $* ; }
+function ls_long_dir_file() { ls --color -l --directory */ && ls --color -l --all --classify | grep --color --invert-match / $* ; }
+function ls_long_recursive() { ls --color -l --recursive $* ; }
+function ls_oneFile() { ls --color -1 $* ; }
+function ls_recursive() { ls --color --recursive $* ; }
+function lsb() { lsb_release -a ; }
+function lsc() { lscpu ; }
+function mk() { make $* ; }
+function mk_c() { make clean ; }
+function mkd() { mkdir $* ; }
+function pcov_html() { coverage html ; }
+function pcov_htmlcov() { explorer htmlcov\index.html ; }
+function pcov_report() { coverage report ; }
+function pcov_run() { coverage run -m unittest discover --verbose --start-directory . --pattern test*.py --top-level-directory . ; }
+function py3() { python3 $* ; }
+function rp() { realpath $* ; }
+function rp.cwd() { realpath . ; }
+function rp.home() { realpath ~ ; }
+function sort() { LC_COLLATE=en_US.UTF-8 sort $* ; }
+function sort_debug() { LC_COLLATE=en_US.UTF-8 sort --debug $* ; }
+function tar_concat() { tar --concatenate -file=$1 $2 ; }
+function tar_create() { tar -cvf $* ; }
+function tar_extract() { tar -xvf $* ; }
+function tar_list() { tar -tvf $* ; }
+function time.() { time(./$*) ; }
+function tp() { type $* ; }
+function tp_all() { type -a $* ; }
+function tr_ascii_zero() { $* | tr '[0-9a-zA-Z]' '0' ; }
+function tr_complement_nonAlnum_newline() { $* | tr --complement '[:alnum:]' '\n' ; }
+function tr_complement_nonAlnum_space() { $* | tr --complement '[:alnum:]' ' ' ; }
+function tr_complement_nonAlnum_squeeze_newline() { $* | tr --complement --squeeze-repeats '[:alnum:]' '\n' ; }
+function tr_complement_nonAlnum_squeeze_space() { $* | tr --complement --squeeze-repeats '[:alnum:]' ' ' ; }
+function tr_complement_nonAlnum_squeeze_tab() { $* | tr --complement --squeeze-repeats '[:alnum:]' '\t' ; }
+function tr_complement_nonAlnum_tab() { $* | tr --complement '[:alnum:]' '\t' ; }
+function tr_delete_complement_alpha() { $* | tr --delete --complement '[:alpha:]' ; }
+function tr_delete_complement_digit() { $* | tr --delete --complement '[:digit:]' ; }
+function tr_delete_complement_lower() { $* | tr --delete --complement '[:lower:]' ; }
+function tr_delete_complement_nonAlnum() { $* | tr --delete --complement '[:alnum:]' ; }
+function tr_delete_complement_upper() { $* | tr --delete --complement '[:upper:]' ; }
+function tr_delete_complement_xdigit() { $* | tr --delete --complement '[:xdigit:]' ; }
+function tr_delete_newline() { $* | tr --delete '\n' ; }
+function tr_delete_space() { $* | tr --delete ' ' ; }
+function tr_delete_tab() { $* | tr --delete '\t' ; }
+function tr_hex_zero() { $* | tr '[0-9a-fA-F]' '0' ; }
+function tr_lower_upper() { $* | tr '[a-z]' '[A-Z]' ; }
+function tr_lower_zero() { $* | tr '[a-z]' '0' ; }
+function tr_num_zero() { $* | tr '[0-9]' '0' ; }
+function tr_path() { echo %PATH% | tr ';' '\n' ; }
+function tr_space_newline() { $* | tr ' ' '\n' ; }
+function tr_space_tab() { $* | tr ' ' '\t' ; }
+function tr_squeeze_newline() { $* | tr --squeeze-repeats '\n' ; }
+function tr_squeeze_space() { $* | tr --squeeze-repeats ' ' ; }
+function tr_squeeze_tab() { $* | tr --squeeze-repeats '\t' ; }
+function tr_tab_newline() { $* | tr '\t' '\n' ; }
+function tr_tab_space() { $* | tr '\t' ' ' ; }
+function tr_upper_lower() { $* | tr '[A-Z]' '[a-z]' ; }
+function tr_upper_zero() { $* | tr '[A-Z]' '0' ; }
+function xargs_d() { $* | xargs ; }
+function xargs_ls_file_includeSpace() { find . -type f -print0 | xargs --null ls ; }
+function xargs_ls_file_noIncludeSpace() { find . -type f | xargs ls ; }
+function xargs_remove_file() { find . -type f -print0 | xargs --null rm -f ; }
+function xargs_remove_file_includeSpace() { find . -type f -print0 | xargs --null rm -f ; }
+function xargs_remove_file_noIncludeSpace() { find . -type f | xargs rm -f ; }
+function xargs_remove_space() { $* | xargs ; }
+function xargs_verbose_ls_file_includeSpace() { find . -type f -print0 | xargs --verbose --null ls ; }
+function xargs_verbose_ls_file_noIncludeSpace() { find . -type f | xargs --verbose ls ; }
+function xargs_verbose_remove_file_includeSpace() { find . -type f -print0 | xargs --verbose --null rm -f ; }
+function xargs_verbose_remove_file_noIncludeSpace() { find . -type f | xargs --verbose rm -f ; }
+function xargs_verbose_remove_space() { $* | xargs --verbose ; }
