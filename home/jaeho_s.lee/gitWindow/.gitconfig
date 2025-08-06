@@ -1,0 +1,23 @@
+[core]
+    editor = 'C:/Program Files/Notepad++/notepad++.exe' -multiInst -nosession
+[diff]
+    tool = vimdiff     #
+    tool = bc          # bc4 설치되어 있다면 bc/bc3/bc4 어떤 내용 적어도 실행됨
+    tool = bc4         #
+    tool = bc3         # diff.tool 동일 내용 여러개면 가장 마지막 내용으로 overwrite 처리됨
+    tool = bc4         #
+[difftool "vimdiff"]
+    path = C:/Program Files/Git/usr/bin/vimdiff.exe
+    trustExitCode = true
+[difftool "bc"]
+    path = c:/program files/beyond compare 4/bcomp.exe
+    trustExitCode = true
+[difftool "bc3"]
+    path = c:/program files (x86)/beyond compare 3/bcomp.exe
+    trustExitCode = true
+[difftool "bc4"]
+    path = c:/program files/beyond compare 4/bcomp.exe
+    trustExitCode = true
+[difftool "bc"]              #  "program files" 와 같이 space 있다면 cmd =\"{path}\" 처리 필수
+    ; cmd = \"c:/program files/beyond compare 4/bcomp.exe\" \"$LOCAL\" \"$REMOTE\"
+    ; cmd = bash ~/.local/bin/gitCommand/difftool.sh "$(git rev-parse HEAD)" \"$LOCAL\" \"$REMOTE\"

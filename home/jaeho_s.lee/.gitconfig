@@ -1,0 +1,98 @@
+[user]
+    name = jaeho_s.lee
+    email = jaeho_s.lee@samsung.com
+[credential]
+    ; helper = manager # manager/cache/store
+    helper = store --file ~/.git-credentials # http 방식으로 clone 하는 경우 사용
+[color]
+    branch = never    # auto (default)
+    status = auto
+    showBranch = auto # git show-branch
+[safe]
+    directory = *
+[http]
+    cookiefile = ~/.gitcookies
+[remote "origin"]
+    puttykeyfile = C:\\Users\\jaeho_s.lee\\.ssh\\ssh_privateKey.ppk # ~/.ssh/ssh_privateKey.ppk // tortoiseGit 에서는 ~ 방식 Error Msg
+    ; fetch = +refs/heads/*:refs/remotes/origin/*           # fatal: multiple updates for ref 'refs/remotes/origin/master' not allowed
+    ; fetch = refs/tags/*:refs/tags/*                       # fatal: multiple updates for ref 'refs/tags/v1.0.0' not allowed
+[push]
+    recurseSubmodules = on-demand
+[submodule]
+    recurse = true             # with .gitconfig: [submodule] recurse = true : git update-ref refs/heads/develop origin/develop && git checkout --force develop
+                               # w/o  .gitconfig: [submodule] recurse = true : git update-ref refs/heads/develop origin/develop && git checkout --force develop && git submodule update --init --force --depth=1
+    fetchJobs = 8
+    ; propagateBranches = true # git branch develop 하면 main + all submodule 에서 develop 생성
+[status]
+    submodulesummary = 1      # submodule_CDE 4612d41...33ca311 (1): > update
+                              # git status --no-short + submodulesummary = 1
+                              #  ==> print the output of submodule summaries
+    short = 1                 # git status --short
+                              # git status --no-short // status.short=1 보다 cmd argument 우선함
+    branch = 1                # git status --short --branch
+    relativePaths = false     # git status : shows paths relative to the repository root
+    aheadBehind = true        # true(default : --ahead-behind) / false(--no-ahead-behind)
+    showUntrackedFiles = no   # no / normal / all
+                              # --untracked-files=no (-uno) / --untracked-files=normal / --untracked-files=all
+[fetch]
+    all = false                   # false(default : --all), true(--no-all)
+    parallel = 8                  #
+    output = compact              # full(default) / compact
+    prune = true                  # true(--prune)      # github에서 삭제된 refs/remotes/origin/branchName 삭제
+    pruneTags = true              # true(--prune-tags) # github에서 NoExist refs/tags/tagName 삭제 # local 생성 후 push 못한 tag도 삭제됨
+                                  # --prune-tags option is equivalent to having refs/tags/*:refs/tags/* declared in the refspecs of the remote
+    showForcedUpdates = true      # default(true) / false
+    recurseSubmodules = on-demand # yes|on-demand|no # git config --global fetch.recurseSubmodules on-demand
+[alias]
+    gl = config --list --show-scope
+[core]
+    autocrlf = true
+    whitespace = trailing-space,space-before-tab,tab-in-indent,cr-at-eol,-indent-with-non-tab
+    attributesfile = ~/.gitattributes
+    excludesFile = ~/.local/bin/.gitignore
+    longpaths = true
+    ignorecase = false # window 에서는 .git/config (local) 자동 설정됨
+    filemode = false   # mode change 100644 => 100755 방지
+                       # git config core.fileMode false ## default in window (git clone)
+                       # git config core.fileMode true  ## default in Linux (git clone)
+[apply]
+    whitespace = fix
+[diff]
+    tool = vimdiff     #
+    tool = bc          # bc4 설치되어 있다면 bc/bc3/bc4 어떤 내용 적어도 실행됨
+    tool = bc4         #
+    tool = bc3         # diff.tool 동일 내용 여러개면 가장 마지막 내용으로 overwrite 처리됨
+    tool = bc4         #
+    submodule = log    # commit revision (short SHA) / file changes 표시
+                       # log (= git submodule summary) / diff / short (default)
+    noPrefix = false   # diff --git a/README_main.md b/README_main.md # false(Default)
+                       # diff --git  README_main.md  README_main.md   # true
+    context = 3        # --unified=3 (default), --unified=0 (only diff)
+[difftool]
+    prompt = false     # To disable the "Launch 'bc4' [Y/n]?" prompt, run the command:
+[difftool "vimdiff"]
+    path = C:/Program Files/Git/usr/bin/vimdiff.exe
+    trustExitCode = true
+[difftool "bc"]
+    path = c:/program files/beyond compare 4/bcomp.exe
+    trustExitCode = true
+[difftool "bc3"]
+    path = c:/program files (x86)/beyond compare 3/bcomp.exe
+    trustExitCode = true
+[difftool "bc4"]
+    path = c:/program files/beyond compare 4/bcomp.exe
+    trustExitCode = true
+[difftool "bc"]              #  "program files" 와 같이 space 있다면 cmd =\"{path}\" 처리 필수
+    ; cmd = \"c:/program files/beyond compare 4/bcomp.exe\" \"$LOCAL\" \"$REMOTE\"
+    ; cmd = bash ~/.local/bin/gitCommand/difftool.sh "$(git rev-parse HEAD)" \"$LOCAL\" \"$REMOTE\"
+[filter "indent"]
+    clean = expand --tabs=4  # clean (staging)
+    smudge = expand --tabs=4 # smudge (checkout)
+[help]
+    autocorrect = 50
+[hooks]
+    allownonascii = true     # Attempt to add a non-ASCII file name
+[include]
+    path = ~/gitWindow/.gitconfig
+[include]
+    path = ~/gitLinux------/.gitconfig
