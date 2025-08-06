@@ -1,0 +1,59 @@
+# Set default behavior to automatically normalize line endings.
+* text=auto
+
+# Force batch scripts to always use CRLF line endings so that if a repo is accessed
+# in Windows via a file share from Linux, the scripts will work.
+*.{cmd,[cC][mM][dD]} text eol=crlf
+*.{bat,[bB][aA][tT]} text eol=crlf
+
+# Force bash scripts to always use LF line endings so that if a repo is accessed
+# in Unix via a file share from Windows, the scripts will work.
+*.csh text eol=lf
+*.sh text eol=lf
+*.bash text eol=lf
+.bash* text eol=lf
+**/.ssh/** text eol=lf
+**/hooks/** text eol=lf
+.vim* text eol=lf
+.git* text eol=lf
+config text eol=lf
+exclude text eol=lf
+.editorconfig text eol=lf
+.*rc text eol=lf
+.profile* text eol=lf
+.alias* text eol=lf
+
+### no conversion like LF will be replaced by CRLF
+*.cfg -text
+*.yaml -text
+*.yml -text
+*.pdf -text
+
+# Setting the "binary" attribute also unsets the "text" and "diff" attributes as above.
+*.png binary
+*.jpg binary
+*.bmp binary
+*.exe binary
+
+# Exclude files from exporting
+.gitattributes  export-ignore
+.gitignore      export-ignore
+.editorconfig   export-ignore
+.gitmodules     export-ignore
+*.md            export-ignore
+
+# filter (clean (staging), smudge (checkout))
+*.{cmd,[cC][mM][dD]} filter=indent
+*.{bat,[bB][aA][tT]} filter=indent
+*.csh filter=indent
+*.sh filter=indent
+*.bash filter=indent
+.bash* filter=indent
+*.{md} filter=indent
+.vim* filter=indent
+.git* filter=indent
+config filter=indent
+exclude filter=indent
+.editorconfig filter=indent
+.*rc filter=indent
+.profile* filter=indent
