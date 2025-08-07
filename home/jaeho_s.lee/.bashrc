@@ -71,7 +71,13 @@ function setToolPath_244() {
 }
 
 function commonHelperFunction() {
-    source ~/.local/bin/runBash/01_CB.sh
+    if [[ $HOME == "/home/jaeho_s.lee" ]] ; then
+        HOME=/cygdrive/c/Users/jaeho_s.lee
+        source ~/.local/bin/runBash/01_CB.sh
+        HOME=/home/jaeho_s.lee
+    else
+        source ~/.local/bin/runBash/01_CB.sh
+    fi
 }
 
 function setUserBitMask() {
@@ -106,7 +112,13 @@ function setAlias() {
 }
 
 function sourceAliasFunc() {
-    source ~/.alias
+    if [[ $HOME == "/home/jaeho_s.lee" ]] ; then
+        HOME=/cygdrive/c/Users/jaeho_s.lee
+        source ~/.alias
+        HOME=/home/jaeho_s.lee
+    else
+        source ~/.alias
+    fi
 
     if [[ $testEnv == "VWP" ]] ; then
         source ~/.alias_VWP
