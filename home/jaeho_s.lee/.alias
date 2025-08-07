@@ -2,8 +2,21 @@ function ..() { cd .. ; commandPrompt ; pwd ; .gis && (gb ; gsm_st ; gs) ; }
 function ...() { cd .. ; cd .. ; commandPrompt ; pwd ; .gis && (gb ; gsm_st ; gs) ; }
 function ....() { cd .. ; cd .. ; cd .. ; commandPrompt ; pwd ; .gis && (gb ; gsm_st ; gs) ; }
 function .....() { cd .. ; cd .. ; cd .. ; cd .. ; commandPrompt ; pwd ; .gis && (gb ; gsm_st ; gs) ; }
-function .b() { source ~/.bashrc ; }
-function .bg() { source ~/.bashrc green ; }
+function .a() { source ~/.alias $* ; }
+function .a.o() { source ~/.alias_office $* ; }
+function .a.vwp() { source ~/.alias_VWP $* ; }
+function .b() { source ~/.bashrc --log_level DEBUG $* ; }
+function .b.D() { source ~/.bashrc --log_level DEBUG $* ; }
+function .b.D1() { source ~/.bashrc -l DEBUG $* ; }
+function .b.D2() { source ~/.bashrc --l DEBUG $* ; }
+function .b.D3() { source ~/.bashrc -log_level DEBUG $* ; }
+function .b.D4() { source ~/.bashrc --log_level DEBUG $* ; }
+function .b.I() { source ~/.bashrc --log_level INFO $* ; }
+function .b.I1() { source ~/.bashrc -l INFO $* ; }
+function .b.I2() { source ~/.bashrc --l INFO $* ; }
+function .b.I3() { source ~/.bashrc -log_level INFO $* ; }
+function .b.I4() { source ~/.bashrc --log_level INFO $* ; }
+function .bg() { source ~/.bashrc --command_prompt green $* ; }
 function .d() { dos2unix *.sh ; }
 function .g() { if .gis ; then while [[ ! -d .git ]]; do cd ..; done && commandPrompt ; pwd ; fi ; }
 function .ga() { ga $* ; }
@@ -1279,18 +1292,18 @@ function gzip_c_9k() { gzip --best --verbose --force --keep $* ; }
 function gzip_d() { gzip --decompress --verbose --force $*.gz ; }
 function gzip_d_k() { gzip --decompress --verbose --force --keep $*.gz ; }
 function his() { history | tail -$* ; }
-function his.f() { history | tail -f $* ; }
 function his.1() { history | tail -1 $* ; }
-function his.2() { history | tail -2 $* ; }
-function his.3() { history | tail -3 $* ; }
-function his.4() { history | tail -4 $* ; }
-function his.5() { history | tail -5 $* ; }
 function his.10() { history | tail -10 $* ; }
-function his.20() { history | tail -20 $* ; }
-function his.30() { history | tail -30 $* ; }
-function his.40() { history | tail -40 $* ; }
-function his.50() { history | tail -50 $* ; }
 function his.100() { history | tail -100 $* ; }
+function his.2() { history | tail -2 $* ; }
+function his.20() { history | tail -20 $* ; }
+function his.3() { history | tail -3 $* ; }
+function his.30() { history | tail -30 $* ; }
+function his.4() { history | tail -4 $* ; }
+function his.40() { history | tail -40 $* ; }
+function his.5() { history | tail -5 $* ; }
+function his.50() { history | tail -50 $* ; }
+function his.f() { history | tail -f $* ; }
 function id.get() { getent passwd $* ; }
 function id.get.jaeho_s.lee() { getent passwd jaeho_s.lee $* ; }
 function id.set.chown() { id=$1; home=$2; sudo chown -R $id:$id $home ; }
@@ -1374,7 +1387,11 @@ function tar_concat() { tar --concatenate -file=$1 $2 ; }
 function tar_create() { tar -cvf $* ; }
 function tar_extract() { tar -xvf $* ; }
 function tar_list() { tar -tvf $* ; }
-function time.() { time(./$*) ; }
+function tm() { time(./$*) ; }
+function tm.1() { time ls ; }
+function tm.2() { time ls -1; }
+function tm.3() { time(ls -1); }
+function tm.all() { time $* ; }
 function tp() { type $* ; }
 function tp_all() { type -a $* ; }
 function tr_ascii_zero() { $* | tr '[0-9a-zA-Z]' '0' ; }

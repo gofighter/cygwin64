@@ -1,4 +1,4 @@
-function setCommonEnv() {
+function printCommonEnv() {
     echo ----- [2] .bashrc                #
     echo $0                               # /usr/bin/bash
     echo $-                               # himBH
@@ -21,14 +21,12 @@ function setTestEnv() {
     else
         testEnv=LinuxEtc
     fi
-    # echo -e "testEnv: $testEnv\n"
+    [[ $log_level == "DEBUG" ]] && echo -e "testEnv: $testEnv\n"
 }
 
 function sourceBashrc() {
     if [[ $testEnv == "Linux244" ]] ; then
         source ~/.bashrc_244
-    else
-        commandPrompt
     fi
 }
 
@@ -48,8 +46,18 @@ function setPath() {
     set_PATH ~/.local/bin
 }
 
-function setCygWinPath() {
+function setPathForNoLinuxPC() {
     set_PATH /usr/local/bin:/usr/bin
+
+    ###### Git Bash
+    # $uname
+    # MINGW64_NT-10.0-26100
+    ###### Cygwin_Mintty.bat
+    # $uname
+    # CYGWIN_NT-10.0-26100
+    ###### Cygwin.bat
+    # $uname
+    # MSYS_NT-10.0-26100
 }
 
 function setToolPath_244() {
@@ -68,7 +76,7 @@ function commonHelperFunction() {
 
 function setUserBitMask() {
     umask 077
-    # cmd="umask" && CommandRunner0
+    [[ $log_level == "DEBUG" ]] && cmd="umask" && CommandRunner0
 }
 
 function setToolPath() {
@@ -132,16 +140,22 @@ function commandPrompt() {
     else
         setPromptColorBlue
     fi
-    [[ $bash_arg == "green" ]] && setPromptColorGreen
+    [[ $command_prompt == "green" ]] && setPromptColorGreen
 
     getBranchName
 
     #\u     the username of the current user
-    #\W     the  basename  of the current working directory
+    #\w     the fullPath of the current working directory
+    #\W     the basename of the current working directory
 
-    PS1='\[\033]0;$MSYSTEM : $branchName \w \007\]' # set window title
-    PS1="$PS1"'\[\e[${attr};${clfg};${clbg}m\]'     # Color for user@workingDir
-    PS1="$PS1"'[\u@\W]'                             # user@workingDir
+    if [[ $testEnv == "WindowMintty" ]] ; then
+        PS1='\[\033]0;$MSYSTEM : $branchName \w \007\]' # set window title
+        PS1="$PS1"'\[\e[${attr};${clfg};${clbg}m\]'     # Color for user@workingDir
+        PS1="$PS1"'[\u@\W]'                             # user@workingDir(basenameOfPath)
+    else
+        PS1='\[\e[${attr};${clfg};${clbg}m\]'           # Color for user@workingDir
+        PS1="$PS1"'[\u@\w]'                             # user@workingDir(fullPath)
+    fi
     PS1="$PS1"'\[\e[${attr};${clfg};${clbg_gb}m\]'  # Color for bash function
     PS1="$PS1"'$branchName'                         # bash function
     PS1="$PS1"'\$\[\e[0;0;0m\]'                     # reset format
@@ -205,45 +219,65 @@ function setPromptColor_MINGW() {
 }
 
 function setPromptColorBlue() {
-    [[ $testEnv != "VWP" ]] && attr=1      # Bold/Bright # VS2022 terminal
-    clfg=34     # Blue
-    clbg=34     # Blue
-    clbg_gb=34  # Blue
+    [[ $testEnv != "VWP" ]] && attr=1   # Bold/Bright # VS2022 terminal
+    clfg=34                             # Blue
+    clbg=34                             # Blue
+    clbg_gb=34                          # Blue
 }
 
 function setPromptColorGreen() {
-    [[ $testEnv != "VWP" ]] && attr=7      # Reverse (Linux PC)
-    clfg=30     # Black
-    clbg=102    # Light green
-    clbg_gb=106 # Light cyan
+    [[ $testEnv != "VWP" ]] && attr=7   # Reverse (Linux PC)
+    clfg=30                             # Black
+    clbg=102                            # Light green
+    clbg_gb=106                         # Light cyan
 }
 
 function getBranchName() {
-    branchName_detach=`git.exe branch 2> /dev/null | grep -oP --color "\* [(]\K.+(?=[)])"`
+    branchName_detach=`git branch 2> /dev/null | grep -oP --color "\* [(]\K.+(?=[)])"`
     if [[ $? == 0 ]]; then
         branchName=$branchName_detach
     else
-        branchName_noDetach=`git.exe branch 2> /dev/null | awk '/*/ {print $2}'`
+        branchName_noDetach=`git branch 2> /dev/null | awk '/*/ {print $2}'`
         branchName=$branchName_noDetach
     fi
 
-    [[ $branchName != "" ]] && branchName="($branchName)"
+    [[ $branchName != "" ]] && branchName="(${branchName})"
+    [[ $log_level == "DEBUG" ]] && LogInfoRef_multiLine branchName
+}
+
+function printArugments() {
+    LogInfoRef_multiLine command_prompt
+    LogInfoRef_multiLine log_level
 }
 
 ##################################
 
-bash_arg=$1
-# setCommonEnv
+command_prompt=
+log_level=INFO
+
+args=("${@//-/}") # 배열 확장
+
+for i in "${!args[@]}" ; do
+    next=$((i+1))
+    arg=${args[$i]}
+    case "${arg}" in
+        c|command_prompt) command_prompt=${args[$next]} ;;
+        l|log_level) log_level=${args[$next]} ;;
+    esac
+done
+
+commonHelperFunction
+[[ $log_level == "DEBUG" ]] && printArugments
+[[ $log_level == "DEBUG" ]] && printCommonEnv
 setTestEnv
-# sourceBashrc
+sourceBashrc
 setLanguage
 setPath
-setCygWinPath
-commonHelperFunction
+[[ ! $(uname) == "Linux" ]] && setPathForNoLinuxPC
 setUserBitMask
-# setToolPath
+setToolPath
 setAlias
 sourceAliasFunc
-# printToolPath
-# printToolVersion
+[[ $log_level == "DEBUG" ]] && printToolPath
+[[ $log_level == "DEBUG" ]] && printToolVersion
 commandPrompt
