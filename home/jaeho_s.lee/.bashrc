@@ -94,8 +94,24 @@ function setToolPath() {
 }
 
 function setCXX() {
-    export CC=$(which gcc)
-    export CXX=$(which g++)
+    if [[ $testEnv == "VWP" ]] ; then
+        setCXX_VWP
+    else
+        export CC=$(which gcc)
+        export CXX=$(which g++)
+    fi
+}
+
+function setCXX_VWP() {
+    while IFS= read -r opt arg; do
+        LogInfoLev0 $opt $arg
+        case "${opt}" in
+            PATH) set_PATH  $arg ;;
+            LD_LIB) set_LD_LIBRARY_PATH  $arg ;;
+            CC) export CC=$arg ;;
+            CXX) export CC=$arg ;;
+        esac
+    done <<< $(cat PATH_VWP.txt)
 }
 
 function setAlias() {
@@ -128,6 +144,9 @@ function sourceAliasFunc() {
 }
 
 function printToolPath() {
+    ###################################### sudo update-alternatives --config cmake
+    # ~/.local/bin/cmake ## 3.22.1's link file
+
     cmd="which g++" && CommandRunner0
     cmd="which python" && CommandRunner0
     cmd="which bash" && CommandRunner0
@@ -257,7 +276,7 @@ function getBranchName() {
     [[ $log_level == "DEBUG" ]] && LogInfoRef_multiLine branchName
 }
 
-function printArugments() {
+function printArguments() {
     LogInfoRef_multiLine command_prompt
     LogInfoRef_multiLine log_level
 }
@@ -279,7 +298,7 @@ for i in "${!args[@]}" ; do
 done
 
 commonHelperFunction
-[[ $log_level == "DEBUG" ]] && printArugments
+[[ $log_level == "DEBUG" ]] && printArguments
 [[ $log_level == "DEBUG" ]] && printCommonEnv
 setTestEnv
 sourceBashrc
