@@ -310,3 +310,55 @@
 2025/08/02 19:23:57 running: D:\02_sw\cygwin64\bin\dash.exe "/etc/postinstall/zp_man-db-update-index.dash"
 2025/08/02 19:24:35 note: Installation Complete
 2025/08/02 19:24:35 Ending cygwin install
+2025/08/08 04:36:56 Starting cygwin install, version 2.934
+2025/08/08 04:36:56 User has backup/restore rights
+2025/08/08 04:36:56 User has symlink creation right
+2025/08/08 04:36:56 Current Directory: D:\02_sw\utils\cygwin\cygwin_3.6.4
+2025/08/08 04:37:00 source: network install
+2025/08/08 04:37:03 root: D:\02_sw\cygwin64 system
+2025/08/08 04:37:03 Changing gid to Administrators
+2025/08/08 04:37:04 Selected local directory: D:\02_sw\utils\cygwin\cygwin_3.6.4
+2025/08/08 04:37:05 net: Preconfig
+2025/08/08 04:37:08 site: https://mirrors.163.com/cygwin/
+2025/08/08 04:41:11 solving: 0 tasks, update: yes, use test packages: no
+2025/08/08 04:45:16 mbox : Are you sure you want to exit setup? Any current download or installation will be aborted.
+2025/08/08 04:45:18 Ending cygwin install
+2025/08/10 19:16:55 Starting cygwin install, version 2.934
+2025/08/10 19:16:55 User has backup/restore rights
+2025/08/10 19:16:55 User has symlink creation right
+2025/08/10 19:16:56 Current Directory: D:\02_sw\utils\cygwin\cygwin_3.6.4
+2025/08/10 19:16:58 source: network install
+2025/08/10 19:16:59 root: D:\02_sw\cygwin64 system
+2025/08/10 19:16:59 Changing gid to Administrators
+2025/08/10 19:17:00 Selected local directory: D:\02_sw\utils\cygwin\cygwin_3.6.4
+2025/08/10 19:17:01 net: Preconfig
+2025/08/10 19:17:11 site: https://mirrors.163.com/cygwin/
+2025/08/10 19:18:00 solving: 0 tasks, update: yes, use test packages: no
+2025/08/10 19:19:31 solving: 2 tasks, update: no, use test packages: no
+2025/08/10 19:19:31 Augmented Transaction List:
+2025/08/10 19:19:31    0 install rsync           3.3.0-1   
+2025/08/10 19:19:31    1   erase rsync           3.2.7-1   
+2025/08/10 19:19:31    2 install libdb18.1       18.1.40-1 
+2025/08/10 19:19:31    3 install libgdbm_compat4 1.24-1    
+2025/08/10 19:19:31    4 install perl_base       5.40.3-1  
+2025/08/10 19:19:31    5 install perl_autorebase 5.40.3-1  
+2025/08/10 19:19:31    6 install perl            5.40.3-1  
+2025/08/10 19:21:40 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/rsync/rsync-3.3.0-1.tar.xz
+2025/08/10 19:21:47 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/db/libdb18.1/libdb18.1-18.1.40-1.tar.xz
+2025/08/10 19:21:47 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gdbm/libgdbm_compat4/libgdbm_compat4-1.24-1.tar.xz
+2025/08/10 19:22:49 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/perl/perl_base/perl_base-5.40.3-1-x86_64.tar.zst
+2025/08/10 19:22:49 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/perl/perl_autorebase/perl_autorebase-5.40.3-1-x86_64.tar.zst
+2025/08/10 19:24:02 Downloaded D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/perl/perl-5.40.3-1-x86_64.tar.zst
+2025/08/10 19:24:02 Registry value set: HKEY_LOCAL_MACHINE\Software\Cygwin\setup\rootdir = "D:\02_sw\cygwin64"
+2025/08/10 19:24:02 Uninstalling rsync
+2025/08/10 19:24:02 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/rsync/rsync-3.3.0-1.tar.xz
+2025/08/10 19:24:03 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/db/libdb18.1/libdb18.1-18.1.40-1.tar.xz
+2025/08/10 19:24:03 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/gdbm/libgdbm_compat4/libgdbm_compat4-1.24-1.tar.xz
+2025/08/10 19:24:03 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/perl/perl_base/perl_base-5.40.3-1-x86_64.tar.zst
+2025/08/10 19:24:04 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/perl/perl_autorebase/perl_autorebase-5.40.3-1-x86_64.tar.zst
+2025/08/10 19:24:04 Extracting from file://D:\02_sw\utils\cygwin\cygwin_3.6.4/https%3a%2f%2fmirrors.163.com%2fcygwin%2f/x86_64/release/perl/perl-5.40.3-1-x86_64.tar.zst
+2025/08/10 19:24:07 running: D:\02_sw\cygwin64\bin\dash.exe "/etc/postinstall/0p_000_autorebase.dash"
+2025/08/10 19:24:12 running: D:\02_sw\cygwin64\bin\dash.exe "/etc/postinstall/0p_update-info-dir.dash"
+2025/08/10 19:24:13 running: D:\02_sw\cygwin64\bin\dash.exe "/etc/postinstall/zp_man-db-update-index.dash"
+2025/08/10 19:33:51 note: Installation Complete
+2025/08/10 19:33:51 Ending cygwin install

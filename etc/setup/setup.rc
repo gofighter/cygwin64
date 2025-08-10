@@ -112,9 +112,10 @@ mirrors-lst
 	ftp://ftp.inf.tu-dresden.de/software/windows/cygwin32/;ftp.inf.tu-dresden.de;Europe;Germany
 	http://ftp.inf.tu-dresden.de/software/windows/cygwin32/;ftp.inf.tu-dresden.de;Europe;Germany
 	https://ftp.inf.tu-dresden.de/software/windows/cygwin32/;ftp.inf.tu-dresden.de;Europe;Germany
-	ftp://ftp.funet.fi/pub/mirrors/sourceware.org/pub/cygwin/;ftp.funet.fi;Europe;Finland
-	https://ftp.funet.fi/pub/mirrors/sourceware.org/pub/cygwin/;ftp.funet.fi;Europe;Finland
 	https://mirrors.filigrane-technologie.fr/cygwin/;mirrors.filigrane-technologie.fr;Europe;France
+	ftp://ftp.lip6.fr/pub/cygwin/;ftp.lip6.fr;Europe;France
+	http://ftp.lip6.fr/pub/cygwin/;ftp.lip6.fr;Europe;France
+	https://ftp.lip6.fr/pub/cygwin/;ftp.lip6.fr;Europe;France
 	ftp://ftp.ntua.gr/pub/pc/cygwin/;ftp.ntua.gr;Europe;Greece
 	http://ftp.ntua.gr/pub/pc/cygwin/;ftp.ntua.gr;Europe;Greece
 	http://mirror.isoc.org.il/pub/cygwin/;mirror.isoc.org.il;Asia;Israel

@@ -32,12 +32,14 @@
 #   from /etc/setup/libbz2_1.lst.gz
 #   from /etc/setup/libcom_err2.lst.gz
 #   from /etc/setup/libcrypt2.lst.gz
+#   from /etc/setup/libdb18.1.lst.gz
 #   from /etc/setup/libedit0.lst.gz
 #   from /etc/setup/libfdisk1.lst.gz
 #   from /etc/setup/libffi6.lst.gz
 #   from /etc/setup/libfido2.lst.gz
 #   from /etc/setup/libgcc1.lst.gz
 #   from /etc/setup/libgdbm6.lst.gz
+#   from /etc/setup/libgdbm_compat4.lst.gz
 #   from /etc/setup/libgmp10.lst.gz
 #   from /etc/setup/libgssapi_krb5_2.lst.gz
 #   from /etc/setup/libiconv2.lst.gz
@@ -76,6 +78,9 @@
 #   from /etc/setup/openssl.lst.gz
 #   from /etc/setup/p11-kit-trust.lst.gz
 #   from /etc/setup/p11-kit.lst.gz
+#   from /etc/setup/perl.lst.gz
+#   from /etc/setup/perl_autorebase.lst.gz
+#   from /etc/setup/perl_base.lst.gz
 #   from /etc/setup/rebase.lst.gz
 #   from /etc/setup/rsync.lst.gz
 #   from /etc/setup/run.lst.gz
@@ -311,6 +316,8 @@
 /usr/bin/cygbz2-1.dll
 /usr/bin/cygcom_err-2.dll
 /usr/bin/cygcrypt-2.dll
+/usr/bin/cygdb-18.1.dll
+/usr/bin/cygdb_cxx-18.1.dll
 /usr/bin/cygedit-0.dll
 /usr/bin/cygfdisk-1.dll
 /usr/bin/cygffi-6.dll
@@ -320,6 +327,7 @@
 /usr/bin/fido2-token.exe
 /usr/bin/cyggcc_s-seh-1.dll
 /usr/bin/cyggdbm-6.dll
+/usr/bin/cyggdbm_compat-4.dll
 /usr/bin/cyggmp-10.dll
 /usr/bin/cyggssapi_krb5-2.dll
 /usr/bin/cygiconv-2.dll
@@ -406,6 +414,63 @@
 /usr/bin/p11-kit.exe
 /usr/libexec/p11-kit/p11-kit-remote.exe
 /usr/lib/p11-kit-proxy.so
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/attributes/attributes.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Compress/Raw/Bzip2/Bzip2.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Compress/Raw/Zlib/Zlib.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/DB_File/DB_File.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Devel/Peek/Peek.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Filter/Util/Call/Call.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/GDBM_File/GDBM_File.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/IPC/SysV/SysV.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Math/BigInt/FastCalc/FastCalc.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/NDBM_File/NDBM_File.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Opcode/Opcode.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/re/re.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/SDBM_File/SDBM_File.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Sys/Hostname/Hostname.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Sys/Syslog/Syslog.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/threads/shared/shared.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/threads/threads.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Unicode/Collate/Collate.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Unicode/Normalize/Normalize.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/CORE/cygperl5_40.dll
+/usr/bin/perl.exe
+/usr/bin/perl5.40.3.exe
+/usr/bin/cygperl5_40.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/B/B.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Cwd/Cwd.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Data/Dumper/Dumper.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Digest/MD5/MD5.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Digest/SHA/SHA.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Encode/Byte/Byte.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Encode/CN/CN.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Encode/EBCDIC/EBCDIC.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Encode/Encode.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Encode/JP/JP.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Encode/KR/KR.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Encode/Symbol/Symbol.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Encode/TW/TW.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Encode/Unicode/Unicode.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Fcntl/Fcntl.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/File/DosGlob/DosGlob.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/File/Glob/Glob.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Hash/Util/FieldHash/FieldHash.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Hash/Util/Util.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/I18N/Langinfo/Langinfo.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/IO/IO.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/List/Util/Util.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/MIME/Base64/Base64.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/POSIX/POSIX.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/PerlIO/encoding/encoding.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/PerlIO/mmap/mmap.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/PerlIO/via/via.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Socket/Socket.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Storable/Storable.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Time/HiRes/HiRes.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Time/Piece/Piece.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Win32/Win32.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/Win32API/File/File.dll
+/usr/lib/perl5/5.40/x86_64-cygwin-threads/auto/mro/mro.dll
 /usr/bin/rsync.exe
 /usr/bin/run.exe
 /usr/bin/sed.exe

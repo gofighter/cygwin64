@@ -128,3 +128,27 @@ echo $-                               # himBH
 
 ### bash --login -i -c "some command"
 echo $-                               # himBHc
+
+################# cygwin version program 설치 여부 확인 및 perl 설치
+```
+[jaeho@/](develop)$which grep
+/usr/bin/grep
+[jaeho@/](develop)$which sed
+/usr/bin/sed
+[jaeho@/](develop)$which awk
+/usr/bin/awk
+[jaeho@/](develop)$which perl
+/cygdrive/c/Program Files/Git/usr/bin/perl
+[jaeho@/](develop)$ 
+=>
+[jaeho@/](develop)$which grep
+/usr/bin/grep
+[jaeho@/](develop)$which sed
+/usr/bin/sed
+[jaeho@/](develop)$which awk
+/usr/bin/awk
+[jaeho@/](develop)$which perl
+/cygdrive/c/Program Files/Git/usr/bin/perl
+[jaeho@/](develop)$which perl
+/usr/bin/perl
+```

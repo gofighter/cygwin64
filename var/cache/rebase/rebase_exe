@@ -241,6 +241,8 @@
 /usr/bin/trust.exe
 /usr/bin/p11-kit.exe
 /usr/libexec/p11-kit/p11-kit-remote.exe
+/usr/bin/perl.exe
+/usr/bin/perl5.40.3.exe
 /usr/bin/rsync.exe
 /usr/bin/run.exe
 /usr/bin/sed.exe

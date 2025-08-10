@@ -32,12 +32,14 @@ libblkid1 libblkid1-2.40.2-2.tar.bz2 0
 libbz2_1 libbz2_1-1.0.8-1.tar.bz2 0
 libcom_err2 libcom_err2-1.44.5-1.tar.bz2 0
 libcrypt2 libcrypt2-4.4.20-1.tar.bz2 0
+libdb18.1 libdb18.1-18.1.40-1.tar.bz2 0
 libedit0 libedit0-20221030-4.tar.bz2 0
 libfdisk1 libfdisk1-2.40.2-2.tar.bz2 0
 libffi6 libffi6-3.2.1-2.tar.bz2 0
 libfido2 libfido2-1.15.0-1.tar.bz2 0
 libgcc1 libgcc1-13.4.0-1.tar.bz2 0
 libgdbm6 libgdbm6-1.24-1.tar.bz2 0
+libgdbm_compat4 libgdbm_compat4-1.24-1.tar.bz2 0
 libgmp10 libgmp10-6.3.0-1.tar.bz2 0
 libgssapi_krb5_2 libgssapi_krb5_2-1.15.2-2.tar.bz2 0
 libiconv2 libiconv2-1.17-1.tar.bz2 0
@@ -76,8 +78,11 @@ openssh openssh-10.0p1-1.tar.bz2 1
 openssl openssl-3.0.17-1.tar.bz2 0
 p11-kit p11-kit-0.23.20-1.tar.bz2 0
 p11-kit-trust p11-kit-trust-0.23.20-1.tar.bz2 0
+perl perl-5.40.3-1.tar.bz2 1
+perl_autorebase perl_autorebase-5.40.3-1.tar.bz2 0
+perl_base perl_base-5.40.3-1.tar.bz2 0
 rebase rebase-4.6.6-1.tar.bz2 0
-rsync rsync-3.2.7-1.tar.bz2 1
+rsync rsync-3.3.0-1.tar.bz2 1
 run run-1.3.4-2.tar.bz2 0
 sed sed-4.9-1.tar.bz2 0
 tar tar-1.35-2.tar.bz2 0
