@@ -103,23 +103,22 @@ function setCXX() {
 }
 
 function setCXX_VWP() {
-    while IFS= read -r opt arg; do
-        LogInfoLev0 $opt $arg
+    while read -r opt arg; do
+        [[ $log_level == "DEBUG" ]] && LogInfoLev0 $opt : $arg
         case "${opt}" in
-            PATH) set_PATH  $arg ;;
-            LD_LIB) set_LD_LIBRARY_PATH  $arg ;;
+            PATH) set_PATH $arg ;;
+            LD_LIB) set_LD_LIBRARY_PATH $arg ;;
             CC) export CC=$arg ;;
-            CXX) export CC=$arg ;;
+            CXX) export CXX=$arg ;;
         esac
-    done <<< $(cat PATH_VWP.txt)
+    done <<< $(cat ~/PATH_VWP.txt)
 }
 
 function setAlias() {
     alias rm='rm -i'
-    # alias cp='cp -i'               # cp Interactive 로 인해서 잘 안되면 /bin/cp 사용
+    # alias cp='cp -i'                # cp Interactive 로 인해서 잘 안되면 /bin/cp 사용
     alias mv='mv -i'
-    alias less='less -r'             # raw control characters
-    alias whence='type -a'           # where, of a sort
+    alias less='less -r'              # raw control characters
     alias grep='grep --color'
     alias egrep='grep --extended-regexp --color=auto'
     alias fgrep='grep --fixed-strings --color=auto'
@@ -158,6 +157,8 @@ function printToolVersion() {
     cmd="python --version" && CommandRunner0
     cmd="bash --version" && CommandRunner0
     cmd="cmake --version" && CommandRunner0
+    LogInfoRef_multiLine CC
+    LogInfoRef_multiLine CXX
     LogInfoRef_multiLine SHELL
     LogInfoRef_multiLine PATH
     LogInfoRef_multiLine LD_LIBRARY_PATH
